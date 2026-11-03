@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBA Matchup Board</title>
+<style>
+:root {
+  --bg: #f4f3ef; --panel: #ffffff; --panel2: #f8f7f4; --ink: #1b1d22; --ink2: #555a64; --ink3: #8a8f99; --line: #e1dfd8;
+  --accent: #2d5bd7; --up: #1d7a46; --up-bg: #e3f3e8; --down: #b4372f; --down-bg: #fbe7e4; --warn: #9a6200; --warn-bg: #fdf1d8;
+  --tag-p: #7b3fb8; --tag-p-bg: #f0e7fa; --tag-i: #b4372f; --tag-i-bg: #fbe7e4; --mod: #6b5d00; --mod-bg: #f6f0c9;
+  --proj: #13306e; --proj-bg: #eaf0fd;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121418; --panel: #1b1e24; --panel2: #20242b; --ink: #e8e9ec; --ink2: #a9aeb8; --ink3: #737985; --line: #2e333c;
+    --accent: #7ea2ff; --up: #5fd08f; --up-bg: #183526; --down: #ff8a80; --down-bg: #3b1d1b; --warn: #f2c26b; --warn-bg: #3a2e14;
+    --tag-p: #c9a2f5; --tag-p-bg: #2f2340; --tag-i: #ff8a80; --tag-i-bg: #3b1d1b; --mod: #e8d97a; --mod-bg: #36321a;
+    --proj: #cddcff; --proj-bg: #1d2a48;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121418; --panel: #1b1e24; --panel2: #20242b; --ink: #e8e9ec; --ink2: #a9aeb8; --ink3: #737985; --line: #2e333c;
+  --accent: #7ea2ff; --up: #5fd08f; --up-bg: #183526; --down: #ff8a80; --down-bg: #3b1d1b; --warn: #f2c26b; --warn-bg: #3a2e14;
+  --tag-p: #c9a2f5; --tag-p-bg: #2f2340; --tag-i: #ff8a80; --tag-i-bg: #3b1d1b; --mod: #e8d97a; --mod-bg: #36321a;
+  --proj: #cddcff; --proj-bg: #1d2a48;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.num, td, th { font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+
+/* top bar */
+.top { position: sticky; top: 0; z-index: 20; background: var(--panel); border-bottom: 1px solid var(--line); }
+.top-in { max-width: 1680px; margin: 0 auto; padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.brand { font-weight: 700; font-size: 15px; letter-spacing: .2px; }
+.datectl { display: flex; gap: 4px; align-items: center; }
+.btn { border: 1px solid var(--line); background: var(--panel2); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+.btn:hover { border-color: var(--ink3); }
+.status { color: var(--ink2); font-size: 12px; }
+.weights { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: 12px; }
+.weights label { display: flex; gap: 5px; align-items: center; }
+.weights input[type=range] { width: 90px; }
+.weights .wv { min-width: 3.2em; font-weight: 600; }
+.nav { max-width: 1680px; margin: 0 auto; padding: 0 16px 8px; display: flex; gap: 6px; overflow-x: auto; }
+.nav a { white-space: nowrap; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; font-size: 12px; color: var(--ink2); background: var(--panel2); }
+
+main { max-width: 1680px; margin: 0 auto; padding: 12px 16px 60px; }
+.method { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; color: var(--ink2); font-size: 12px; }
+.method summary { cursor: pointer; color: var(--ink); font-weight: 600; }
+.method ul { margin: 6px 0; padding-left: 18px; }
+.quiet { padding: 60px 0; text-align: center; color: var(--ink2); font-size: 15px; }
+
+/* game */
+.game { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 22px; overflow: hidden; scroll-margin-top: 110px; }
+.ghead { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--panel2); }
+.matchup { font-size: 19px; font-weight: 700; }
+.matchup .at { color: var(--ink3); font-weight: 400; margin: 0 6px; }
+.tip { color: var(--ink2); font-size: 13px; font-weight: 500; margin-left: 8px; }
+.score { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.score .blk { font-size: 13px; }
+.score .lbl { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .5px; color: var(--ink3); }
+.score b { font-size: 15px; }
+.script { font-size: 12px; color: var(--ink2); width: 100%; }
+
+.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--line); }
+.tside { padding: 10px 14px; min-width: 0; }
+.tside + .tside { border-left: 1px solid var(--line); }
+.tname { font-weight: 700; font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tmeta { color: var(--ink2); font-size: 12px; margin: 3px 0 6px; }
+.tag { font-size: 10.5px; font-weight: 700; letter-spacing: .4px; padding: 1px 6px; border-radius: 4px; }
+.tag.p { color: var(--tag-p); background: var(--tag-p-bg); }
+.tag.i { color: var(--tag-i); background: var(--tag-i-bg); }
+.tag.none { color: var(--ink3); background: var(--panel2); font-weight: 600; }
+.tagd { font-size: 11.5px; color: var(--ink2); margin: 2px 0; }
+.outline { font-size: 12px; margin-top: 6px; }
+.outline b { color: var(--down); }
+.recon { font-size: 11.5px; color: var(--ink2); margin-top: 2px; }
+
+.tvp { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+.tvp caption { text-align: left; font-size: 11px; color: var(--ink2); padding-bottom: 3px; caption-side: top; }
+.tvp th, .tvp td { padding: 2px 5px; text-align: right; border-bottom: 1px solid var(--line); }
+.tvp th:first-child, .tvp td:first-child { text-align: left; }
+.tvp th { font-weight: 600; color: var(--ink2); font-size: 11px; }
+.soft { background: var(--warn-bg); }
+.tough { background: var(--proj-bg); }
+
+.badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .3px; padding: 0 5px; border-radius: 3px; vertical-align: 1px; }
+.b-warn { color: var(--warn); background: var(--warn-bg); }
+.b-mod { color: var(--mod); background: var(--mod-bg); }
+.b-down { color: var(--down); background: var(--down-bg); }
+.b-up { color: var(--up); background: var(--up-bg); }
+.b-n { color: var(--ink2); background: var(--panel2); border: 1px solid var(--line); }
+
+.cols { display: grid; grid-template-columns: 1fr 1fr; }
+.col { padding: 10px; min-width: 0; }
+.col + .col { border-left: 1px solid var(--line); }
+.colhead { font-weight: 700; padding: 0 4px 8px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.colhead span { font-weight: 400; color: var(--ink2); font-size: 12px; }
+
+/* card */
+.card { border: 1px solid var(--line); border-radius: 8px; margin-bottom: 10px; background: var(--panel); overflow: hidden; }
+.chead { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 7px 10px; background: var(--panel2); border-bottom: 1px solid var(--line); }
+.pname { font-weight: 700; font-size: 14px; }
+.ppos { font-size: 11.5px; color: var(--ink2); }
+.pmin { margin-left: auto; font-size: 12px; color: var(--ink2); }
+.pmin b { color: var(--ink); }
+.proj { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); }
+.proj div { background: var(--proj-bg); color: var(--proj); text-align: center; padding: 5px 2px 4px; }
+.proj .k { font-size: 10px; font-weight: 600; letter-spacing: .5px; opacity: .8; }
+.proj .v { font-size: 18px; font-weight: 700; line-height: 1.15; }
+.proj .b { font-size: 10.5px; opacity: .85; }
+.cbody { padding: 6px 10px 8px; }
+.sec { margin-top: 8px; }
+.sech { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--ink2); display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+.sech .sub { text-transform: none; font-weight: 400; letter-spacing: 0; color: var(--ink3); }
+table.t { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-top: 2px; table-layout: auto; }
+table.t th, table.t td { padding: 1px 4px; text-align: right; white-space: nowrap; }
+table.t th { color: var(--ink3); font-weight: 600; font-size: 10.5px; border-bottom: 1px solid var(--line); }
+table.t td.l, table.t th.l { text-align: left; }
+table.t td.nm { max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+table.t tr.sum td { border-top: 1px solid var(--line); font-weight: 600; }
+table.t tr.sum2 td { color: var(--ink2); }
+table.t tr.flag td { color: var(--warn); }
+table.t tr.split td { color: var(--ink3); }
+table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px solid var(--line); }
+.empty { font-size: 11.5px; color: var(--ink3); font-style: italic; padding: 2px 0; }
+.rates { font-size: 11px; color: var(--ink2); margin-top: 2px; }
+.flags { font-size: 11px; color: var(--warn); margin: 2px 0 0; padding-left: 14px; }
+.hits { font-size: 11px; color: var(--ink2); margin-top: 2px; }
+.notes { margin: 6px 0 0; padding: 0; list-style: none; font-size: 11.5px; }
+.notes li { padding: 3px 7px; border-radius: 4px; margin-top: 3px; }
+.n-con { background: var(--up-bg); }
+.n-div { background: var(--warn-bg); }
+.n-split, .n-env { background: var(--panel2); color: var(--ink2); }
+.n-env-up { background: var(--up-bg); }
+.n-env-down { background: var(--down-bg); }
+.n-cau { background: var(--down-bg); color: var(--down); font-weight: 600; }
+.n-scr-up { background: var(--up-bg); border-left: 3px solid var(--up); }
+.n-scr-down { background: var(--down-bg); border-left: 3px solid var(--down); }
+.segl { font-size: 11px; color: var(--ink2); margin-top: 4px; font-weight: 600; }
+.hide-unflagged .card:not(.has-flag) { display: none; }
+
+@media (max-width: 1100px) {
+  .cols, .teams { grid-template-columns: 1fr; }
+  .col + .col, .tside + .tside { border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  .top { position: static; }
+}
+@media (max-width: 520px) {
+  .top-in, .nav, main { padding-left: 16px; padding-right: 16px; }
+  .col { padding: 8px 0; }
+  .proj .v { font-size: 16px; }
+  table.t { font-size: 10.5px; }
+  table.t th, table.t td { padding: 1px 2px; }
+  .cbody { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="top-in">
+    <div class="brand">NBA Matchup Board</div>
+    <div class="datectl">
+      <button class="btn" id="prev" title="Previous day">‹</button>
+      <input type="date" id="date" class="btn">
+      <button class="btn" id="next" title="Next day">›</button>
+      <button class="btn" id="today">Today</button>
+      <button class="btn" id="refresh" title="Re-pull slate, injuries and new box scores">Refresh</button>
+    </div>
+    <div class="weights" id="weights">
+      <span>Blend weights:</span>
+      <label>Vs team <input type="range" id="w-vt" min="0" max="100" step="5"><span class="wv" id="wv-vt"></span></label>
+      <label>Own L5 <input type="range" id="w-l5" min="0" max="100" step="5"><span class="wv" id="wv-l5"></span></label>
+      <label>Opp pos log <input type="range" id="w-op" min="0" max="100" step="5"><span class="wv" id="wv-op"></span></label>
+      <button class="btn" id="wreset">50/25/25</button>
+      <label><input type="checkbox" id="flagged"> Screen-flagged cards only</label>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+  <nav class="nav" id="nav"></nav>
+</div>
+<main>
+  <details class="method" id="method">
+    <summary>How this board is built (sources, labels, what is modeled)</summary>
+    <ul>
+      <li><b>Sources:</b> ESPN public endpoints — completed box scores (this season), player game logs (prior two seasons, for vs-team meetings only), slate, market line, rosters and injury statuses. Nothing is typed in by hand.</li>
+      <li><b>Projection</b> = weighted blend of three per-36 lines × projected minutes. Default weights 50% vs-team / 25% own last 5 / 25% opponent positional log, adjustable above. A line with n=0 is dropped and the others renormalized (shown on the card). No last-season baseline.</li>
+      <li><b>Positions:</b> ESPN lists players only as G / F / C. The PG/SG and SF/PF split is inferred from each player's box profile (G: AST/36 ≥ 4.5 → PG else SG; F: REB/36 ≥ 10.5 → C, ≥ 7 → PF, else SF). Every position-bucketed number therefore carries a <span class="badge b-mod">MODELED BUCKET</span> label — the stats are box-score sums, the bucket assignment is a model.</li>
+      <li><b>Opponent positional log:</b> in each of the opponent's last 5 games, the opposing player at that position who played the most minutes. Raw lines are shown game by game, with per-36 for the blend.</li>
+      <li><b>Vs-team line:</b> his last 5 meetings with tonight's opponent across this season and the two prior seasons (incl. playoffs, incl. prior clubs). Meetings with a prior club or in a role ≥8 mpg different are split out and <i>not</i> blended.</li>
+      <li><b>Modeled (labelled where shown):</b> projected score (pace × ORtg/DRtg from box scores, each regressed toward league average by GP/(GP+10) so 7-game samples don't swing it, ±1.2 home court per side, no injury adjustment); vacated minutes allocation (same position → adjacent → any rotation player, +8 min / 38 min caps, remainder left unallocated); usage bump (50% of the vacated production not recovered by minutes); blowout minutes trim on projected starters (from |spread| ≥ 10).</li>
+      <li><b>Not available from any box-score source, so not shown:</b> defensive assignments and coverage scheme (drop / switch / zone). Read those yourself.</li>
+      <li><b>Screen flags</b> mark a gap that repeats in ≥3 separate games (and a majority of the sample); they are matchup signals, not picks. The positional-log screen reads each opposing player against his own season rate (excluding that game), so "a starter scored more than this bench player" doesn't count as an edge. The vs-team screen compares each meeting to his current per-36 rate. STL/BLK flags only show alongside a PTS/REB/AST/3PM flag, unless a vs-team STL/BLK line is consistently 2+ with positional-log backing.</li>
+      <li><b>Refresh:</b> the board rebuilds every time it opens and again at 8:07 AM ET if left open. Box scores and prior-season logs are cached in this browser, so later loads are fast.</li>
+    </ul>
+  </details>
+  <div id="board"></div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/model.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

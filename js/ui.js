@@ -34,6 +34,7 @@ async function build(D) {
       $('#board').innerHTML = `<div class="quiet">No games on ${fmtDay(D)}.${nx ? ` <a href="#" id="gonext">Next slate: ${fmtDay(nx)}</a>` : ''}</div>`;
       if (nx) $('#gonext').onclick = e => { e.preventDefault(); FOLLOW_TODAY = false; build(nx); };
       setStatus(`Checked ${new Date().toLocaleTimeString()} — no games.`);
+      loadAgent(D);
       return;
     }
     setStatus('Computing rotations…');
@@ -43,6 +44,7 @@ async function build(D) {
     RAW = raw;
     BOARD = buildBoard(raw, gl);
     LAST_BUILD = new Date();
+    await loadAgent(D);
     render();
     const pastNote = D < etNowParts().date ? ' · past date: injuries/rosters are as of today, not that day' : '';
     setStatus(`Built ${LAST_BUILD.toLocaleString()} from ${BOARD.boxCount} completed box scores${pastNote}`);
@@ -236,6 +238,8 @@ function renderCard(c, g) {
   cau.forEach(t => allNotes.push(`<li class="n-cau">${esc(t)}</li>`));
   notes.forEach(n => allNotes.push(`<li class="n-${n.kind}">${esc(n.text)}</li>`));
   if (env) allNotes.push(`<li class="n-${env.kind}">${esc(env.text)}</li>`);
+  const agentNote = agentCardNote(c, BOARD.teams[c.tid].abbr);
+  if (agentNote) allNotes.unshift(agentNote);
   if (c.status) allNotes.push(`<li class="n-div">Listed ${esc(c.status)}${c.statusComment ? ': ' + esc(c.statusComment) : ''} — projected as if he plays.</li>`);
 
   return `<article class="card ${scr.length ? 'has-flag' : ''}">

@@ -146,6 +146,12 @@ table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px so
 .n-scr-down { background: var(--down-bg); border-left: 3px solid var(--down); }
 .segl { font-size: 11px; color: var(--ink2); margin-top: 4px; font-weight: 600; }
 .hide-unflagged .card:not(.has-flag) { display: none; }
+.agentp { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; font-size: 12.5px; }
+.agentp ul { margin: 4px 0; padding-left: 18px; }
+.agentp:empty { display: none; }
+.agent-note { color: var(--ink2); font-size: 12px; margin-top: 3px; }
+.agent-bad { color: var(--down); font-weight: 600; }
+.n-agent { background: var(--proj-bg); border-left: 3px solid var(--accent); }
 
 @media (max-width: 1100px) {
   .cols, .teams { grid-template-columns: 1fr; }
@@ -203,10 +209,12 @@ table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px so
       <li><b>Refresh:</b> the board rebuilds every time it opens and again at 8:07 AM ET if left open. Box scores and prior-season logs are cached in this browser, so later loads are fast.</li>
     </ul>
   </details>
+  <div class="agentp" id="agent"></div>
   <div id="board"></div>
 </main>
 <script src="js/data.js"></script>
 <script src="js/model.js"></script>
+<script src="js/agent.js"></script>
 <script src="js/ui.js"></script>
 </body>
 </html>

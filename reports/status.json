@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-03 14:14 ET",
+  "checkedAt": "2026-11-03 14:16 ET",
   "plan": {
     "monthlyCredits": 500,
     "resetDay": 1,
@@ -19,7 +19,18 @@
     "result": "player props returned — plan includes props"
   },
   "quota": {
-    "remaining": 499,
-    "used": 1
+    "remaining": 497,
+    "used": 3
+  },
+  "booksOnPlan": {
+    "creditsUsed": 1,
+    "books": [
+      "FanDuel",
+      "DraftKings",
+      "BetMGM"
+    ],
+    "missing": [
+      "Caesars"
+    ]
   }
 }

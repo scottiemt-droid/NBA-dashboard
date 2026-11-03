@@ -301,6 +301,11 @@ async function statusCheck(B, D, runAt) {
     try {
       const evs = await odds.events();
       out.odds = `connected — key accepted, ${evs.length} upcoming NBA events listed`;
+      // which of the four books the plan returns at all (game moneylines: 1 credit for the whole slate)
+      const h2h = await odds.get('/odds?regions=us&markets=h2h&oddsFormat=decimal&dateFormat=iso');
+      const onPlan = new Set();
+      for (const e of h2h || []) for (const bk of e.bookmakers || []) if (BOOKS[bk.key]) onPlan.add(BOOKS[bk.key]);
+      out.booksOnPlan = { creditsUsed: odds.lastCost, books: [...onPlan], missing: [...new Set(Object.values(BOOKS))].filter(b => !onPlan.has(b)) };
       const ev = evs.filter(e => Date.parse(e.commence_time) > Date.now()).sort((a, b) => Date.parse(a.commence_time) - Date.parse(b.commence_time))[0];
       if (ev) {
         const j = await odds.eventProps(ev.id, ['player_points']);

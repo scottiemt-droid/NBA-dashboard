@@ -1,0 +1,67 @@
+name: Edge agent
+
+# Times are UTC. The agent decides on every run what is due (in ET), so these only need to be frequent enough:
+#  - 12:20 / 13:20 UTC: morning scan lands after the board's 8:07 AM ET refresh in both EDT and EST
+#  - every 10 minutes 15:00–05:59 UTC: re-check runs; the agent only emits a report when a game is
+#    ~60 or ~15 minutes from tip. Scheduled Actions can start late, so a missed window is reported, not faked.
+on:
+  schedule:
+    - cron: '20 12 * * *'
+    - cron: '20 13 * * *'
+    - cron: '*/10 15-23 * * *'
+    - cron: '*/10 0-5 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'auto | morning | recheck'
+        default: 'auto'
+      window:
+        description: 'for recheck: T-60 or T-15'
+        default: 'T-60'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: edge-agent
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Restore board data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: board-cache-${{ github.run_id }}
+          restore-keys: board-cache-
+
+      - name: Run edge agent
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: node agent/run.js --mode "${{ inputs.mode || 'auto' }}" --window "${{ inputs.window || 'T-60' }}"
+
+      - name: Save board data cache
+        if: hashFiles('.cache/.dirty') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: board-cache-${{ github.run_id }}
+
+      - name: Commit report
+        run: |
+          git add reports
+          if git diff --cached --quiet; then echo "No report this run."; exit 0; fi
+          git config user.name "edge-agent[bot]"
+          git config user.email "edge-agent@users.noreply.github.com"
+          git commit -m "Edge agent report $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1

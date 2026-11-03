@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-03 14:14 ET",
+  "plan": {
+    "monthlyCredits": 500,
+    "resetDay": 1,
+    "budgetMode": true
+  },
+  "board": "ESPN reachable — 0 games on 2026-11-03",
+  "odds": "connected — key accepted, 9 upcoming NBA events listed",
+  "probe": {
+    "event": "Philadelphia 76ers @ Detroit Pistons",
+    "tip": "2026-11-05T00:00:00Z",
+    "creditsUsed": 1,
+    "booksWithProps": [
+      "FanDuel",
+      "BetMGM"
+    ],
+    "playersPriced": 10,
+    "result": "player props returned — plan includes props"
+  },
+  "quota": {
+    "remaining": 499,
+    "used": 1
+  }
+}

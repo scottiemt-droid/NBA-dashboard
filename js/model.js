@@ -18,7 +18,14 @@ const ABS_FLOOR = { pts: 4, reb: 2, ast: 1.5, tpm: 0.8, stl: 0.7, blk: 0.7 }; //
 const NORM_FLOOR = { pts: 3, reb: 1.5, ast: 1, tpm: 1, stl: 0.6, blk: 0.6 }; // per-game gap vs a player's own norm that counts
 const BLOWOUT = 20;           // final margin that marks a game as minutes-distorted
 const ROLE_MPG_SHIFT = 8;      // season MPG change that counts as a role change
-const SMALL_GP = 10;           // team-vs-position SMALL SAMPLE flag
+const TAG_MIN_PCT = 0.08;      // scheme tag fires when BOTH of its metrics are >= 8% above the league average for those buckets
+const TAG_DEFS = [
+  { tag: 'PERIMETER-WEAK', label: 'PG+SG+SF', Ps: ['PG', 'SG', 'SF'], stats: ['pts', 'tpm'] },
+  { tag: 'INTERIOR-WEAK', label: 'PF+C', Ps: ['PF', 'C'], stats: ['pts', 'reb'] }
+];
+// Tier-1 matchup flag: each line >= 5% past his season per-36 the same way, blend >= 15% past it, and a per-game gap at projected minutes of at least `floor`
+const MATCHUP_RULE = { lineTol: 0.05, blendGap: 0.15, floor: { pts: 2.5, reb: 1.2, ast: 1, tpm: 0.5, stl: 0.4, blk: 0.4 } };
+const SMALL_GP = 10;         // team-vs-position SMALL SAMPLE flag
 const VS_SEASONS_BACK = 2;     // vs-team search window: current season + 2 prior
 const MODEL = { hcaPerSide: 1.2, ratingPriorGames: 10, usageResidualShare: 0.5, vacCapAdd: 8, vacCapMin: 38, blowoutStart: 10, blowoutPerPt: 0.5, blowoutMax: 4 };
 
@@ -147,20 +154,22 @@ function teamContext(raw, idx) {
     });
   });
 
-  // scheme tags: z-scores of what the team allows
-  const z = vals => { const m = mean(vals), sd = Math.sqrt(mean(vals.map(v => (v - m) ** 2))) || 1; return v => (v - m) / sd; };
-  const perim = t => tvp[t].PG.pts + tvp[t].SG.pts + tvp[t].SF.pts;
-  const inter = t => tvp[t].PF.pts + tvp[t].C.pts;
-  const zP = z(tids.map(perim)), z3 = z(tids.map(t => ratings[t].opp3)), zI = z(tids.map(inter)), zPa = z(tids.map(t => ratings[t].oppPaint));
-  const rk = (f, t) => 1 + tids.filter(x => f(x) > f(t)).length;
-  const tags = {};
+  // scheme tags: team tendencies read off the team-vs-position panel (modeled buckets), each metric vs the league
+  // average for the same buckets. Not defensive assignments or coverage schemes — box scores can't measure those.
+  const grp = (t, Ps, s) => Ps.reduce((a, P) => a + tvp[t][P][s], 0);
+  const tagLg = {};
+  for (const d of TAG_DEFS) tagLg[d.tag] = Object.fromEntries(d.stats.map(s => [s, mean(tids.map(t => grp(t, d.Ps, s)))]));
+  const tags = {}, tagChecks = {};
   for (const t of tids) {
-    const pScore = (zP(perim(t)) + z3(ratings[t].opp3)) / 2, iScore = (zI(inter(t)) + zPa(ratings[t].oppPaint)) / 2;
-    tags[t] = [];
-    if (pScore >= 0.5) tags[t].push({ tag: 'PERIMETER-WEAK', detail: `Allows ${perim(t).toFixed(1)} PG+SG+SF pts/g (#${rk(perim, t)} most) and ${ratings[t].opp3.toFixed(1)} opp 3PM/g (#${rk(x => ratings[x].opp3, t)} most)` });
-    if (iScore >= 0.5) tags[t].push({ tag: 'INTERIOR-WEAK', detail: `Allows ${inter(t).toFixed(1)} PF+C pts/g (#${rk(inter, t)} most) and ${ratings[t].oppPaint.toFixed(1)} opp paint pts/g (#${rk(x => ratings[x].oppPaint, t)} most)` });
+    tags[t] = []; tagChecks[t] = [];
+    for (const d of TAG_DEFS) {
+      const metrics = d.stats.map(s => { const v = grp(t, d.Ps, s), L = tagLg[d.tag][s]; return { s, v, lg: L, pct: L ? v / L - 1 : 0 }; });
+      const row = { tag: d.tag, label: d.label, metrics, fired: metrics.every(m => m.pct >= TAG_MIN_PCT), gp: ratings[t].gp };
+      tagChecks[t].push(row);
+      if (row.fired) tags[t].push(row);
+    }
   }
-  return { ratings, tvp, tvpLg, lg, tags };
+  return { ratings, tvp, tvpLg, lg, tags, tagChecks };
 }
 
 function projectScore(game, ctx) {
@@ -436,12 +445,12 @@ function buildBoard(raw, gamelogs) {
           status: st && !isOut(st) ? st : null, statusComment: x.r.comment,
           baseMin: x.baseMin, vacMin: vac, trimMin: tr, finalMin, bump: T.bump[x.pid] || {},
           returning: x.returning, lastPlayed: x.lastPlayed, priorClubInL5,
-          own5, l5p36, l5raw: rawAvg(own5), rates: ratesBlock(pl),
+          own5, l5p36, l5raw: rawAvg(own5), season36: per36(pl.games), rates: ratesBlock(pl),
           vt, log, rest, yesterdayMin: yesterday ? yesterday.min : null,
           oppRating: ctx.ratings[oid], oppTvp: ctx.tvp[oid] && ctx.tvp[oid][pl.pos], tvpLg: ctx.tvpLg[pl.pos]
         };
       });
-      sides[tid] = { tid, oid, team: raw.teams[tid], T, rest, cards, tags: ctx.tags[tid] || [], rating: ctx.ratings[tid], tvp: ctx.tvp[tid] };
+      sides[tid] = { tid, oid, team: raw.teams[tid], T, rest, cards, tags: ctx.tags[tid] || [], tagChecks: ctx.tagChecks[tid] || [], rating: ctx.ratings[tid], tvp: ctx.tvp[tid] };
     }
     games.push({ ...game, proj, spread, scriptMargin, scriptSource, trim, sides });
   }
@@ -523,10 +532,38 @@ function divergenceReasons(c) {
   return 'Why it may be real or stale: ' + r.join('; ') + '.';
 }
 
-function screenFlags(c) {
-  const out = [];
-  const l5 = c.own5.length ? c.l5p36 : null;
-  if (!l5) return out;
+/* Tier 1 — MATCHUP FLAG: tonight's three lines all point the same way vs his season per-36 rate and the
+   blended gap is clear after minutes/context adjustments. No pattern history required. */
+function matchupSignal(c, s, bl) {
+  const R = c.season36 && c.season36[s];
+  if (R == null || !c.vt.n || !c.log.n || !c.own5.length || bl.b36[s] == null) return null;
+  const l5 = c.l5p36[s];
+  // vs-team: current-role meetings per 36, blowouts dropped when other meetings remain
+  const calm = c.vt.cur.filter(r => r.margin == null || Math.abs(r.margin) < BLOWOUT);
+  const vtRows = calm.length ? calm : c.vt.cur;
+  const vt = per36(vtRows)[s];
+  // opponent log: each opposing player vs his own norm, and still true without its single most extreme game
+  const normed = c.log.used.filter(r => r.exp);
+  if (!normed.length) return null;
+  const ratio = rows => { const e = rows.reduce((t, r) => t + r.exp[s], 0); return e ? sumBy(rows, s) / e : null; };
+  const full = ratio(normed);
+  const ex = normed.length > 1 ? [...normed].sort((a, b) => Math.abs(b[s] - b.exp[s]) - Math.abs(a[s] - a.exp[s])).slice(1) : normed;
+  const robust = ratio(ex);
+  if (full == null || robust == null) return null;
+  const T = MATCHUP_RULE;
+  const gapPg = (bl.b36[s] - R) * c.finalMin / 36;
+  const b = bl.b36[s] / (R || 1e-9);
+  let dir = null;
+  if (l5 >= R && vt >= R * (1 + T.lineTol) && full >= 1 + T.lineTol && robust >= 1 + T.lineTol && b >= 1 + T.blendGap && gapPg >= T.floor[s]) dir = 'up';
+  if (l5 <= R && vt <= R * (1 - T.lineTol) && full <= 1 - T.lineTol && robust <= 1 - T.lineTol && b <= 1 - T.blendGap && -gapPg >= T.floor[s]) dir = 'down';
+  if (!dir) return null;
+  const pct = v => `${v >= 1 ? '+' : ''}${Math.round((v - 1) * 100)}%`;
+  return { dir, text: `all three lines ${dir === 'up' ? 'above' : 'below'} his season ${R.toFixed(1)}/36 — own L5 ${l5.toFixed(1)}, vs ${c.oppAbbr} ${vt.toFixed(1)} (n=${vtRows.length}${vtRows.length < c.vt.cur.length ? ', blowouts excluded' : ''}), ${c.oppAbbr} vs ${c.pos}s ${pct(full)} on their norm (${pct(robust)} without its most extreme game) → blend ${bl.b36[s].toFixed(1)}/36 (${pct(b)}, ${gapPg >= 0 ? '+' : ''}${gapPg.toFixed(1)} at ${c.finalMin.toFixed(0)} min)` };
+}
+
+/* Tier 2 — PATTERN: the gap repeated in 3+ separate matchups and most of the sample (rule unchanged). */
+function patternSignals(c) {
+  const l5 = c.l5p36;
   const strong = {};
   const push = (s, o) => (strong[s] = strong[s] || []).push(o);
   const need = n => Math.max(3, Math.ceil(0.75 * n)); // repeats in >=3 separate games and most of the sample (4 of 5)
@@ -551,19 +588,39 @@ function screenFlags(c) {
       if (below >= need(per.length) && agg != null && agg <= 0.8 && base - c.vt.p36[s] >= ABS_FLOOR[s]) push(s, { dir: 'down', text: `vs ${c.oppAbbr} ${below}/${per.length} meetings below his current rate (${c.vt.p36[s].toFixed(1)} vs ${base.toFixed(1)}/36)` });
     }
   }
-  const mainHit = MAIN.some(s => strong[s]);
+  const res = {};
   for (const s of STATS) {
     if (!strong[s]) continue;
     const dirs = new Set(strong[s].map(x => x.dir));
     if (dirs.size > 1) continue; // lines disagree → no flag
+    res[s] = { dir: [...dirs][0], text: strong[s].map(x => x.text).join('; ') };
+  }
+  return res;
+}
+
+function screenFlags(c, bl) {
+  const out = [];
+  const l5 = c.own5.length ? c.l5p36 : null;
+  if (!l5) return out;
+  const pattern = patternSignals(c);
+  const merged = {};
+  for (const s of STATS) {
+    const m = matchupSignal(c, s, bl), p = pattern[s];
+    if (!m && !p) continue;
+    if (m && p && m.dir !== p.dir) continue; // tiers disagree → no flag
+    merged[s] = { stat: s, dir: (m || p).dir, matchup: m ? m.text : null, pattern: p ? p.text : null };
+  }
+  const mainHit = MAIN.some(s => merged[s]);
+  for (const s of STATS) {
+    if (!merged[s]) continue;
     if ((s === 'stl' || s === 'blk') && !mainHit) continue; // secondary lens unless exception below
-    out.push({ stat: s, dir: [...dirs][0], text: strong[s].map(x => x.text).join('; ') });
+    out.push(merged[s]);
   }
   // STL/BLK exception: consistently strong vs-team line with positional-log backing
   for (const s of ['stl', 'blk']) {
     if (out.some(f => f.stat === s)) continue;
     const k = c.vt.cur.filter(r => r[s] >= 2).length;
-    if (c.vt.n >= 4 && k >= c.vt.n - 1 && c.log.p36 && c.log.p36[s] >= l5[s]) out.push({ stat: s, dir: 'up', text: `${SL[s]} 2+ in ${k}/${c.vt.n} vs this team, opp log ${c.log.p36[s].toFixed(1)}/36 backs it` });
+    if (c.vt.n >= 4 && k >= c.vt.n - 1 && c.log.p36 && c.log.p36[s] >= l5[s]) out.push({ stat: s, dir: 'up', matchup: null, pattern: `${SL[s]} 2+ in ${k}/${c.vt.n} vs this team, opp log ${c.log.p36[s].toFixed(1)}/36 backs it` });
   }
   return out;
 }

@@ -81,6 +81,7 @@ function renderGame(g) {
       <div class="matchup">${esc(A.short)}<span class="at">@</span>${esc(H.short)}<span class="tip">${etTime(g.date)}</span></div>
       <div class="score">${projHtml}${mkt}</div>
       <div class="script">${script}</div>
+      <div class="script">Scheme tags <span class="badge b-mod">MODELED BUCKET</span>: ${[g.away, g.home].map(t => `<b>${esc(T[t].abbr)}</b> ${tagChips(g.sides[t])}`).join(' &nbsp;·&nbsp; ')} <span style="color:var(--ink3)">— numbers and rule on each team panel</span></div>
     </div>
     <div class="teams">${[g.away, g.home].map(t => renderTeamSide(g, t)).join('')}</div>
     <div class="cols">${[g.away, g.home].map(t => renderCol(g, t)).join('')}</div>
@@ -89,8 +90,7 @@ function renderGame(g) {
 
 function renderTeamSide(g, tid) {
   const s = g.sides[tid], team = s.team, R = s.rating, Tm = s.T;
-  const tags = s.tags.length ? s.tags.map(t => `<span class="tag ${t.tag[0] === 'P' ? 'p' : 'i'}">${t.tag}</span>`).join(' ') : '<span class="tag none">NO WEAKNESS TAG</span>';
-  const tagD = s.tags.map(t => `<div class="tagd">${t.tag}: ${esc(t.detail)}${R.gp < SMALL_GP ? ' <span class="badge b-warn">SMALL SAMPLE</span>' : ''}</div>`).join('');
+  const tags = tagChips(s);
   const rest = s.rest.rest == null ? '' : s.rest.b2b ? '<span class="badge b-down">BACK-TO-BACK</span>' : `${s.rest.rest} day${s.rest.rest === 1 ? '' : 's'} rest`;
   const meta = R && R.gp ? `${R.gp} GP · pace ${f1(R.pace)} (#${R.paceRank}) · ORtg ${f1(R.ortg)} (#${R.ortgRank}) · DRtg ${f1(R.drtg)} (#${R.drtgRank}) · ${rest}${s.rest.threeInFour && !s.rest.b2b ? ' · 3 games in 4 nights' : ''}` : 'No completed games yet';
   const outs = Tm.outs.length ? Tm.outs.map(v => `${esc(v.name)} (${esc(v.status)}${v.min > 0.05 ? `, vacates ${f1(v.min)} min` : v.apps === 0 ? ', already out of recent games' : ''})`).join('; ') : 'none';
@@ -99,10 +99,25 @@ function renderTeamSide(g, tid) {
   return `<div class="tside">
     <div class="tname">${esc(team.name)} ${tags}</div>
     <div class="tmeta">${meta}</div>
-    ${tagD}
     <div class="outline"><b>Out:</b> ${outs}</div>${recon}${ret}
     ${renderTvp(s)}
   </div>`;
+}
+
+function tagChips(s) {
+  return s.tags.length ? s.tags.map(t => `<span class="tag ${t.tag[0] === 'P' ? 'p' : 'i'}">${t.tag}</span>`).join(' ') : '<span class="tag none">NO WEAKNESS TAG</span>';
+}
+
+const TAG_RULE_TXT = `Rule: a tag fires when BOTH of its numbers are ≥ ${Math.round(TAG_MIN_PCT * 100)}% above the league average for the same buckets this season.`;
+
+function renderTagChecks(s) {
+  const pct = m => `${m.pct >= 0 ? '+' : ''}${Math.round(m.pct * 100)}%`;
+  const rows = s.tagChecks.map(r => {
+    const nums = r.metrics.map(m => `<span class="${m.pct >= TAG_MIN_PCT ? 'hitm' : ''}">${SL[m.s]} ${f1(m.v)}/g vs lg ${f1(m.lg)} (${pct(m)})</span>`).join(' · ');
+    return `<div class="tagd">${r.fired ? `<span class="tag ${r.tag[0] === 'P' ? 'p' : 'i'}">${r.tag}</span>` : `<span class="tag none">${r.tag}: not fired</span>`} ${r.label} allowed — ${nums}</div>`;
+  }).join('');
+  return `<div class="tagbox"><div class="tagd"><b>Scheme tags</b> — team tendencies from box scores, not defensive assignments or coverage schemes (those aren't measurable from box scores and aren't shown) <span class="badge b-mod">MODELED BUCKET</span>${s.tvp.gp < SMALL_GP ? ' <span class="badge b-warn">SMALL SAMPLE</span>' : ''}</div>
+    ${rows}<div class="tagd">${TAG_RULE_TXT}</div></div>`;
 }
 
 function renderTvp(s) {
@@ -117,7 +132,7 @@ function renderTvp(s) {
   return `<table class="tvp"><caption>What <b>${esc(s.team.abbr)}</b> allows per game to each position — <b>TEAM TOTAL</b> (all opposing players at the position combined, not a single-player rate) · GP ${tv.gp} ${tv.gp < SMALL_GP ? '<span class="badge b-warn">SMALL SAMPLE</span>' : ''} <span class="badge b-mod">MODELED BUCKET</span> · <span class="soft">&nbsp;soft: 6 most allowed&nbsp;</span> <span class="tough">&nbsp;tough: 6 fewest&nbsp;</span></caption>
     <tr><th>Pos</th><th>GP</th><th>MIN</th>${STATS.map(k => `<th>${SL[k]}</th>`).join('')}</tr>
     ${POS5.map(P => `<tr><td>${P}</td><td>${tv.gp}</td><td>${f0(tv[P].min)}</td>${STATS.map(k => cell(P, k)).join('')}</tr>`).join('')}
-  </table>`;
+  </table>${renderTagChecks(s)}`;
 }
 
 function renderCol(g, tid) {
@@ -138,7 +153,7 @@ function renderCard(c, g) {
   const bl = blendCard(c, W);
   const notes = cardNotes(c);
   const env = environmentNote(c);
-  const scr = screenFlags(c);
+  const scr = screenFlags(c, bl);
   const cau = cautions(c, bl);
   const opp = BOARD.teams[c.oid].abbr;
 
@@ -209,7 +224,15 @@ function renderCard(c, g) {
 
   // notes
   const allNotes = [];
-  scr.forEach(f => allNotes.push(`<li class="n-scr-${f.dir}"><b>Screen ${SL[f.stat]} ${f.dir === 'up' ? '▲' : '▼'}</b> ${esc(f.text)}</li>`));
+  scr.forEach(f => {
+    const arrow = f.dir === 'up' ? '▲' : '▼';
+    const badges = `${f.matchup ? '<span class="badge b-n">MATCHUP FLAG</span>' : ''}${f.pattern ? ' <span class="badge b-pat">PATTERN</span>' : ''}`;
+    const body = [
+      f.matchup ? `Tonight: ${esc(f.matchup)}` : '',
+      f.pattern ? `Pattern (3+ separate games): ${esc(f.pattern)}${f.matchup ? '' : ' — tonight\'s three lines don\'t all agree'}` : ''
+    ].filter(Boolean).join('<br>');
+    allNotes.push(`<li class="n-scr-${f.dir}"><b>${SL[f.stat]} ${arrow}</b> ${badges} <span class="sig">matchup signal, not a pick</span><br>${body}</li>`);
+  });
   cau.forEach(t => allNotes.push(`<li class="n-cau">${esc(t)}</li>`));
   notes.forEach(n => allNotes.push(`<li class="n-${n.kind}">${esc(n.text)}</li>`));
   if (env) allNotes.push(`<li class="n-${env.kind}">${esc(env.text)}</li>`);

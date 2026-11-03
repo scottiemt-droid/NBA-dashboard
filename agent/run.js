@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const { loadBoardCode, boardDefaultWeights, buildBoardFor, ROOT } = require('./lib/board');
-const { OddsClient, parseOffers, normName, BOOKS } = require('./lib/odds');
+const { OddsClient, parseOffers, normName, BOOKS, ALL_MARKETS, STAT_MARKETS } = require('./lib/odds');
 const E = require('./lib/edge');
 const { PlayLog } = require('./lib/log');
 const { renderReport, renderIndex } = require('./lib/report');
@@ -17,6 +17,20 @@ const { renderReport, renderIndex } = require('./lib/report');
 const args = {};
 for (let i = 2; i < process.argv.length; i++) if (process.argv[i].startsWith('--')) args[process.argv[i].slice(2)] = process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[++i] : true;
 const MODE = args.mode || 'auto';
+
+/* Odds plan budget. ODDS_PLAN_CREDITS = monthly credits on the plan (default 500 = free tier); ODDS_RESET_DAY =
+   day of month the quota resets (default 1). Plans of 5,000 credits or less run in budget mode:
+   board-signal triage decides which games/stats get a props call, the morning scan uses main lines only,
+   the 60-minute re-check is skipped, and one 15-minute re-check pulls main + alt lines for the morning's flags. */
+const PLAN = { monthly: +(process.env.ODDS_PLAN_CREDITS || 500), resetDay: +(process.env.ODDS_RESET_DAY || 1) };
+const LEAN = PLAN.monthly <= 5000;
+const RESERVE = 10;              // credits never spent, so a status check always works
+const MORNING_SHARE = 0.5;       // budget mode: share of the day's credits the morning scan may use
+function daysUntilReset(D) {
+  const [y, m, d] = D.split('-').map(Number);
+  const next = d < PLAN.resetDay ? Date.UTC(y, m - 1, PLAN.resetDay) : Date.UTC(y, m, PLAN.resetDay);
+  return Math.max(1, Math.round((next - Date.UTC(y, m - 1, d)) / 864e5));
+}
 const REPORTS = path.join(ROOT, 'reports');
 const log = m => console.log('  ' + m);
 const lastWord = s => String(s || '').trim().split(/\s+/).pop().toLowerCase();
@@ -31,6 +45,10 @@ async function main() {
   const runAt = `${now.date} ${String(now.h).padStart(2, '0')}:${String(now.m).padStart(2, '0')}`;
   const stateFile = path.join(REPORTS, D, 'state.json');
   const state = readJson(stateFile, { morning: null, checks: {}, missed: {} });
+  state.spent = state.spent || 0;
+  state.flagged = state.flagged || {};
+
+  if (MODE === 'status') return statusCheck(B, D, runAt);
 
   // ---- what is due this run (one cheap ESPN call) ----
   const sb = await B.fetchJSON(`${B.ESPN}/scoreboard?dates=${D.replace(/-/g, '')}`);
@@ -50,9 +68,9 @@ async function main() {
     const t60 = [], t15 = [];
     for (const g of slate.filter(x => x.pre)) {
       const c = state.checks[g.id] = state.checks[g.id] || {};
-      if (g.mins > 45 && g.mins <= 75 && !c.t60) t60.push(g.id);
+      if (g.mins > 45 && g.mins <= 75 && !c.t60) { if (LEAN) c.t60 = 'skipped (budget mode)'; else t60.push(g.id); }
       if (g.mins > 3 && g.mins <= 25 && !c.t15) t15.push(g.id);
-      if (g.mins <= 45 && !c.t60 && !state.missed[g.id + ':t60']) state.missed[g.id + ':t60'] = runAt;
+      if (!LEAN && g.mins <= 45 && !c.t60 && !state.missed[g.id + ':t60']) state.missed[g.id + ':t60'] = runAt;
     }
     if (t60.length) passes.push({ phase: 'T-60', games: t60 });
     if (t15.length) passes.push({ phase: 'T-15', games: t15 });
@@ -85,31 +103,73 @@ async function main() {
   }
 
   // match board games ↔ odds events, fetch each scoped game's props once (cached for the run)
-  const scoped = [...new Set(passes.flatMap(p => p.games))];
   const propsByGame = {};
   const gaps = [];
-  if (built && !built.empty && oddsEvents) {
-    for (const k of Object.keys(BOOKS)) if (!status.books[BOOKS[k]]) status.books[BOOKS[k]] = { name: BOOKS[k], games: 0 };
-    for (const gid of scoped) {
-      const g = built.board.games.find(x => x.id === gid);
-      if (!g) continue;
-      const H = built.board.teams[g.home], A = built.board.teams[g.away];
-      const ev = oddsEvents.find(e => lastWord(e.home_team) === lastWord(H.name) && lastWord(e.away_team) === lastWord(A.name) && Math.abs(Date.parse(e.commence_time) - Date.parse(g.date)) < 6 * 3600e3);
-      if (!ev) { gaps.push(`${A.abbr} @ ${H.abbr}: no matching event in the odds feed`); continue; }
-      status.oddsGames++;
-      try {
-        const j = await odds.eventProps(ev.id);
-        const parsed = parseOffers(j);
-        propsByGame[gid] = parsed.offers;
-        for (const name of new Set(parsed.booksSeen.map(k => BOOKS[k]))) status.books[name].games++;
-        const missing = Object.keys(BOOKS).filter(k => k !== 'williamhill_us' && !parsed.booksSeen.includes(k) && !(k === 'caesars' && parsed.booksSeen.includes('williamhill_us')));
-        if (!parsed.offers.length) gaps.push(`${A.abbr} @ ${H.abbr}: odds feed returned no player props from any of the four books (props may not be posted yet)`);
-        else if (missing.length) gaps.push(`${A.abbr} @ ${H.abbr}: no props from ${missing.map(k => BOOKS[k]).join(', ')}`);
-      } catch (e) {
-        gaps.push(`${A.abbr} @ ${H.abbr}: props fetch failed — ${odds.scrub(e.message)}`);
-        if (odds.stopped) { status.notes.push(`Stopped fetching: ${odds.stopped}. Games after this point have no odds this run.`); break; }
+  // Board triage: the board's own screen flags (MATCHUP = 2, PATTERN only = 1) rank games and pick stats.
+  const triage = {};
+  if (built && !built.empty) for (const g of built.board.games) {
+    const t = triage[g.id] = { score: 0, stats: {} };
+    for (const side of Object.values(g.sides)) for (const c of side.cards) {
+      for (const f of B.screenFlags(c, B.blendCard(c, weights))) {
+        if (!E.STATS4.includes(f.stat)) continue;
+        const w = f.matchup ? 2 : 1;
+        t.score += w; t.stats[f.stat] = (t.stats[f.stat] || 0) + w;
       }
     }
+  }
+  const topStats = gid => Object.entries((triage[gid] || {}).stats || {}).sort((a, b) => b[1] - a[1]).map(([s]) => s);
+  // Which markets each pass asks for (budget mode spends credits only where the board or the morning flagged something).
+  const marketsFor = (pass, gid) => {
+    if (!LEAN) return ALL_MARKETS;
+    if (pass.phase === 'morning') return topStats(gid).slice(0, 2).map(s => STAT_MARKETS[s][0]); // top 2 board-flagged stats, main lines
+    const flagged = state.flagged[gid] || [];
+    return flagged.flatMap(s => STAT_MARKETS[s]);
+  };
+  const budget = { daily: null, allowance: {}, spentRun: 0 };
+  const label = id => { const g = built && built.board.games.find(x => x.id === id); return g ? `${built.board.teams[g.away].abbr} @ ${built.board.teams[g.home].abbr}` : id; };
+
+  if (built && !built.empty && oddsEvents) {
+    for (const k of Object.keys(BOOKS)) if (!status.books[BOOKS[k]]) status.books[BOOKS[k]] = { name: BOOKS[k], games: 0 };
+    const days = daysUntilReset(D);
+    const remaining = odds.remaining != null ? odds.remaining : Math.round(PLAN.monthly * days / 30);
+    budget.daily = LEAN ? Math.max(0, Math.floor((remaining - RESERVE) / days)) : Infinity;
+    if (LEAN) status.notes.push(`Budget mode (${PLAN.monthly.toLocaleString()}-credit plan): ${odds.remaining != null ? remaining.toLocaleString() + ' credits left' : 'credits left not reported yet — estimated'}, ${days} day${days === 1 ? '' : 's'} to reset → ${budget.daily} credits/day; ${state.spent} already spent today. Morning = main lines for the board's flagged stats in its top-signal games; the 60-minute re-check is skipped; one 15-minute re-check pulls main + alt lines only for morning flags.`);
+
+    for (const pass of passes) {
+      let allow = !LEAN ? Infinity : pass.phase === 'morning' ? Math.floor(budget.daily * MORNING_SHARE) - state.spent : budget.daily - state.spent;
+      const order = [...pass.games].sort((a, b) => ((triage[b] || {}).score || 0) - ((triage[a] || {}).score || 0));
+      const fetched = [];
+      for (const gid of order) {
+        const g = built.board.games.find(x => x.id === gid);
+        if (!g) continue;
+        const markets = marketsFor(pass, gid);
+        if (!markets.length) { gaps.push(`${label(gid)}: not scanned — ${pass.phase === 'morning' ? 'no board signal in this game' : 'nothing flagged here this morning'} (budget mode)`); continue; }
+        if (markets.length > allow) { gaps.push(`${label(gid)}: not scanned — would cost up to ${markets.length} credits, ${Math.max(0, allow)} left in today's ${pass.phase} budget (board signal score ${(triage[gid] || {}).score || 0})`); continue; }
+        const H = built.board.teams[g.home], A = built.board.teams[g.away];
+        const ev = oddsEvents.find(e => lastWord(e.home_team) === lastWord(H.name) && lastWord(e.away_team) === lastWord(A.name) && Math.abs(Date.parse(e.commence_time) - Date.parse(g.date)) < 6 * 3600e3);
+        if (!ev) { gaps.push(`${A.abbr} @ ${H.abbr}: no matching event in the odds feed`); continue; }
+        status.oddsGames++;
+        try {
+          const j = await odds.eventProps(ev.id, markets);
+          const cost = odds.lastCost != null ? odds.lastCost : markets.length;
+          allow -= cost; state.spent += cost; budget.spentRun += cost;
+          fetched.push(gid);
+          if (LEAN) gaps.push(`${A.abbr} @ ${H.abbr}: scanned ${markets.map(m => m.replace('player_', '')).join(', ')} (${cost} credit${cost === 1 ? '' : 's'})`);
+          const parsed = parseOffers(j);
+          propsByGame[gid] = (propsByGame[gid] || []).concat(parsed.offers);
+          for (const name of new Set(parsed.booksSeen.map(k => BOOKS[k]))) status.books[name].games++;
+          const missing = Object.keys(BOOKS).filter(k => k !== 'williamhill_us' && !parsed.booksSeen.includes(k) && !(k === 'caesars' && parsed.booksSeen.includes('williamhill_us')));
+          if (!parsed.offers.length) gaps.push(`${A.abbr} @ ${H.abbr}: odds feed returned no player props from any of the four books (props may not be posted yet)`);
+          else if (missing.length) gaps.push(`${A.abbr} @ ${H.abbr}: no props from ${missing.map(k => BOOKS[k]).join(', ')}`);
+        } catch (e) {
+          gaps.push(`${A.abbr} @ ${H.abbr}: props fetch failed — ${odds.scrub(e.message)}`);
+          if (odds.stopped) { status.notes.push(`Stopped fetching: ${odds.stopped}. Games after this point have no odds this run.`); break; }
+        }
+      }
+      pass.fetched = fetched;
+      if (odds.stopped) break;
+    }
+    if (LEAN) status.notes.push(`This run spent ${budget.spentRun} credit${budget.spentRun === 1 ? '' : 's'}.`);
     if (odds.planIssue) status.notes.push(`Plan check: the odds feed rejected the props/alt-line markets (${odds.planIssue}). Player props and alt lines need a plan that includes them — see README.`);
     if (status.odds.ok && !Object.values(propsByGame).some(o => o.length)) status.notes.push('No player props came back for any scoped game — no edges computed. Nothing is substituted (no game lines, no estimates).');
   }
@@ -160,7 +220,17 @@ async function main() {
   const stamp = runAt.slice(11).replace(':', '');
 
   for (const pass of passes) {
+    if (LEAN && pass.phase !== 'morning' && !(pass.fetched || []).length) {
+      // budget mode: nothing flagged in these games this morning, so no credits spent and no report written
+      for (const id of pass.games) { const c = state.checks[id] = state.checks[id] || {}; c.t15 = c.t15 || `${runAt}: nothing to re-check (budget mode)`; }
+      console.log(`${pass.phase}: no morning flags in ${pass.games.map(label).join(', ')} — nothing re-checked, no credits spent.`);
+      continue;
+    }
     const legs = allLegs.filter(l => pass.games.includes(l.gameId));
+    if (pass.phase === 'morning') for (const gid of pass.games) {
+      const st = [...new Set(legs.filter(l => l.gameId === gid && l.qualified).map(l => l.s))];
+      if (st.length) state.flagged[gid] = st;
+    }
     const byEdge = (a, b) => (b.edge3 || 0) - (a.edge3 || 0);
     const ranked = legs.filter(l => l.headline).sort(byEdge);
     const held = legs.filter(l => l.qualified && !l.headline).sort(byEdge);
@@ -212,6 +282,39 @@ async function main() {
   writeJson(path.join(REPORTS, 'index.json'), index);
   fs.writeFileSync(path.join(REPORTS, 'index.html'), renderIndex(index));
   B.persist();
+}
+
+/* --mode status: confirms the setup without a real scan. ESPN reachability, the odds key (free /events call), and a
+   one-market probe on the next game (player_points only: at most 1 credit, 0 if props aren't posted yet).
+   Writes reports/status.json — no key material, just results. */
+async function statusCheck(B, D, runAt) {
+  const out = { checkedAt: `${runAt} ET`, plan: { monthlyCredits: PLAN.monthly, resetDay: PLAN.resetDay, budgetMode: LEAN }, board: null, odds: null, probe: null, quota: null };
+  try {
+    const sb = await B.fetchJSON(`${B.ESPN}/scoreboard?dates=${D.replace(/-/g, '')}`);
+    const n = ((sb && sb.events) || []).length;
+    out.board = `ESPN reachable — ${n} game${n === 1 ? '' : 's'} on ${D}`;
+  } catch (e) { out.board = `ESPN unreachable: ${e.message}`; }
+  const key = process.env.ODDS_API_KEY;
+  const odds = new OddsClient(key);
+  if (!key) out.odds = 'NO KEY — ODDS_API_KEY secret is not set or not visible to this run';
+  else {
+    try {
+      const evs = await odds.events();
+      out.odds = `connected — key accepted, ${evs.length} upcoming NBA events listed`;
+      const ev = evs.filter(e => Date.parse(e.commence_time) > Date.now()).sort((a, b) => Date.parse(a.commence_time) - Date.parse(b.commence_time))[0];
+      if (ev) {
+        const j = await odds.eventProps(ev.id, ['player_points']);
+        const p = parseOffers(j);
+        out.probe = { event: `${ev.away_team} @ ${ev.home_team}`, tip: ev.commence_time, creditsUsed: odds.lastCost,
+          booksWithProps: [...new Set(p.booksSeen.map(k => BOOKS[k]))], playersPriced: new Set(p.offers.map(o => o.key)).size,
+          result: p.offers.length ? 'player props returned — plan includes props' : 'no player props returned yet (books usually post them on game day) — re-run on a game day to confirm' };
+      }
+    } catch (e) { out.odds = `ERROR — ${odds.scrub(e.message)}`; if (odds.planIssue) out.planIssue = odds.planIssue; }
+  }
+  if (odds.remaining != null) out.quota = { remaining: odds.remaining, used: odds.used };
+  console.log('STATUS CHECK');
+  for (const [k, v] of Object.entries(out)) console.log(`  ${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`);
+  writeJson(path.join(REPORTS, 'status.json'), out);
 }
 
 function slim(l) {

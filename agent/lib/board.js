@@ -65,7 +65,7 @@ function loadBoardCode() {
   const src = ['js/data.js', 'js/model.js'].map(f => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n;\n');
   const B = vm.runInContext(src + `
 ;({ ESPN, fetchJSON, extractBox, loadRaw, loadGamelogs, prepareTeams, buildBoard, blendCard, cautions,
-    per36, etNowParts, etDate, etTime, addDays, STATS, MAIN, SL, BLOWOUT, seasonLabel });`, ctx, { filename: 'board-code' });
+    screenFlags, per36, etNowParts, etDate, etTime, addDays, STATS, MAIN, SL, BLOWOUT, seasonLabel });`, ctx, { filename: 'board-code' });
   B.persist = () => saveCache(map, state);
   return B;
 }

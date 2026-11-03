@@ -10,10 +10,14 @@ on:
     - cron: '20 13 * * *'
     - cron: '*/10 15-23 * * *'
     - cron: '*/10 0-5 * * *'
+  # A push that changes the agent runs a status check only (free: confirms key, plan, books, quota).
+  push:
+    branches: [main]
+    paths: ['agent/**', '.github/workflows/edge-agent.yml']
   workflow_dispatch:
     inputs:
       mode:
-        description: 'auto | morning | recheck'
+        description: 'auto | morning | recheck | status'
         default: 'auto'
       window:
         description: 'for recheck: T-60 or T-15'
@@ -47,7 +51,9 @@ jobs:
       - name: Run edge agent
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: node agent/run.js --mode "${{ inputs.mode || 'auto' }}" --window "${{ inputs.window || 'T-60' }}"
+          ODDS_PLAN_CREDITS: ${{ vars.ODDS_PLAN_CREDITS || '500' }}
+          ODDS_RESET_DAY: ${{ vars.ODDS_RESET_DAY || '1' }}
+        run: node agent/run.js --mode "${{ inputs.mode || (github.event_name == 'push' && 'status') || 'auto' }}" --window "${{ inputs.window || 'T-15' }}"
 
       - name: Save board data cache
         if: hashFiles('.cache/.dirty') != ''

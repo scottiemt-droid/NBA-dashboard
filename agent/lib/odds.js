@@ -52,15 +52,17 @@ class OddsClient {
   // Free endpoint (does not count against quota).
   async events() { return this.get('/events?dateFormat=iso'); }
 
-  async eventProps(eventId) {
-    if (this.cache.has(eventId)) return this.cache.get(eventId);
-    if (this.remaining != null && this.remaining < COST_PER_EVENT) {
-      this.stopped = `Odds API quota too low to continue (${this.remaining} credits left, ~${COST_PER_EVENT} needed per game)`;
+  // markets: subset of ALL_MARKETS (cost = markets actually returned × 1 region). Cached per event+markets for the run.
+  async eventProps(eventId, markets = ALL_MARKETS) {
+    const ck = eventId + '|' + markets.join(',');
+    if (this.cache.has(ck)) return this.cache.get(ck);
+    if (this.remaining != null && this.remaining < markets.length) {
+      this.stopped = `Odds API quota too low to continue (${this.remaining} credits left, up to ${markets.length} needed for this game)`;
       throw new Error(this.stopped);
     }
     try {
-      const j = await this.get(`/events/${eventId}/odds?regions=us&markets=${ALL_MARKETS.join(',')}&oddsFormat=decimal&dateFormat=iso`);
-      this.cache.set(eventId, j);
+      const j = await this.get(`/events/${eventId}/odds?regions=us&markets=${markets.join(',')}&oddsFormat=decimal&dateFormat=iso`);
+      this.cache.set(ck, j);
       return j;
     } catch (e) {
       if (e.status === 422 || /market|plan|subscription/i.test(e.body || '')) this.planIssue = this.planIssue || e.message;
@@ -92,4 +94,4 @@ function parseOffers(eventJson) {
   return { offers, booksSeen: [...booksSeen] };
 }
 
-module.exports = { OddsClient, parseOffers, normName, BOOKS, ALL_MARKETS, COST_PER_EVENT };
+module.exports = { OddsClient, parseOffers, normName, BOOKS, ALL_MARKETS, STAT_MARKETS, COST_PER_EVENT };

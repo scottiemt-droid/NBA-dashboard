@@ -62,6 +62,18 @@ A separate scheduled agent (`agent/`) that compares the board's projections with
 3. Confirm it works: GitHub → **Actions → Edge agent → Run workflow** with mode `morning`. The run log starts with `DATA SOURCE STATUS` — you want `Odds feed: connected`, each book listed with `props for N/N games`, and a `Quota:` line with credits remaining. A report appears under `reports/`.
 4. Local run (optional, needs Node 18+): `ODDS_API_KEY=... node agent/run.js --mode morning`. The key is read only from the environment and is scrubbed from every error message.
 
+**Check your setup for free:** Actions → Edge agent → Run workflow → mode `status`. It confirms the key and probes one market on the next game (at most 1 credit, 0 if props aren't posted yet). It writes `reports/status.json` with the books returning props and the credits left. A push that changes `agent/` runs the same check automatically.
+
+## Budget mode (free 500-credit plan)
+
+The agent runs in budget mode whenever the plan is 5,000 credits a month or less. That's the default: `ODDS_PLAN_CREDITS` = 500. If you upgrade, set a repo **variable** `ODDS_PLAN_CREDITS` to the new monthly figure (Settings → Secrets and variables → Actions → Variables). Set `ODDS_RESET_DAY` too if your quota doesn't reset on the 1st.
+
+- **Daily budget** = (credits left − 10 kept in reserve) ÷ days until reset, which is about 16–18 a day on 500 credits. Credits left come from the feed's own quota header.
+- **Morning scan** (up to half the day's credits): the board's screen flags rank the games. Each top game gets main lines only, for its 2 most-flagged stats (1 credit per stat). Games with no board signal, or past the budget, aren't scanned; each one is listed in the report with the reason.
+- **60-minute re-check: skipped** in budget mode.
+- **15-minute re-check:** only for stats that qualified in the morning, pulling main + alt lines (2 credits per stat), so the ladder is built at tip time. Only legs that clear here count as cleared. Games with nothing flagged cost nothing and write no report.
+- **What this gives up:** full-slate coverage, the 60-minute check, and morning ladders. Nothing is estimated in place of a game that wasn't scanned. A day where the budget covers nothing useful is reported as such.
+
 ## Schedule (`.github/workflows/edge-agent.yml`)
 
 - **Morning scan** after the board's 8:07 AM ET refresh: **flags only. A morning flag is never a cleared play.**

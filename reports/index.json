@@ -4,5 +4,11 @@
     "file": "1452-morning.html",
     "label": "14:52 ET — Morning scan (flags only)",
     "summary": "40 flagged, parlay"
+  },
+  {
+    "date": "2026-11-05",
+    "file": "1505-morning.html",
+    "label": "15:05 ET — Morning scan (flags only)",
+    "summary": "17 flagged, parlay"
   }
 ]

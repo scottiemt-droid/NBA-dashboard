@@ -187,6 +187,7 @@ async function main() {
   const allLegs = [];
   const ladderSrc = [];
   const unmatched = {};
+  const marketLines = {};
   if (built && !built.empty) {
     for (const g of built.board.games) {
       const offers = propsByGame[g.id];
@@ -205,12 +206,38 @@ async function main() {
             proj: bl.adj[s], base: bl.base[s], baseMin: c.baseMin, finalMin: c.finalMin, vacMin: c.vacMin };
           ev.rungs.forEach(r => allLegs.push(Object.assign(r, meta)));
           if (ev.rungs.some(r => r.qualified)) ladderSrc.push({ ...meta, s, proj: bl.adj[s], base: bl.base[s], rows: E.ladderRows(ev, bl.adj[s]) });
+          // market log: each book's main two-way line (closest to even), median across books — only lines actually fetched
+          const mains = [];
+          for (const bk of new Set(mine.map(o => o.book))) {
+            const pts = {};
+            for (const o of mine.filter(x => x.book === bk && !x.alt)) (pts[o.point] = pts[o.point] || {})[o.side] = o.price;
+            const two = Object.entries(pts).filter(([, x]) => x.over && x.under).sort((a, b) => Math.abs(a[1].over - a[1].under) - Math.abs(b[1].over - b[1].under))[0];
+            if (two) mains.push(+two[0]);
+          }
+          if (mains.length) {
+            mains.sort((a, b) => a - b);
+            marketLines[`${g.id}|${c.pid}|${s}`] = { name: c.name, line: mains[Math.floor(mains.length / 2)], books: mains.length, proj: Math.round(bl.adj[s] * 100) / 100 };
+          }
         }
       }
     }
   }
   const unmatchedList = Object.entries(unmatched);
   if (unmatchedList.length) gaps.push(`${unmatchedList.length} prop player(s) not in tonight's projected rotations (OUT, outside the 9-man rotation, or a name mismatch) — skipped: ${unmatchedList.slice(0, 15).map(([n, gm]) => `${n} (${gm})`).join(', ')}${unmatchedList.length > 15 ? ', …' : ''}`);
+
+  // market lines for the projection log (reports/model/lines/D.json): first sighting = open, any re-check = close
+  if (Object.keys(marketLines).length) {
+    const lf = path.join(REPORTS, 'model', 'lines', `${D}.json`);
+    const cur = readJson(lf, {});
+    const isCheck = passes.some(p => p.phase !== 'morning');
+    for (const [k, v] of Object.entries(marketLines)) {
+      const e = cur[k] = cur[k] || { name: v.name };
+      const reading = { line: v.line, books: v.books, proj: v.proj, at: runAt };
+      if (!e.open) e.open = reading;
+      if (isCheck) e.close = reading;
+    }
+    writeJson(lf, cur);
+  }
 
   // ---- log, reports ----
   const playLog = new PlayLog(ROOT);

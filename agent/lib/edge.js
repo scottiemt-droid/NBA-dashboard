@@ -20,14 +20,15 @@ function normCdf(x) {
   return x > 0 ? 1 - p : p;
 }
 
-/* Distribution: every game row in the three board lines (his last 5, his current-role vs-team meetings, the
-   opponent's positional log) → per-36 rate × projected minutes, weighted by the board's line weights split evenly
+/* Distribution: every game in his current-role vs-team meetings and his last 10 games (the base of the own-form and
+   opponent-positional inputs) → per-36 rate × projected minutes, weighted by the board's line weights split evenly
    across each line's games, then rescaled so the weighted mean equals the board's projection. */
 function distribution(card, s, weights, minutes, projection) {
   const lines = [
     { k: 'vt', w: weights.vt, rows: card.vt.n ? card.vt.cur : [] },
-    { k: 'l5', w: weights.l5, rows: card.own5 },
-    { k: 'op', w: weights.op, rows: card.log.n ? card.log.used : [] }
+    // own form and opponent-positional inputs are both built on his own games, so both draw their shape from his last 10
+    { k: 'l5', w: weights.l5, rows: card.own10 || card.own5 },
+    { k: 'op', w: weights.op, rows: card.inputs && card.inputs.op ? (card.own10 || card.own5) : [] }
   ].filter(l => l.w > 0 && l.rows.some(r => r.min > 0));
   const W = lines.reduce((t, l) => t + l.w, 0);
   if (!W || projection == null) return null;

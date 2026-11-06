@@ -149,6 +149,9 @@ table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px so
 .agentp { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; font-size: 12.5px; }
 .agentp ul { margin: 4px 0; padding-left: 18px; }
 .agentp:empty { display: none; }
+.acc { margin-top: 6px; }
+.acc .t td, .acc .t th { padding: 2px 6px; }
+.acc .scroll { overflow-x: auto; }
 .agent-note { color: var(--ink2); font-size: 12px; margin-top: 3px; }
 .agent-bad { color: var(--down); font-weight: 600; }
 .n-agent { background: var(--proj-bg); border-left: 3px solid var(--accent); }
@@ -183,10 +186,10 @@ table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px so
     </div>
     <div class="weights" id="weights">
       <span>Blend weights:</span>
-      <label>Vs team <input type="range" id="w-vt" min="0" max="100" step="5"><span class="wv" id="wv-vt"></span></label>
-      <label>Own L5 <input type="range" id="w-l5" min="0" max="100" step="5"><span class="wv" id="wv-l5"></span></label>
-      <label>Opp pos log <input type="range" id="w-op" min="0" max="100" step="5"><span class="wv" id="wv-op"></span></label>
-      <button class="btn" id="wreset">50/25/25</button>
+      <label title="His last 5 meetings with this opponent (current role)">Vs team <input type="range" id="w-vt" min="0" max="100" step="5"><span class="wv" id="wv-vt"></span></label>
+      <label title="Own form: last 5 + last 10 per 36, shrunk toward his season rate">Own form <input type="range" id="w-l5" min="0" max="100" step="5"><span class="wv" id="wv-l5"></span></label>
+      <label title="Opponent positional: his own rate × what the opponent allows to his position over the full season">Opp positional <input type="range" id="w-op" min="0" max="100" step="5"><span class="wv" id="wv-op"></span></label>
+      <button class="btn" id="wreset">Reset 30/40/30</button>
       <label><input type="checkbox" id="flagged"> Screen-flagged cards only</label>
     </div>
     <div class="status" id="status"></div>
@@ -198,23 +201,46 @@ table.blend tr.fin td { font-weight: 700; color: var(--proj); border-top: 1px so
     <summary>How this board is built (sources, labels, what is modeled)</summary>
     <ul>
       <li><b>Sources:</b> ESPN public endpoints — completed box scores (this season), player game logs (prior two seasons, for vs-team meetings only), slate, market line, rosters and injury statuses. Nothing is typed in by hand.</li>
-      <li><b>Projection</b> = weighted blend of three per-36 lines × projected minutes. Default weights 50% vs-team / 25% own last 5 / 25% opponent positional log, adjustable above. A line with n=0 is dropped and the others renormalized (shown on the card). No last-season baseline.</li>
+      <li><b>Projection, minutes first:</b> projected minutes = recent minutes (50% L5 / 30% L10 / 20% season) − back-to-back or 3-in-4 cut + vacated minutes from OUT teammates − blowout trim. Injuries and game script move minutes, never rates. Then rates × minutes ÷ 36 × pace factor.</li>
+      <li><b>Rates</b> = weighted blend of three per-36 inputs, default <b>30% vs-team / 40% own form / 30% opponent positional</b>, adjustable above (starting values, to be retuned from the projection log). An input with n=0 is dropped and the others renormalized (shown on the card). No last-season baseline.
+        <ul><li><b>Own form</b> = (L5 + L10)/2 per 36, shrunk toward his season rate with weight n10/(n10+5).</li>
+        <li><b>Opponent positional</b> = his own form × what the opponent allows to his position per 36 position-minutes over the <b>full season</b>, relative to the league, with the opponent's pace removed, shrunk toward 1 by GP/(GP+10), and the defender adjustment (below).</li>
+        <li><b>Vs team</b> = his last 5 meetings with this opponent, current role only.</li></ul></li>
+      <li><b>Attempts, then efficiency:</b> FGA, 3PA and FTA are projected like any rate; 2P%, 3P% and FT% are his last-10 % shrunk toward his season % (50 3PA / 100 2PA / 40 FTA prior; his season % is itself shrunk toward the league when his sample is small). PTS = 2 × 2PM + 3 × 3PM + FTM; 3PM = 3PA × 3P%. Rebound chances and assist opportunities need tracking data, which isn't reachable, so REB and AST use per-36 rates.</li>
+      <li><b>Pace:</b> game pace = model pace scaled by the market total ÷ model total when ESPN shows a total; otherwise the model pace, labelled <span class="badge b-mod">MODELED</span>. Each player's counting stats × (game pace ÷ his team's average game pace), bounded 0.9–1.1. The card shows what pace adds or removes per stat.</li>
+      <li><b>Defender matchup</b> <span class="badge b-mod">MODELED</span>: likely defender = the opponent's top projected-minutes player at his position tonight. If the opponent's usual defender at that position is in or out tonight and there are 2+ games matching that status, the opponent input is adjusted by what the opponent allowed to the position in those games vs the full season (shrunk n/(n+5), capped ±10%). No tracking data is reachable (NBA.com blocks this connection), so who-guards-whom and "elite defender" status can't be verified.</li>
       <li><b>Positions:</b> ESPN lists players only as G / F / C. The PG/SG and SF/PF split is inferred from each player's box profile (G: AST/36 ≥ 4.5 → PG else SG; F: REB/36 ≥ 10.5 → C, ≥ 7 → PF, else SF). Every position-bucketed number therefore carries a <span class="badge b-mod">MODELED BUCKET</span> label — the stats are box-score sums, the bucket assignment is a model.</li>
-      <li><b>Opponent positional log:</b> in each of the opponent's last 5 games, the opposing player at that position who played the most minutes. Raw lines are shown game by game, with per-36 for the blend.</li>
+      <li><b>Opponent positional log (context only):</b> in each of the opponent's last 5 games, the opposing player at that position who played the most minutes. Shown game by game; it no longer drives the projection, and it still feeds the screen flags.</li>
       <li><b>Vs-team line:</b> his last 5 meetings with tonight's opponent across this season and the two prior seasons (incl. playoffs, incl. prior clubs). Meetings with a prior club or in a role ≥8 mpg different are split out and <i>not</i> blended.</li>
-      <li><b>Modeled (labelled where shown):</b> projected score (pace × ORtg/DRtg from box scores, each regressed toward league average by GP/(GP+10) so 7-game samples don't swing it, ±1.2 home court per side, no injury adjustment); vacated minutes allocation (same position → adjacent → any rotation player, +8 min / 38 min caps, remainder left unallocated); usage bump (50% of the vacated production not recovered by minutes); blowout minutes trim on projected starters (from |spread| ≥ 10).</li>
+      <li><b>Modeled (labelled where shown):</b> projected score (pace × ORtg/DRtg from box scores, each regressed toward league average by GP/(GP+10) so 7-game samples don't swing it, ±1.2 home court per side, no injury adjustment); recent-minutes blend; rest cut (−1.5 min on a back-to-back for 28+ mpg players, −0.5 otherwise; −0.5 on a 3-in-4); vacated minutes allocation (same position → adjacent → any rotation player, +8 min / 38 min caps, remainder left unallocated); blowout minutes trim on projected starters (from |spread| ≥ 10); pace estimate when there is no market total; defender matchup.</li>
+      <li><b>Projection log:</b> every game day the board's projections (six stats, attempts, all three inputs, minutes, weights) are saved, then graded the next morning against the box scores. The accuracy panel shows error by stat and by input and suggests weights from the misses. Weights are never changed automatically. Market comparisons use only real lines: ESPN/DraftKings game totals at open and close, and player main lines the odds agent fetched.</li>
       <li><b>Not available from any box-score source, so not shown:</b> defensive assignments and coverage scheme (drop / switch / zone). Read those yourself.</li>
       <li><b>Scheme tags</b> are team tendencies read off the team-vs-position panel, not defensive assignments or coverage schemes. <b>PERIMETER-WEAK</b>: PG+SG+SF points <i>and</i> 3PM allowed both ≥ 8% above the league average for those buckets. <b>INTERIOR-WEAK</b>: PF+C points <i>and</i> rebounds allowed both ≥ 8% above the league average for those buckets. A team can carry both or neither; every team panel shows the numbers whether or not a tag fired.</li>
       <li><b>Screen flags</b> are matchup signals, not picks, in two tiers. <b>MATCHUP FLAG</b> (tonight, no history needed): his own last 5 per-36 is at or past his season per-36 rate, his current-role vs-team per-36 (blowout meetings dropped when others remain) is ≥ 5% past it the same way, and the opponent's positional log is ≥ 5% past its players' own norms the same way, still true without its single most extreme game. On top of that, the blended per-36 must be ≥ 15% past his season rate, and the gap at projected minutes must be at least 2.5 PTS / 1.2 REB / 1.0 AST / 0.5 3PM / 0.4 STL or BLK. <b>PATTERN</b> badge: the gap also repeated in ≥3 separate games and most of the sample (unchanged rule). A pattern without tonight's three-line agreement still shows, labelled as such. The positional-log screen reads each opposing player against his own season rate (excluding that game), so "a starter scored more than this bench player" doesn't count as an edge. The vs-team screen compares each meeting to his current per-36 rate. STL/BLK flags only show alongside a PTS/REB/AST/3PM flag, unless a vs-team STL/BLK line is consistently 2+ with positional-log backing.</li>
       <li><b>Refresh:</b> the board rebuilds every time it opens and again at 8:07 AM ET if left open. Box scores and prior-season logs are cached in this browser, so later loads are fast.</li>
     </ul>
   </details>
+  <details class="method" id="changes">
+    <summary>What changed (Nov 6, 2026)</summary>
+    <ul>
+      <li>Blend is now 30% vs-team / 40% own form / 30% opponent positional (was 50/25/25). Own form uses last 5 and last 10, shrunk toward his season rate.</li>
+      <li>Minutes are projected first (recent minutes, rest, injuries, blowout risk); injuries and game script move minutes, not rates. The usage bump is gone.</li>
+      <li>Game pace from the market total (or MODELED when there's none) scales every counting stat; each card shows the effect.</li>
+      <li>Opponent positional data is now the full season, not the last 5. The last-5 log stays on the card as context.</li>
+      <li>Points and threes come from projected attempts × shrunk shooting %.</li>
+      <li>New MODELED defender-matchup row on every card.</li>
+      <li>New projection log, next-morning grading, error by stat and by input, suggested weights (never applied automatically), and tracking against real lines.</li>
+      <li>Not possible: rebound-chance and assist-opportunity models, and verified defender matchups — both need tracking data, and NBA.com blocks this connection.</li>
+    </ul>
+  </details>
+  <details class="method acc-panel" id="accuracy"></details>
   <div class="agentp" id="agent"></div>
   <div id="board"></div>
 </main>
 <script src="js/data.js"></script>
 <script src="js/model.js"></script>
 <script src="js/agent.js"></script>
+<script src="js/accuracy.js"></script>
 <script src="js/ui.js"></script>
 </body>
 </html>

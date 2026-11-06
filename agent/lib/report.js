@@ -120,8 +120,8 @@ function renderReport(d) {
     ${gaps}
     <h2>Review</h2>${weeklyHtml(d.weekly)}
     <h2>Method</h2><div class="panel sub"><ul>
-      <li>Projection = the board's own blend (vs-team ${d.weights.vt} / own last 5 ${d.weights.l5} / opponent positional log ${d.weights.op}), read from the board code, not recomputed.</li>
-      <li>Probability: every game in those three lines → per-36 × projected minutes, weighted by the blend weights split across each line's games, rescaled so the mean equals the projection; P(stat ≥ rung) from a Gaussian-kernel smooth of that weighted distribution (continuity-corrected, clamped 1–99%). Small samples make these probabilities noisy — check n on the board card.</li>
+      <li>Projection = the board's own projection (minutes first, attempts × efficiency, pace), blending vs-team ${d.weights.vt} / own form ${d.weights.l5} / opponent positional (full season) ${d.weights.op}, read from the board code, not recomputed.</li>
+      <li>Probability: every game in his current-role vs-team meetings and his last 10 → per-36 × projected minutes, weighted by the blend weights split across each line's games, rescaled so the mean equals the projection; P(stat ≥ rung) from a Gaussian-kernel smooth of that weighted distribution (continuity-corrected, clamped 1–99%). Small samples make these probabilities noisy — check n on the board card.</li>
       <li>Devig: two-way (over + under at the same book and line) → proportional. One-sided alt rungs → that book's own main-line margin for the player/stat, applied proportionally. A rung that can't be devigged doesn't count toward the bar.</li>
       <li>Edge = model probability − devigged implied probability. A leg qualifies when ≥ ${MIN_BOOKS} books each show an edge ≥ ${pc(EDGE_MIN, 0)}. "Edge 3rd book" is the edge at the third-best book — the honest strength of the 3-book bar.</li>
       <li>Not headlined: legs that clear only with vacated minutes / usage bump added (base projection fails the bar), or that the board flags with a minutes-scaling caution.</li>

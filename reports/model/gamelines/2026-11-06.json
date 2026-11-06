@@ -1,0 +1,92 @@
+{
+ "401909287": {
+  "label": "WSH @ ATL",
+  "tip": "2026-11-07T00:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "ATL -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909288": {
+  "label": "BOS @ CHA",
+  "tip": "2026-11-07T00:00Z",
+  "open": {
+   "total": 207.5,
+   "spread": "BOS -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909289": {
+  "label": "PHI @ CLE",
+  "tip": "2026-11-07T00:30Z",
+  "open": {
+   "total": 231.5,
+   "spread": "PHI -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909290": {
+  "label": "UTAH @ DAL",
+  "tip": "2026-11-07T01:00Z",
+  "open": {
+   "total": 225.5,
+   "spread": "DAL -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909291": {
+  "label": "OKC @ MEM",
+  "tip": "2026-11-07T01:00Z",
+  "open": {
+   "total": 223.5,
+   "spread": "OKC -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909292": {
+  "label": "TOR @ MIL",
+  "tip": "2026-11-07T01:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "TOR -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909293": {
+  "label": "MIN @ NO",
+  "tip": "2026-11-07T01:00Z",
+  "open": {
+   "total": 230.5,
+   "spread": "MIN -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909294": {
+  "label": "POR @ LAL",
+  "tip": "2026-11-07T03:00Z",
+  "open": {
+   "total": 231.5,
+   "spread": "LAL -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ },
+ "401909295": {
+  "label": "SA @ SAC",
+  "tip": "2026-11-07T03:00Z",
+  "open": {
+   "total": 231.5,
+   "spread": "SA -16.5",
+   "provider": "DraftKings",
+   "at": "2026-11-06T19:33:38.745Z"
+  }
+ }
+}

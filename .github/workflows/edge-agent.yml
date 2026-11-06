@@ -13,7 +13,7 @@ on:
   # A push that changes the agent runs a status check only (free: confirms key, plan, books, quota).
   push:
     branches: [main]
-    paths: ['agent/**', '.github/workflows/edge-agent.yml']
+    paths: ['agent/run.js', 'agent/lib/**', '.github/workflows/edge-agent.yml']
   workflow_dispatch:
     inputs:
       mode:
@@ -47,6 +47,13 @@ jobs:
           path: .cache
           key: board-cache-${{ github.run_id }}
           restore-keys: board-cache-
+
+      # Projection log: snapshot once per game day (after 8:07 AM ET), ESPN game lines at open/close,
+      # next-morning grading and the accuracy summary. Cheap when nothing is due (one free ESPN call).
+      - name: Projection log and grading
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: node agent/projections.js
 
       - name: Run edge agent
         env:

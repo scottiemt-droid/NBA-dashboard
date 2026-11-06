@@ -27,7 +27,30 @@ const TAG_DEFS = [
 const MATCHUP_RULE = { lineTol: 0.05, blendGap: 0.15, floor: { pts: 2.5, reb: 1.2, ast: 1, tpm: 0.5, stl: 0.4, blk: 0.4 } };
 const SMALL_GP = 10;         // team-vs-position SMALL SAMPLE flag
 const VS_SEASONS_BACK = 2;     // vs-team search window: current season + 2 prior
-const MODEL = { hcaPerSide: 1.2, ratingPriorGames: 10, usageResidualShare: 0.5, vacCapAdd: 8, vacCapMin: 38, blowoutStart: 10, blowoutPerPt: 0.5, blowoutMax: 4 };
+const MODEL = { hcaPerSide: 1.2, ratingPriorGames: 10, vacCapAdd: 8, vacCapMin: 38, blowoutStart: 10, blowoutPerPt: 0.5, blowoutMax: 4 };
+
+/* Projection engine (minutes first, then rates; attempts first, then efficiency).
+   Rated quantities are per-36 attempts/counts; points and threes come from attempts × shrunk shooting %. */
+const QSTATS = ['fga', 'tpa', 'fta', 'reb', 'ast', 'stl', 'blk'];
+const PROJ = {
+  formK: 5,              // own form = (L5+L10)/2 shrunk toward season rate with weight n10/(n10+formK)
+  oppPriorGames: 10,     // opponent positional factor shrunk toward 1 by GP/(GP+10)
+  min: { l5: 0.5, l10: 0.3, season: 0.2 },   // recent-minutes blend (MODELED)
+  rest: { b2bStarter: 1.5, b2bBench: 0.5, threeInFour: 0.5, starterMin: 28 },  // minutes cut on a back-to-back / 3-in-4 (MODELED)
+  pace: { min: 0.9, max: 1.1 },               // pace factor bounds
+  pct: { k3: 50, k2: 100, kft: 40, lg3: 100, lg2: 200, lgft: 50 },  // shrinkage priors in attempts
+  def: { k: 5, cap: 0.10, minGames: 2 }       // defender in/out adjustment: shrink n/(n+5), cap ±10%, needs 2+ games
+};
+
+function per36q(rows, keys) {
+  const m = sumBy(rows, 'min');
+  if (!rows.length || !m) return null;
+  const o = { min: m, n: rows.length };
+  keys.forEach(k => o[k] = sumBy(rows, k) / m * 36);
+  return o;
+}
+const shrinkPct = (made, att, prior, k) => (made + k * prior) / (att + k);
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
 const sumBy = (a, k) => a.reduce((t, x) => t + (+x[k] || 0), 0);
 const mean = a => a.length ? a.reduce((t, x) => t + x, 0) / a.length : null;
@@ -117,7 +140,8 @@ function teamContext(raw, idx) {
   for (const [tid, list] of Object.entries(idx.teamGames)) {
     let poss = 0, gmin = 0, pf = 0, pa = 0, opp3 = 0, oppPaint = 0;
     const posAgg = {};
-    POS5.forEach(P => posAgg[P] = { pts: 0, reb: 0, ast: 0, tpm: 0, stl: 0, blk: 0, min: 0 });
+    const AGG = [...new Set([...STATS, ...QSTATS])];
+    POS5.forEach(P => { posAgg[P] = { min: 0 }; AGG.forEach(s => posAgg[P][s] = 0); });
     for (const { g, oid } of list) {
       const T = g.teams[tid], O = g.teams[oid];
       const pT = T.fga + 0.44 * T.fta - T.oreb + T.tov, pO = O.fga + 0.44 * O.fta - O.oreb + O.tov;
@@ -126,15 +150,20 @@ function teamContext(raw, idx) {
         if (p.t !== oid) continue;
         const P = (idx.players[p.id] || {}).pos || 'SF';
         const a = posAgg[P];
-        STATS.forEach(s => a[s] += p[s]);
+        AGG.forEach(s => a[s] += p[s] || 0);
         a.min += p.min;
       }
     }
     const gp = list.length;
     ratings[tid] = { gp, pace: gmin ? poss / gmin * 48 : null, ortg: poss ? 100 * pf / poss : null, drtg: poss ? 100 * pa / poss : null,
       ppg: pf / gp, oppg: pa / gp, opp3: opp3 / gp, oppPaint: oppPaint / gp };
-    tvp[tid] = { gp };
-    POS5.forEach(P => { const a = posAgg[P]; tvp[tid][P] = { min: a.min / gp }; STATS.forEach(s => tvp[tid][P][s] = a[s] / gp); });
+    tvp[tid] = { gp, poss };
+    POS5.forEach(P => {
+      const a = posAgg[P];
+      tvp[tid][P] = { min: a.min / gp, per36: {}, sum: { min: a.min } };
+      STATS.forEach(s => tvp[tid][P][s] = a[s] / gp);
+      QSTATS.forEach(q => { tvp[tid][P].per36[q] = a.min ? a[q] / a.min * 36 : null; tvp[tid][P].sum[q] = a[q]; });
+    });
   }
   const tids = Object.keys(ratings).filter(t => ratings[t].gp > 0);
   const lg = { pace: mean(tids.map(t => ratings[t].pace)), ortg: mean(tids.map(t => ratings[t].ortg)) };
@@ -147,7 +176,10 @@ function teamContext(raw, idx) {
   // league averages + ranks per position (rank 1 = allows the most)
   const tvpLg = {};
   POS5.forEach(P => {
-    tvpLg[P] = {};
+    tvpLg[P] = { per36: {} };
+    // pooled league rate per 36 minutes played at the position
+    const lgMin = tids.reduce((x, t) => x + tvp[t][P].sum.min, 0);
+    QSTATS.forEach(q => tvpLg[P].per36[q] = lgMin ? tids.reduce((x, t) => x + tvp[t][P].sum[q], 0) / lgMin * 36 : null);
     STATS.forEach(s => {
       tvpLg[P][s] = mean(tids.map(t => tvp[t][P][s]));
       [...tids].sort((a, b) => tvp[b][P][s] - tvp[a][P][s]).forEach((t, i) => tvp[t][P][s + 'Rank'] = i + 1);
@@ -169,7 +201,72 @@ function teamContext(raw, idx) {
       if (row.fired) tags[t].push(row);
     }
   }
+  // league shooting, used as the prior when a player's own season sample is small
+  let m3 = 0, a3 = 0, m2 = 0, a2 = 0, mft = 0, aft = 0;
+  for (const pl of Object.values(idx.players)) for (const r of pl.games) {
+    m3 += r.tpm; a3 += r.tpa; m2 += r.fgm - r.tpm; a2 += r.fga - r.tpa; mft += r.ftm; aft += r.fta;
+  }
+  lg.tp = a3 ? m3 / a3 : 0.36; lg.fg2 = a2 ? m2 / a2 : 0.53; lg.ft = aft ? mft / aft : 0.78;
   return { ratings, tvp, tvpLg, lg, tags, tagChecks };
+}
+
+/* Opponent positional factor for one rated quantity: what the opponent allows to this position per 100 possessions,
+   relative to the league average for the position, shrunk toward 1 by GP/(GP+10). Full season, from box scores. */
+function oppFactor(ctx, oid, P, q) {
+  const t = ctx.tvp[oid], L = ctx.tvpLg[P];
+  if (!t || !t.gp || !L || !L.per36[q] || t[P].per36[q] == null) return null;
+  // per 36 position-minutes (removes how many minutes the opponent happened to face at this bucket), with the
+  // opponent's own pace taken out because tonight's pace is applied separately
+  const R = ctx.ratings[oid];
+  const raw = t[P].per36[q] / L.per36[q] * (R && R.pace ? ctx.lg.pace / R.pace : 1);
+  return { raw, f: 1 + (raw - 1) * t.gp / (t.gp + PROJ.oppPriorGames), gp: t.gp };
+}
+
+/* Defender matchup (MODELED — no tracking data is reachable): the likely defender is the opponent's top projected-minutes
+   rotation player at this position tonight; the "usual" defender is the opponent's season minutes leader at the position.
+   If the usual defender's status tonight differs from some past games, compare what the opponent allowed to the position
+   per 100 possessions in games matching tonight (with / without him) vs the full season, shrunk and capped. */
+function defenderInfo(idx, ctx, oid, P, O, cache) {
+  const key = oid + ':' + P;
+  if (cache[key]) return cache[key];
+  const games = idx.teamGames[oid] || [];
+  const mins = {};
+  for (const { g } of games) for (const p of g.players) if (p.t === oid && (idx.players[p.id] || {}).pos === P) {
+    const x = mins[p.id] = mins[p.id] || { id: p.id, name: p.n, min: 0, gp: 0 }; x.min += p.min; x.gp++;
+  }
+  const usual = Object.values(mins).sort((a, b) => b.min - a.min)[0] || null;
+  const pick = Ps => O.rotation.filter(x => Ps.includes(x.pl.pos)).sort((a, b) => b.baseMin - a.baseMin)[0];
+  const lk = pick([P]) || pick(ADJ[P] || []);
+  const likely = lk ? { id: lk.pid, name: lk.r.name, pos: lk.pl.pos, samePos: lk.pl.pos === P } : null;
+  const res = { P, usual, likely, usualOut: false, adj: null, reason: '' };
+  if (!usual) { res.reason = `no ${P} has played for this opponent yet`; return cache[key] = res; }
+  const listedOut = O.outs.some(v => v.pid === usual.id), inRot = O.rotation.some(x => x.pid === usual.id);
+  res.usualOut = listedOut || !inRot;
+  res.usualStatus = listedOut ? 'OUT tonight' : !inRot ? 'not in tonight\'s projected rotation' : 'in tonight';
+  const played = new Set(games.filter(({ g }) => g.players.some(p => p.t === oid && p.id === usual.id)).map(({ g }) => g.id));
+  const subset = games.filter(({ g }) => res.usualOut ? !played.has(g.id) : played.has(g.id));
+  const nSub = subset.length;
+  res.nWith = played.size; res.nWithout = games.length - played.size;
+  if (nSub === games.length) { res.reason = res.usualOut ? `no games without him to compare` : `he played every game, so the season factor already reflects him`; return cache[key] = res; }
+  if (nSub < PROJ.def.minGames) { res.reason = `only n=${nSub} game${nSub === 1 ? '' : 's'} ${res.usualOut ? 'without' : 'with'} him — too few to adjust`; return cache[key] = res; }
+  const perPos36 = (list, q) => { // allowed per 36 minutes at the position
+    let m = 0, v = 0;
+    for (const { g } of list) for (const p of g.players) if (p.t !== oid && (idx.players[p.id] || {}).pos === P) { v += p[q] || 0; m += p.min; }
+    return m ? v / m * 36 : null;
+  };
+  res.adj = {};
+  for (const q of QSTATS) {
+    const sub = perPos36(subset, q), all = perPos36(games, q);
+    res.adj[q] = sub != null && all ? clamp(1 + (sub / all - 1) * nSub / (nSub + PROJ.def.k), 1 - PROJ.def.cap, 1 + PROJ.def.cap) : 1;
+  }
+  res.reason = `${res.usualStatus}: opponent allowed ${P}s ${(() => { const v = Math.round(((perPos36(subset, "fga") || 0) / (perPos36(games, "fga") || 1) - 1) * 100); return (v >= 0 ? '+' : '') + v; })()}% FGA per 36 position-minutes in the ${nSub} game${nSub === 1 ? '' : 's'} ${res.usualOut ? 'without' : 'with'} him vs the full season (shrunk n/(n+${PROJ.def.k}), capped ±${PROJ.def.cap * 100}%)`;
+  return cache[key] = res;
+}
+
+function gamePace(game, proj, ctx) {
+  if (!proj) return null;
+  const mkt = game.odds && game.odds.total != null ? game.odds.total : null;
+  return { pace: mkt ? proj.pace * mkt / proj.total : proj.pace, source: mkt ? 'market' : 'model', total: mkt != null ? mkt : proj.total, modelPace: proj.pace };
 }
 
 function projectScore(game, ctx) {
@@ -218,7 +315,10 @@ function buildTeam(raw, idx, tid, D) {
     const apps = games.filter(x => last5ids.has(x.gid) && x.teamId === tid);
     const appMin = apps.length ? sumBy(apps, 'min') / apps.length : 0;
     const seasonMin = games.length ? sumBy(games, 'min') / games.length : 0;
-    const baseMin = own5.length ? sumBy(own5, 'min') / own5.length : 0;
+    // recent minutes (before rest / injuries / game script): L5, L10 and season averages of games played, blended
+    const avgMin = rows => rows.length ? sumBy(rows, 'min') / rows.length : null;
+    const m5 = avgMin(own5), m10 = avgMin(games.slice(0, 10));
+    const baseMin = m5 == null ? 0 : PROJ.min.l5 * m5 + PROJ.min.l10 * m10 + PROJ.min.season * seasonMin;
     const returning = !apps.length && games.length >= 1 && seasonMin >= 20;
     const real = (apps.length >= 2 && appMin >= 10) || (apps.length === 1 && appMin >= 15) || returning;
     info.push({ pid, r, pl, own5, apps, appMin, baseMin, seasonMin, returning, real, lastPlayed: games[0] ? games[0].date : null });
@@ -259,19 +359,9 @@ function buildTeam(raw, idx, tid, D) {
   }
   const placed = vacTotal - Math.max(0, remaining);
 
-  // usage residual: vacated production not recovered by minutes alone; 50% redistributed by share (modeled)
+  // Injuries move minutes, not rates: no usage bump. (`bump` kept empty so older readers of the card still work.)
   const bump = {};
   rotation.forEach(x => bump[x.pid] = {});
-  for (const s of MAIN) {
-    const outProd = vac.reduce((t, v) => t + v.prod[s], 0);
-    if (!outProd) continue;
-    const rate = x => { const m = sumBy(x.own5, 'min'); return m ? sumBy(x.own5, s) / m : 0; };
-    const recovered = rotation.reduce((t, x) => t + add[x.pid] * rate(x), 0);
-    const residual = Math.max(0, outProd - recovered) * MODEL.usageResidualShare;
-    const base = rotation.map(x => rate(x) * x.baseMin), tot = base.reduce((a, b) => a + b, 0);
-    if (!tot) continue;
-    rotation.forEach((x, i) => bump[x.pid][s] = residual * base[i] / tot);
-  }
 
   const nonRotationOut = vac.filter(v => v.min <= 0.05);
   return {
@@ -412,7 +502,7 @@ function buildBoard(raw, gamelogs) {
   const D = raw.D;
   const idx = raw._idx || indexSeason(raw);
   const ctx = raw._ctx || teamContext(raw, idx);
-  const logCache = {};
+  const logCache = {}, defCache = {};
   const games = [];
   for (const game of raw.slate) {
     const proj = projectScore(game, ctx);
@@ -421,6 +511,7 @@ function buildBoard(raw, gamelogs) {
     const scriptSource = spread ? 'market spread' : 'model margin';
     const trim = scriptMargin >= MODEL.blowoutStart ? Math.min(MODEL.blowoutMax, (scriptMargin - MODEL.blowoutStart + 1) * MODEL.blowoutPerPt) : 0;
     const sides = {};
+    const pace = gamePace(game, proj, ctx);
     const teamsBuilt = { [game.home]: raw._teams[game.home], [game.away]: raw._teams[game.away] };
     for (const tid of [game.away, game.home]) {
       const oid = tid === game.home ? game.away : game.home;
@@ -436,23 +527,71 @@ function buildBoard(raw, gamelogs) {
         const l5p36 = per36(own5);
         const vac = T.add[x.pid] || 0;
         const tr = starters.has(x.pid) ? trim : 0;
-        const finalMin = Math.max(0, x.baseMin + vac - tr);
+        const big = x.baseMin >= PROJ.rest.starterMin;
+        const restCut = rest.b2b ? (big ? PROJ.rest.b2bStarter : PROJ.rest.b2bBench) : rest.threeInFour && big ? PROJ.rest.threeInFour : 0;
+        const finalMin = Math.max(0, x.baseMin + vac - tr - restCut);
         const st = x.r.status;
         const priorClubInL5 = own5.filter(r => r.teamId !== tid).length;
         const yesterday = rest.b2b ? pl.games.find(r => r.date === rest.prev) : null;
+
+        // ---- the three inputs, per 36 (rated quantities) ----
+        const KEYS = [...new Set([...QSTATS, ...STATS])];
+        const l10 = pl.games.slice(0, 10);
+        const l5q = per36q(own5, KEYS), l10q = per36q(l10, KEYS), seasonQ = per36q(pl.games, KEYS);
+        let own = null;
+        if (l5q) {
+          const lam = l10.length / (l10.length + PROJ.formK);
+          own = {};
+          KEYS.forEach(k => own[k] = lam * (0.5 * l5q[k] + 0.5 * l10q[k]) + (1 - lam) * seasonQ[k]);
+          own.lam = lam;
+        }
+        const vtq = vt.n ? per36q(vt.cur, KEYS) : null;
+        const def = defenderInfo(idx, ctx, oid, pl.pos, O, defCache);
+        let op = null, opFactors = null;
+        if (own && ctx.tvp[oid] && ctx.tvp[oid].gp) {
+          op = {}; opFactors = {};
+          for (const q of QSTATS) {
+            const f = oppFactor(ctx, oid, pl.pos, q);
+            const d = def.adj ? def.adj[q] : 1;
+            opFactors[q] = { season: f ? f.f : 1, raw: f ? f.raw : null, def: d, total: (f ? f.f : 1) * d };
+            op[q] = own[q] * opFactors[q].total;
+          }
+        }
+        // ---- shooting: L10 shrunk toward his season %, season shrunk toward league if his sample is small ----
+        const S = rows => ({ m3: sumBy(rows, 'tpm'), a3: sumBy(rows, 'tpa'), m2: sumBy(rows, 'fgm') - sumBy(rows, 'tpm'), a2: sumBy(rows, 'fga') - sumBy(rows, 'tpa'), mft: sumBy(rows, 'ftm'), aft: sumBy(rows, 'fta') });
+        const sz = S(pl.games), s10 = S(l10);
+        const season3 = shrinkPct(sz.m3, sz.a3, ctx.lg.tp, PROJ.pct.lg3), season2 = shrinkPct(sz.m2, sz.a2, ctx.lg.fg2, PROJ.pct.lg2), seasonFt = shrinkPct(sz.mft, sz.aft, ctx.lg.ft, PROJ.pct.lgft);
+        const eff = {
+          tp: shrinkPct(s10.m3, s10.a3, season3, PROJ.pct.k3), fg2: shrinkPct(s10.m2, s10.a2, season2, PROJ.pct.k2), ft: shrinkPct(s10.mft, s10.aft, seasonFt, PROJ.pct.kft),
+          raw10: { tp: s10.a3 ? s10.m3 / s10.a3 : null, fg2: s10.a2 ? s10.m2 / s10.a2 : null, ft: s10.aft ? s10.mft / s10.aft : null, a3: s10.a3, a2: s10.a2, aft: s10.aft, n: l10.length },
+          rawSeason: { tp: sz.a3 ? sz.m3 / sz.a3 : null, fg2: sz.a2 ? sz.m2 / sz.a2 : null, ft: sz.aft ? sz.mft / sz.aft : null, a3: sz.a3, a2: sz.a2, aft: sz.aft },
+          season: { tp: season3, fg2: season2, ft: seasonFt }
+        };
+        // implied per-36 of the six stats for an input's attempt/count rates (points & threes via attempts × efficiency)
+        const implied = q => q && {
+          fga: q.fga, tpa: Math.min(q.tpa, q.fga), fta: q.fta,
+          tpm: Math.min(q.tpa, q.fga) * eff.tp,
+          pts: 2 * Math.max(0, q.fga - q.tpa) * eff.fg2 + 3 * Math.min(q.tpa, q.fga) * eff.tp + q.fta * eff.ft,
+          reb: q.reb, ast: q.ast, stl: q.stl, blk: q.blk
+        };
+        const teamPace = ctx.ratings[tid] && ctx.ratings[tid].pace;
+        const paceFactor = pace && teamPace ? clamp(pace.pace / teamPace, PROJ.pace.min, PROJ.pace.max) : 1;
         return {
           pid: x.pid, name: x.r.name, pos: pl.pos, posNote: pl.posNote, posInferred: !!pl.inferred, tid, oid, oppAbbr: raw.teams[oid].abbr,
           status: st && !isOut(st) ? st : null, statusComment: x.r.comment,
-          baseMin: x.baseMin, vacMin: vac, trimMin: tr, finalMin, bump: T.bump[x.pid] || {},
+          baseMin: x.baseMin, vacMin: vac, trimMin: tr, restCut, finalMin, bump: T.bump[x.pid] || {},
+          minParts: { l5: own5.length ? sumBy(own5, 'min') / own5.length : null, l10: l10.length ? sumBy(l10, 'min') / l10.length : null, season: x.seasonMin, n5: own5.length, n10: l10.length, nSeason: pl.games.length },
           returning: x.returning, lastPlayed: x.lastPlayed, priorClubInL5,
           own5, l5p36, l5raw: rawAvg(own5), season36: per36(pl.games), rates: ratesBlock(pl),
+          own10: l10, l10q, seasonQ, inputs: { vt: implied(vtq), own: implied(own), op: implied(op) }, rawInputs: { vt: vtq, own, op }, opFactors, ownLam: own ? own.lam : null,
+          eff, def, pace, paceFactor, teamPace,
           vt, log, rest, yesterdayMin: yesterday ? yesterday.min : null,
           oppRating: ctx.ratings[oid], oppTvp: ctx.tvp[oid] && ctx.tvp[oid][pl.pos], tvpLg: ctx.tvpLg[pl.pos]
         };
       });
       sides[tid] = { tid, oid, team: raw.teams[tid], T, rest, cards, tags: ctx.tags[tid] || [], tagChecks: ctx.tagChecks[tid] || [], rating: ctx.ratings[tid], tvp: ctx.tvp[tid] };
     }
-    games.push({ ...game, proj, spread, scriptMargin, scriptSource, trim, sides });
+    games.push({ ...game, proj, pace, spread, scriptMargin, scriptSource, trim, sides });
   }
   return { D, games, ctx, teams: raw.teams, fetchedAt: raw.fetchedAt, seasonYear: raw.seasonYear, boxCount: Object.keys(raw.boxes).length };
 }
@@ -469,29 +608,36 @@ function prepareTeams(raw) {
 
 /* ---------- per-render (weights are live) ---------- */
 
+/* Weight keys: vt = vs this team, l5 = own form (L5 + L10 shrunk toward season; key kept for compatibility),
+   op = opponent positional (full season). Everything is linear in the inputs, so the blended projection equals
+   the weighted average of each input's own projection — which is what the daily log grades. */
+const BLEND_KEYS = [['vt', 'vt'], ['l5', 'own'], ['op', 'op']];
+const PROJ_KEYS = ['pts', 'reb', 'ast', 'tpm', 'stl', 'blk', 'fga', 'tpa', 'fta'];
+
 function blendCard(c, w) {
-  const lines = [
-    { k: 'vt', w: w.vt, r: c.vt.n ? c.vt.p36 : null },
-    { k: 'l5', w: w.l5, r: c.own5.length ? c.l5p36 : null },
-    { k: 'op', w: w.op, r: c.log.n ? c.log.p36 : null }
-  ];
+  const lines = BLEND_KEYS.map(([k, ik]) => ({ k, w: w[k], r: c.inputs[ik] }));
   const live = lines.filter(l => l.r && l.w > 0);
   const W = live.reduce((t, l) => t + l.w, 0);
-  const b36 = {}, base = {}, adj = {};
-  STATS.forEach(s => {
+  const b36 = {}, base = {}, adj = {}, noPace = {}, inputProj = {};
+  for (const [k, ik] of BLEND_KEYS) {
+    const r = c.inputs[ik];
+    inputProj[k] = r ? Object.fromEntries(PROJ_KEYS.map(s => [s, r[s] * c.finalMin / 36 * c.paceFactor])) : null;
+  }
+  PROJ_KEYS.forEach(s => {
     b36[s] = W ? live.reduce((t, l) => t + l.w * l.r[s], 0) / W : null;
-    base[s] = b36[s] == null ? null : b36[s] * c.baseMin / 36;
-    adj[s] = b36[s] == null ? null : b36[s] * c.finalMin / 36 + (c.bump[s] || 0);
+    base[s] = b36[s] == null ? null : b36[s] * c.baseMin / 36 * c.paceFactor;
+    adj[s] = b36[s] == null ? null : b36[s] * c.finalMin / 36 * c.paceFactor;
+    noPace[s] = b36[s] == null ? null : b36[s] * c.finalMin / 36;
   });
   const used = {};
   live.forEach(l => used[l.k] = Math.round(100 * l.w / W));
-  const adjusted = c.vacMin > 0.05 || c.trimMin > 0 || MAIN.some(s => (c.bump[s] || 0) > 0.05);
-  return { b36, base, adj, used, adjusted, renormalized: lines.some(l => !l.r && l.w > 0) };
+  const adjusted = c.vacMin > 0.05 || c.trimMin > 0 || c.restCut > 0;
+  return { b36, base, adj, noPace, inputProj, used, adjusted, renormalized: lines.some(l => !l.r && l.w > 0) };
 }
 
 function cardNotes(c) {
   const notes = [];
-  const vt = c.vt.n ? c.vt.p36 : null, l5 = c.own5.length ? c.l5p36 : null, op = c.log.n ? c.log.p36 : null;
+  const vt = c.inputs.vt, l5 = c.inputs.own, op = c.inputs.op;
   // consistency / divergence on the main four
   const consistent = [], diverge = [];
   for (const s of MAIN) {
@@ -506,7 +652,7 @@ function cardNotes(c) {
       if (big) diverge.push(`${SL[s]} ${a.toFixed(1)} vs ${b.toFixed(1)} (${a > b ? 'above' : 'below'})`);
     }
   }
-  if (consistent.length) notes.push({ kind: 'con', text: `Consistent across all three lines (vs-team / own L5 / opp log, per 36): ${consistent.join(' · ')} — strengthens the projection.` });
+  if (consistent.length) notes.push({ kind: 'con', text: `Consistent across all three inputs (vs-team / own form / opp positional, per 36): ${consistent.join(' · ')} — strengthens the projection.` });
   if (diverge.length) notes.push({ kind: 'div', text: `Vs-team line diverges from current form (per 36): ${diverge.join(', ')}. ${divergenceReasons(c)}` });
   for (const seg of c.vt.segs.filter(s => s.key === 'split')) notes.push({ kind: 'split', text: `${seg.rows.length} meeting(s) ${seg.label.split(' — ')[0]} shown separately and kept out of the blend (role/club change).` });
   return notes;

@@ -18,9 +18,23 @@ Double-click `start-board.cmd`. It starts a tiny local server (`serve.ps1`, Powe
 | `js/data.js` | ESPN fetches + cache; box-score and game-log extraction |
 | `js/model.js` | Positions, team-vs-position, scheme tags, ratings, rotations, vacated minutes, the three lines, blend, notes, screen flags |
 | `js/ui.js` | Rendering, live weight sliders, date controls, 8:07 AM ET timer |
+| `js/accuracy.js` | Model-accuracy panel (reads `reports/model/summary.json`) |
+| `js/agent.js` | Edge-agent panel (reads `reports/`) |
+| `agent/projections.js` | Daily projection snapshot, next-morning grading, game-line open/close, accuracy + weight suggestion |
 | `index.html` | Layout, styles, method notes |
 
-Tunable constants live at the top of `js/model.js` (`MODEL`, `BLOWOUT`, `ROLE_MPG_SHIFT`, `SMALL_GP`, `HITS`, thresholds).
+Tunable constants live at the top of `js/model.js` (`MODEL`, `PROJ`, `BLOWOUT`, `ROLE_MPG_SHIFT`, `SMALL_GP`, `HITS`, thresholds). Default blend weights are `W_DEFAULT` in `js/ui.js`. The full rules are in [SPEC.md](SPEC.md).
+
+## Projection log and retune
+
+`agent/projections.js` runs on the same GitHub schedule as the edge agent. You can also run it locally with `node agent/projections.js`; it caches raw ESPN data in `.cache/`.
+
+- Once per game day after 8:07 AM ET it saves every projection to `reports/model/projections/DATE.json`: six stats, attempts, all three inputs, minutes and weights.
+- The next morning it grades them against the box scores.
+- It writes `reports/model/summary.json`: error by stat, error by input, minutes error, and a suggested weight mix. The suggestion is a grid search on the graded misses, labelled tentative under 300 player-games. **It never changes weights automatically.**
+- It tracks against real lines only. Game totals and spreads come from ESPN/DraftKings at open and close (last reading within 60 minutes of tip). Player main lines come from what the odds agent fetched. Each comparison states its sample size and says when it is too small (under 100) to conclude anything.
+
+The board shows all of this in the **Model accuracy & retune** panel.
 
 ## What is measured vs modeled
 
@@ -29,10 +43,10 @@ Tunable constants live at the top of `js/model.js` (`MODEL`, `BLOWOUT`, `ROLE_MP
 **Modeled (labelled on the board):**
 - 5-position buckets. ESPN lists only G/F/C, so PG/SG and SF/PF/C are inferred from AST/36 and REB/36. Every position-split number is tagged `MODELED BUCKET`.
 - Projected score. Pace × ratings, regressed toward league average by GP/(GP+10), with ±1.2 home court per side.
-- Vacated-minutes allocation and the usage bump.
-- Blowout minutes trim.
+- Recent-minutes blend, rest cut, vacated-minutes allocation and blowout trim (minutes, never rates).
+- Pace estimate when there is no market total, and the defender-matchup adjustment.
 
-**Not available, so not shown:** defensive assignments and coverage scheme (drop/switch/zone).
+**Not available, so not shown:** defensive assignments and coverage scheme (drop/switch/zone), verified defender matchups, rebound chances and assist opportunities. These need NBA tracking data; NBA.com (and the `nba_api` package, which uses it) is blocked from this connection.
 
 ## Known limits
 
@@ -83,11 +97,11 @@ The agent runs in budget mode whenever the plan is 5,000 credits a month or less
 
 ## How an edge is computed
 
-- **Projection:** the board's blend (default 50/25/25, read from `js/ui.js`) for points, rebounds, assists and threes.
-- **Probability per rung:** every game in the three board lines (his last 5, his current-role vs-team meetings, the opponent's positional log) is turned into per-36 × projected minutes. Games are weighted by the blend weights, split across each line's games, and rescaled so the mean equals the projection. P(stat ≥ rung) then comes from a Gaussian-kernel smooth of that distribution. Samples are small, so treat these as noisy.
+- **Projection:** the board's projection (minutes first, attempts × shrunk %, pace; blend default 30/40/30 read from `js/ui.js`) for points, rebounds, assists and threes.
+- **Probability per rung:** every game in his current-role vs-team meetings and his last 10 games (the base of the own-form and opponent-positional inputs) is turned into per-36 × projected minutes. Games are weighted by the blend weights, split across each line's games, and rescaled so the mean equals the projection. P(stat ≥ rung) then comes from a Gaussian-kernel smooth of that distribution. Samples are small, so treat these as noisy.
 - **Devig:** two-way (over + under, same book and line) → proportional. One-sided alt rungs → that book's own main-line margin for the player/stat. A rung that can't be devigged doesn't count.
 - **Qualifies:** model probability − devigged implied probability ≥ 3 points at **at least 3 books**. Rungs a book doesn't offer are skipped, never filled from another book.
-- **Not headlined:** legs that only clear because of vacated minutes / usage bump (the base projection fails the bar), and legs the board marks with a minutes-scaling caution. These are shown separately, with base vs adjusted.
+- **Not headlined:** legs that only clear because of added minutes (vacated minutes, rest/blowout changes — the base projection at recent minutes fails the bar), and legs the board marks with a minutes-scaling caution. These are shown separately, with base vs adjusted.
 - **Ladders:** points 10/15/20/25 (30+ when the projection supports it), rebounds 5/6/8/10, assists 5/6/8/10, threes 3/4/5, plus the main line. Each rung shows best verified price, model p, devigged p, edge and EV, so the payout vs hit-rate trade-off is visible.
 - **Parlays:** only when every leg qualifies. Combined probability uses lifts measured from actual joint game outcomes (same player: his own games; same game: games both played), shrunk toward 1 for small samples. Pairs without enough shared games are not built. Cross-game legs are treated as independent and labelled as such. Priced at one book that offers every leg; same-game parlay prices at the book will usually be lower than the product shown. If nothing qualifies: "No parlay today".
 - **Stakes:** quarter-Kelly as a % of bankroll, capped at 1% per single and 0.5% per parlay. Never a dollar amount.

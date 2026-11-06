@@ -1,0 +1,306 @@
+{
+ "updated": "2026-11-06T19:33:53.271Z",
+ "days": 0,
+ "pending": 1,
+ "playerGames": 0,
+ "dnp": 0,
+ "byStat": {
+  "pts": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "reb": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "ast": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "tpm": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "stl": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "blk": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "fga": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "tpa": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  },
+  "fta": {
+   "n": 0,
+   "mae": null,
+   "bias": null,
+   "meanActual": null,
+   "inputs": {
+    "vt": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "l5": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    },
+    "op": {
+     "n": 0,
+     "mae": null,
+     "bias": null
+    }
+   },
+   "blendOnSameRows": {
+    "n": 0,
+    "mae": null
+   }
+  }
+ },
+ "minutes": {
+  "n": 0,
+  "mae": null,
+  "bias": null
+ },
+ "bestInput": {
+  "pts": null,
+  "reb": null,
+  "ast": null,
+  "tpm": null,
+  "stl": null,
+  "blk": null
+ },
+ "weights": {
+  "current": null,
+  "n": 0,
+  "threshold": 300,
+  "currentLoss": null,
+  "suggested": null,
+  "suggestedLoss": null,
+  "verdict": "No graded player-games with all three inputs yet — nothing to suggest."
+ },
+ "market": {
+  "gameTotals": {
+   "n": 0,
+   "threshold": 100,
+   "modelMae": null,
+   "closeMae": null,
+   "modelMinusClose": null,
+   "sideRecord": {
+    "decided": 0,
+    "modelSideWon": 0
+   },
+   "openToCloseMoveTowardModel": {
+    "moved": 0,
+    "towardModel": 0
+   },
+   "verdict": "No graded comparisons yet."
+  },
+  "playerLines": {
+   "n": 0,
+   "withClose": 0,
+   "projMae": null,
+   "lineMae": null,
+   "projMinusLine": null,
+   "sideRecord": {
+    "decided": 0,
+    "projSideWon": 0
+   },
+   "note": "Lines come only from props the odds agent fetched (budget mode: a few stats per day), so this sample grows slowly.",
+   "verdict": "No graded comparisons yet."
+  }
+ },
+ "days_list": []
+}

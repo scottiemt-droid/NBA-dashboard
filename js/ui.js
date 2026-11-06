@@ -9,9 +9,9 @@ const pc = v => v == null ? '–' : v.toFixed(1) + '%';
 const md = d => d ? d.slice(5).replace('-', '/') : '';
 const nTag = (n, full = 5) => `<span class="badge ${n < full ? 'b-warn' : 'b-n'}">n=${n}</span>`;
 
-const W_DEFAULT = { vt: 50, l5: 25, op: 25 };
+const W_DEFAULT = { vt: 30, l5: 40, op: 30 };
 let W = { ...W_DEFAULT };
-try { const s = JSON.parse(localStorage.getItem('nba-board-weights') || 'null'); if (s && ['vt', 'l5', 'op'].every(k => typeof s[k] === 'number')) W = s; } catch (e) { }
+try { const s = JSON.parse(localStorage.getItem('nba-board-weights-v2') || 'null'); if (s && ['vt', 'l5', 'op'].every(k => typeof s[k] === 'number')) W = s; } catch (e) { }
 
 let BOARD = null, RAW = null, VIEW_DATE = null, FOLLOW_TODAY = true, BUILDING = false, LAST_BUILD = null;
 
@@ -78,11 +78,15 @@ function renderGame(g) {
     `<div class="blk"><span class="lbl">Market line</span>Not posted at source — none shown.</div>`;
   const script = g.trim > 0 ? `Game script: ${g.scriptSource} ${f1(g.scriptMargin)} → blowout risk; projected starters on both sides trimmed ${f1(g.trim)} min (fourth-quarter stats lost) <span class="badge b-mod">MODELED</span>` :
     `Game script: ${g.scriptSource} ${f1(g.scriptMargin)} — no blowout trim applied.`;
+  const pc = g.pace;
+  const paceLine = !pc ? 'Game pace: not enough completed games to estimate.' :
+    `Game pace <b>${f1(pc.pace)}</b> possessions — ${pc.source === 'market' ? `from the market total ${pc.total} (model pace ${f1(pc.modelPace)} scaled by market total ÷ model total ${f1(g.proj.total)})` : `no market total, pace-based estimate <span class="badge b-mod">MODELED</span>`} · ${[g.away, g.home].map(t => { const r = BOARD.ctx.ratings[t]; const f = r && r.pace ? Math.min(1.1, Math.max(0.9, pc.pace / r.pace)) : 1; return `${esc(T[t].abbr)} avg ${r && r.pace ? f1(r.pace) : '–'} → stats ×${f.toFixed(3)}`; }).join(' · ')}`;
   return `<section class="game" id="g-${g.id}">
     <div class="ghead">
       <div class="matchup">${esc(A.short)}<span class="at">@</span>${esc(H.short)}<span class="tip">${etTime(g.date)}</span></div>
       <div class="score">${projHtml}${mkt}</div>
       <div class="script">${script}</div>
+      <div class="script">${paceLine}</div>
       <div class="script">Scheme tags <span class="badge b-mod">MODELED BUCKET</span>: ${[g.away, g.home].map(t => `<b>${esc(T[t].abbr)}</b> ${tagChips(g.sides[t])}`).join(' &nbsp;·&nbsp; ')} <span style="color:var(--ink3)">— numbers and rule on each team panel</span></div>
     </div>
     <div class="teams">${[g.away, g.home].map(t => renderTeamSide(g, t)).join('')}</div>
@@ -163,36 +167,55 @@ function renderCard(c, g) {
   const status = c.status ? `<span class="badge b-warn" title="${esc(c.statusComment)}">${esc(c.status.toUpperCase())}</span>` : '';
   const rest = c.rest.b2b ? `<span class="badge b-down">B2B${c.yesterdayMin != null ? ` · ${c.yesterdayMin} min last night` : ''}</span>` : (c.rest.rest != null ? `<span class="badge b-n">${c.rest.rest}d rest</span>` : '');
   const ret = c.returning ? `<span class="badge b-warn">RETURNING · last played ${md(c.lastPlayed)}</span>` : '';
-  const minParts = [`base ${f1(c.baseMin)}`];
+  const mp = c.minParts;
+  const minParts = [`recent ${f1(c.baseMin)}`];
+  if (c.restCut > 0) minParts.push(`−${f1(c.restCut)} ${c.rest.b2b ? 'B2B' : '3-in-4'}`);
   if (c.vacMin > 0.05) minParts.push(`+${f1(c.vacMin)} vacated`);
   if (c.trimMin > 0) minParts.push(`−${f1(c.trimMin)} blowout`);
+  const minTitle = `Recent minutes = ${PROJ.min.l5 * 100}% L5 (${f1(mp.l5)}, n=${mp.n5}) + ${PROJ.min.l10 * 100}% L10 (${f1(mp.l10)}, n=${mp.n10}) + ${PROJ.min.season * 100}% season (${f1(mp.season)}, n=${mp.nSeason}). Rest cut, vacated minutes and blowout trim are MODELED.`;
   const pos = `${c.pos}${c.posInferred ? ' <span class="badge b-mod" title="' + esc(c.posNote) + '">INFERRED</span>' : ''}`;
 
   // projection strip
   const proj = STATS.map(s => {
     const a = bl.adj[s], b = bl.base[s];
-    const sub = bl.adjusted ? `<div class="b">base ${f1(b)}${(c.bump[s] || 0) > 0.05 ? ` · +${f1(c.bump[s])} usage` : ''}</div>` : '<div class="b">&nbsp;</div>';
+    const sub = bl.adjusted ? `<div class="b">base ${f1(b)}</div>` : '<div class="b">&nbsp;</div>';
     return `<div><div class="k">${SL[s]}</div><div class="v">${f1(a)}</div>${sub}</div>`;
   }).join('');
 
   // blend table
-  const lineN = { vt: c.vt.n, l5: c.own5.length, op: c.log.n };
+  const lineN = { vt: c.vt.n, l5: c.own5.length, op: c.inputs.op ? 1 : 0 };
   const usedTxt = k => bl.used[k] != null ? bl.used[k] + '%' : lineN[k] ? '0%' : '0% (n=0)';
+  const opGp = BOARD.ctx.tvp[c.oid] ? BOARD.ctx.tvp[c.oid].gp : 0;
   const blend = `<table class="t blend">
-    <tr><th class="l">Per 36</th><th>wt</th>${STH}</tr>
-    <tr><td class="l">Vs ${esc(opp)} ${nTag(c.vt.n)}</td><td>${usedTxt('vt')}</td>${statCells(c.vt.n ? c.vt.p36 : null)}</tr>
-    <tr><td class="l">Own last 5 ${nTag(c.own5.length)}</td><td>${usedTxt('l5')}</td>${statCells(c.own5.length ? c.l5p36 : null)}</tr>
-    <tr><td class="l">Opp ${c.pos} log ${nTag(c.log.n)}</td><td>${usedTxt('op')}</td>${statCells(c.log.n ? c.log.p36 : null)}</tr>
-    <tr class="fin"><td class="l">Blend /36 → × ${f1(c.finalMin)} min</td><td></td>${statCells(bl.b36)}</tr>
-  </table>${bl.renormalized ? `<div class="rates">A line with n=0 is dropped; weights renormalized to ${['vt', 'l5', 'op'].filter(k => bl.used[k] != null).map(k => ({ vt: 'vs-team', l5: 'own L5', op: 'opp log' })[k] + ' ' + bl.used[k] + '%').join(' / ')}.</div>` : ''}`;
+    <tr><th class="l">Per 36 (points & 3PM from attempts × %)</th><th>wt</th>${STH}</tr>
+    <tr><td class="l">Vs ${esc(opp)} ${nTag(c.vt.n)}</td><td>${usedTxt('vt')}</td>${statCells(c.inputs.vt)}</tr>
+    <tr><td class="l" title="(L5 + L10)/2 per 36, weighted ${c.ownLam != null ? (c.ownLam * 100).toFixed(0) : '–'}% vs ${c.ownLam != null ? (100 - c.ownLam * 100).toFixed(0) : '–'}% season rate">Own form <span class="sub">L5+L10→season</span> ${nTag(c.own5.length)}</td><td>${usedTxt('l5')}</td>${statCells(c.inputs.own)}</tr>
+    <tr><td class="l" title="His own form × ${esc(opp)}'s full-season factor at ${c.pos} (see line 2)">Opp ${c.pos} season <span class="badge ${opGp < SMALL_GP ? 'b-warn' : 'b-n'}">GP ${opGp}</span></td><td>${usedTxt('op')}</td>${statCells(c.inputs.op)}</tr>
+    <tr class="fin"><td class="l">Blend /36</td><td></td>${statCells(bl.b36)}</tr>
+    <tr class="fin"><td class="l">× ${f1(c.finalMin)} min × pace ${c.paceFactor.toFixed(3)}</td><td></td>${statCells(bl.adj)}</tr>
+  </table>${bl.renormalized ? `<div class="rates">An input with n=0 is dropped; weights renormalized to ${['vt', 'l5', 'op'].filter(k => bl.used[k] != null).map(k => ({ vt: 'vs-team', l5: 'own form', op: 'opp positional' })[k] + ' ' + bl.used[k] + '%').join(' / ')}.</div>` : ''}`;
+
+  // attempts → efficiency, pace, defender
+  const E = c.eff, pcs = v => v == null ? '–' : (100 * v).toFixed(1) + '%';
+  const effLine = (lab, k, att) => `${lab} <b>${pcs(E[k])}</b> <span class="sub">(L10 ${pcs(E.raw10[k])} on ${E.raw10[att]} att → season ${pcs(E.rawSeason[k])} on ${E.rawSeason[att]})</span>`;
+  const attempts = `<div class="rates"><b>Attempts → efficiency:</b> FGA ${f1(bl.adj.fga)} (3PA ${f1(bl.adj.tpa)}) · FTA ${f1(bl.adj.fta)} → ${effLine('2P%', 'fg2', 'a2')} · ${effLine('3P%', 'tp', 'a3')} · ${effLine('FT%', 'ft', 'aft')} → PTS ${f1(bl.adj.pts)}, 3PM ${f1(bl.adj.tpm)}.
+    <span class="sub">L10 % shrunk toward his season % (${PROJ.pct.k3} 3PA / ${PROJ.pct.k2} 2PA / ${PROJ.pct.kft} FTA prior). Rebound chances and assist opportunities need tracking data, which isn't reachable — REB and AST use per-36 rates × minutes × pace.</span></div>`;
+  const paceTxt = c.pace ? `<div class="rates"><b>Pace ×${c.paceFactor.toFixed(3)}</b> — game ${f1(c.pace.pace)} (${c.pace.source === 'market' ? `market total ${c.pace.total}` : 'MODELED, no market total'}) vs ${esc(BOARD.teams[c.tid].abbr)} avg ${f1(c.teamPace)}: ${MAIN.concat(['stl', 'blk']).map(s => { const d = bl.adj[s] - bl.noPace[s]; return `${SL[s]} ${d >= 0 ? '+' : ''}${d.toFixed(1)}`; }).join(', ')}</div>` : '';
+  const d = c.def;
+  const defTxt = `<div class="rates"><b>Defender matchup</b> <span class="badge b-mod">MODELED</span> — likely: <b>${d.likely ? esc(d.likely.name) : 'none identified'}</b>${d.likely && !d.likely.samePos ? ` (${esc(d.likely.pos)}, adjacent position)` : ''} (${esc(opp)}'s top projected-minutes ${c.pos} tonight).
+    ${d.usual ? `Usual ${c.pos} defender: ${esc(d.usual.name)} (${d.usual.gp} GP) — <b>${esc(d.usualStatus || '')}</b>.` : ''}
+    ${d.adj ? `Adjustment: FGA ×${d.adj.fga.toFixed(3)}, 3PA ×${d.adj.tpa.toFixed(3)}, REB ×${d.adj.reb.toFixed(3)}, AST ×${d.adj.ast.toFixed(3)} on the opponent input — ${esc(d.reason)}.` : `No adjustment — ${esc(d.reason)}.`}
+    <span class="sub">Who guards whom and "elite defender" status can't be verified: no tracking data is reachable (NBA.com blocks this connection), so this is position and minutes based.</span></div>`;
 
   // line 1: own last 5, per 36
   const r = c.rates;
   const l1rows = c.own5.map(x => `<tr title="Raw: ${STATS.map(s => SL[s] + ' ' + x[s]).join(', ')}"><td class="l">${md(x.date)}</td><td class="l">${x.oppId === c.oid ? '<b>' : ''}${esc(BOARD.teams[x.oppId] ? BOARD.teams[x.oppId].abbr : '?')}${x.oppId === c.oid ? '</b>' : ''}${x.teamId !== c.tid ? '*' : ''}</td><td>${x.min}</td>${STATS.map(s => `<td>${f1(x[s] / x.min * 36)}</td>`).join('')}</tr>`).join('');
-  const line1 = `<div class="sec"><div class="sech">1 · Own last 5 this season — per 36 ${nTag(c.own5.length)}${c.priorClubInL5 ? '<span class="sub">* = with prior club</span>' : ''}</div>
+  const line1 = `<div class="sec"><div class="sech">1 · Own form — last 5 game by game, per 36 ${nTag(c.own5.length)}${c.priorClubInL5 ? '<span class="sub">* = with prior club</span>' : ''}</div>
     ${c.own5.length ? `<table class="t"><tr><th class="l">Date</th><th class="l">Opp</th><th>MIN</th>${STH}</tr>${l1rows}
-      <tr class="sum"><td class="l" colspan="2">Per 36 (aggregate)</td><td>${f1(c.l5raw.min)}</td>${statCells(c.l5p36)}</tr>
-      <tr class="sum2"><td class="l" colspan="2">Raw avg</td><td></td>${statCells(c.l5raw)}</tr></table>
+      <tr class="sum"><td class="l" colspan="2">L5 per 36</td><td>${f1(c.l5raw.min)}</td>${statCells(c.l5p36)}</tr>
+      <tr class="sum2"><td class="l" colspan="2">L10 per 36 ${nTag(c.minParts.n10, 10)}</td><td>${f1(c.minParts.l10)}</td>${statCells(c.l10q)}</tr>
+      <tr class="sum2"><td class="l" colspan="2">Season per 36 ${nTag(c.minParts.nSeason, 10)}</td><td>${f1(c.minParts.season)}</td>${statCells(c.seasonQ)}</tr>
+      <tr class="sum2"><td class="l" colspan="2">L5 raw avg</td><td></td>${statCells(c.l5raw)}</tr></table>
       <div class="rates">USG L5 ${pc(r.usg5)} · FGA ${f1(r.fgaPg)}/g, ${f1(r.fga36)}/36 · 3PA ${f1(r.tpaPg)}/g, ${f1(r.tpa36)}/36 · FTA ${f1(r.fta36)}/36<br>
       FG% L5 ${pc(r.s5.fg)} · L${r.s10.n} ${pc(r.s10.fg)} · season ${pc(r.sSeason.fg)} &nbsp; 3P% L5 ${pc(r.s5.tp)} · L${r.s10.n} ${pc(r.s10.tp)} · season ${pc(r.sSeason.tp)} &nbsp; FT% season ${pc(r.sSeason.ft)}</div>` : '<div class="empty">n=0 — no games this season.</div>'}</div>`;
 
@@ -203,7 +226,20 @@ function renderCard(c, g) {
   const S = L.summary;
   const srow = (lab, k) => `<tr class="sum2"><td class="l" colspan="3">${lab}</td>${STATS.map(s => `<td>${f1(S[s][k])}</td>`).join('')}<td></td></tr>`;
   const hits = STATS.map(s => `${SL[s]} ${S[s].hits.map(h => `${h.t}+ ${h.k}/${L.n}`).join(', ')}`).join(' · ');
-  const line2 = `<div class="sec"><div class="sech">2 · ${esc(opp)} vs last 5 ${c.pos}s ${nTag(L.n)} <span class="badge b-mod">MODELED BUCKET</span><span class="sub">primary ${c.pos} each game, raw</span></div>
+  const QL = { fga: 'FGA', tpa: '3PA', fta: 'FTA', reb: 'REB', ast: 'AST', stl: 'STL', blk: 'BLK' };
+  const tv = BOARD.ctx.tvp[c.oid], lgP = BOARD.ctx.tvpLg[c.pos];
+  const F = c.opFactors;
+  const frow = (lab, fn, cls = 'sum2') => `<tr class="${cls}"><td class="l">${lab}</td>${QSTATS.map(q => `<td>${fn(q)}</td>`).join('')}</tr>`;
+  const seasonTable = F && tv && tv.gp ? `<table class="t"><tr><th class="l">${esc(opp)} vs ${c.pos}</th>${QSTATS.map(q => `<th>${QL[q]}</th>`).join('')}</tr>
+      ${frow(`${esc(opp)} allows /36 at ${c.pos}`, q => f1(tv[c.pos].per36[q]))}
+      ${frow(`League /36 at ${c.pos}`, q => f1(lgP.per36[q]))}
+      ${frow('Factor (pace-neutral)', q => F[q].raw != null ? F[q].raw.toFixed(2) : '–')}
+      ${frow(`Shrunk GP/(GP+${PROJ.oppPriorGames})`, q => F[q].season.toFixed(2))}
+      ${frow('Defender adj.', q => F[q].def.toFixed(2))}
+      ${frow('Applied to own form', q => `<b>×${F[q].total.toFixed(2)}</b>`, 'sum')}</table>` : `<div class="empty">n=0 — no completed games for ${esc(opp)} yet; input dropped.</div>`;
+  const line2 = `<div class="sec"><div class="sech">2 · Opponent positional — full season (drives the projection) <span class="badge ${tv && tv.gp < SMALL_GP ? 'b-warn' : 'b-n'}">GP ${tv ? tv.gp : 0}${tv && tv.gp < SMALL_GP ? ' · SMALL SAMPLE' : ''}</span> <span class="badge b-mod">MODELED BUCKET</span></div>
+    ${seasonTable}
+    <div class="sech" style="margin-top:6px">${esc(opp)} vs last 5 ${c.pos}s — context only, not in the projection ${nTag(L.n)}<span class="sub">primary ${c.pos} each game, raw</span></div>
     ${L.n ? `<table class="t"><tr><th class="l">Date</th><th class="l">Player</th><th>MIN</th>${STH}<th class="l"></th></tr>${l2rows}
       <tr class="sum"><td class="l" colspan="3">Per 36 (both sides)</td>${statCells(L.p36)}<td></td></tr>
       ${srow('Avg', 'avg')}${srow('Median', 'med')}${srow('High', 'hi')}${srow('Low', 'lo')}
@@ -211,7 +247,7 @@ function renderCard(c, g) {
       <div class="hits">Hits: ${hits}</div>` : `<div class="empty">n=0 — no ${c.pos} found in ${esc(opp)}'s recent box scores.</div>`}
     ${(() => {
       const own = L.used.filter(x => x.pid === c.pid);
-      const fl = own.length ? [...L.flags, `Includes his own game${own.length > 1 ? 's' : ''} vs ${opp} (${own.map(x => md(x.date)).join(', ')}) — the same game also appears in line 3, so it counts twice in the blend`] : L.flags;
+      const fl = own.length ? [...L.flags, `Includes his own game${own.length > 1 ? 's' : ''} vs ${opp} (${own.map(x => md(x.date)).join(', ')}) — the same game also appears in line 3 (this log is context only now, so it is not double-counted)`] : L.flags;
       return fl.length ? `<ul class="flags">${fl.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '';
     })()}</div>`;
 
@@ -244,10 +280,10 @@ function renderCard(c, g) {
 
   return `<article class="card ${scr.length ? 'has-flag' : ''}">
     <div class="chead"><span class="pname">${esc(c.name)}</span><span class="ppos">${pos}</span>${status}${rest}${ret}
-      <span class="pmin">MIN <b>${f1(c.finalMin)}</b> <span>(${minParts.join(' ')})</span></span></div>
+      <span class="pmin" title="${esc(minTitle)}">MIN <b>${f1(c.finalMin)}</b> <span>(${minParts.join(' ')})</span></span></div>
     <div class="proj">${proj}</div>
     <div class="cbody">
-      ${blend}
+      ${blend}${attempts}${paceTxt}${defTxt}
       ${allNotes.length ? `<ul class="notes">${allNotes.join('')}</ul>` : ''}
       ${line1}${line2}${line3}
     </div>
@@ -265,7 +301,7 @@ let rT = null;
 function onWeights() {
   for (const k of ['vt', 'l5', 'op']) W[k] = +$('#w-' + k).value;
   syncWeights();
-  try { localStorage.setItem('nba-board-weights', JSON.stringify(W)); } catch (e) { }
+  try { localStorage.setItem('nba-board-weights-v2', JSON.stringify(W)); } catch (e) { }
   clearTimeout(rT);
   rT = setTimeout(() => { const y = window.scrollY; render(); window.scrollTo(0, y); }, 120);
 }
@@ -296,4 +332,5 @@ function scheduleMorning() {
   if (q && /^\d{4}-\d{2}-\d{2}$/.test(q)) FOLLOW_TODAY = false;
   build(FOLLOW_TODAY ? etNowParts().date : q);
   scheduleMorning();
+  loadAccuracy();
 })();

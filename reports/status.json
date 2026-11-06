@@ -1,26 +1,27 @@
 {
-  "checkedAt": "2026-11-03 14:16 ET",
+  "checkedAt": "2026-11-06 14:37 ET",
   "plan": {
     "monthlyCredits": 500,
     "resetDay": 1,
     "budgetMode": true
   },
-  "board": "ESPN reachable — 0 games on 2026-11-03",
-  "odds": "connected — key accepted, 9 upcoming NBA events listed",
+  "board": "ESPN reachable — 9 games on 2026-11-06",
+  "odds": "connected — key accepted, 13 upcoming NBA events listed",
   "probe": {
-    "event": "Philadelphia 76ers @ Detroit Pistons",
-    "tip": "2026-11-05T00:00:00Z",
+    "event": "Washington Wizards @ Atlanta Hawks",
+    "tip": "2026-11-07T00:10:00Z",
     "creditsUsed": 1,
     "booksWithProps": [
       "FanDuel",
+      "DraftKings",
       "BetMGM"
     ],
-    "playersPriced": 10,
+    "playersPriced": 13,
     "result": "player props returned — plan includes props"
   },
   "quota": {
-    "remaining": 497,
-    "used": 3
+    "remaining": 471,
+    "used": 29
   },
   "booksOnPlan": {
     "creditsUsed": 1,

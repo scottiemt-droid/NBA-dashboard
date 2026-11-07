@@ -1,0 +1,72 @@
+{
+ "401909938": {
+  "label": "DEN VS IND",
+  "tip": "2026-11-07T22:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "DEN -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909939": {
+  "label": "BKN @ ATL",
+  "tip": "2026-11-08T00:30Z",
+  "open": {
+   "total": 226.5,
+   "spread": "ATL -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909940": {
+  "label": "NY @ CLE",
+  "tip": "2026-11-08T01:00Z",
+  "open": {
+   "total": 224.5,
+   "spread": "NY -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909941": {
+  "label": "WSH @ OKC",
+  "tip": "2026-11-08T01:00Z",
+  "open": {
+   "total": 220.5,
+   "spread": "OKC -11.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909942": {
+  "label": "ORL @ GS",
+  "tip": "2026-11-08T01:30Z",
+  "open": {
+   "total": 220.5,
+   "spread": "GS -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909943": {
+  "label": "HOU @ PHX",
+  "tip": "2026-11-08T02:00Z",
+  "open": {
+   "total": 221.5,
+   "spread": "HOU -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ },
+ "401909944": {
+  "label": "SA @ POR",
+  "tip": "2026-11-08T03:00Z",
+  "open": {
+   "total": 227.5,
+   "spread": "SA -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T10:42:58.564Z"
+  }
+ }
+}

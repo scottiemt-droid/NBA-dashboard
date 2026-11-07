@@ -37,7 +37,15 @@
    "spread": "DAL -6.5",
    "provider": "DraftKings",
    "at": "2026-11-06T19:33:38.745Z"
-  }
+  },
+  "close": {
+   "total": 225.5,
+   "spread": "DAL -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T00:30:22.355Z"
+  },
+  "closeMinsBeforeTip": 30,
+  "closeFinal": false
  },
  "401909291": {
   "label": "OKC @ MEM",
@@ -47,7 +55,15 @@
    "spread": "OKC -4.5",
    "provider": "DraftKings",
    "at": "2026-11-06T19:33:38.745Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "OKC -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T00:30:22.355Z"
+  },
+  "closeMinsBeforeTip": 30,
+  "closeFinal": false
  },
  "401909292": {
   "label": "TOR @ MIL",
@@ -57,7 +73,15 @@
    "spread": "TOR -4.5",
    "provider": "DraftKings",
    "at": "2026-11-06T19:33:38.745Z"
-  }
+  },
+  "close": {
+   "total": 228.5,
+   "spread": "TOR -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T00:30:22.355Z"
+  },
+  "closeMinsBeforeTip": 30,
+  "closeFinal": false
  },
  "401909293": {
   "label": "MIN @ NO",
@@ -67,7 +91,15 @@
    "spread": "MIN -3.5",
    "provider": "DraftKings",
    "at": "2026-11-06T19:33:38.745Z"
-  }
+  },
+  "close": {
+   "total": 230.5,
+   "spread": "MIN -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-07T00:30:22.355Z"
+  },
+  "closeMinsBeforeTip": 30,
+  "closeFinal": false
  },
  "401909294": {
   "label": "POR @ LAL",

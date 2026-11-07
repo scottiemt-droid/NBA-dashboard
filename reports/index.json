@@ -22,5 +22,11 @@
     "file": "1430-morning.html",
     "label": "14:30 ET — Morning scan (flags only)",
     "summary": "41 flagged, parlay"
+  },
+  {
+    "date": "2026-11-07",
+    "file": "1246-morning.html",
+    "label": "12:46 ET — Morning scan (flags only)",
+    "summary": "48 flagged, parlay"
   }
 ]

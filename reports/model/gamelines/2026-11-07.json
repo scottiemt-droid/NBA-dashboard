@@ -67,6 +67,14 @@
    "spread": "SA -6.5",
    "provider": "DraftKings",
    "at": "2026-11-07T10:42:58.564Z"
-  }
+  },
+  "close": {
+   "total": 228.5,
+   "spread": "SA -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-08T02:18:26.063Z"
+  },
+  "closeMinsBeforeTip": 42,
+  "closeFinal": false
  }
 }

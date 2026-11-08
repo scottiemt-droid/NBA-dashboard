@@ -27,7 +27,15 @@
    "spread": "MIN -11.5",
    "provider": "Draft Kings",
    "at": "2026-11-08T10:40:12.141Z"
-  }
+  },
+  "close": {
+   "total": 222.5,
+   "spread": "MIN -11.5",
+   "provider": "DraftKings",
+   "at": "2026-11-08T23:05:44.774Z"
+  },
+  "closeMinsBeforeTip": 54,
+  "closeFinal": false
  },
  "401909948": {
   "label": "BKN @ DAL",

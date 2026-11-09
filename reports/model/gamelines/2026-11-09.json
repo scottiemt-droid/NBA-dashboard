@@ -7,7 +7,15 @@
    "spread": "LAL -1.5",
    "provider": "DraftKings",
    "at": "2026-11-09T12:10:55.303Z"
-  }
+  },
+  "close": {
+   "total": 233.5,
+   "spread": "ATL -2.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-09T23:45:38.463Z"
+  },
+  "closeMinsBeforeTip": 14,
+  "closeFinal": true
  },
  "401909953": {
   "label": "CLE @ CHA",
@@ -17,7 +25,15 @@
    "spread": "CLE -9.5",
    "provider": "DraftKings",
    "at": "2026-11-09T12:10:55.303Z"
-  }
+  },
+  "close": {
+   "total": 215.5,
+   "spread": "CLE -8.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-09T23:45:38.463Z"
+  },
+  "closeMinsBeforeTip": 14,
+  "closeFinal": true
  },
  "401909954": {
   "label": "WSH @ DET",
@@ -27,7 +43,15 @@
    "spread": "DET -10.5",
    "provider": "DraftKings",
    "at": "2026-11-09T12:10:55.303Z"
-  }
+  },
+  "close": {
+   "total": 218.5,
+   "spread": "DET -9.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-09T23:45:38.463Z"
+  },
+  "closeMinsBeforeTip": 14,
+  "closeFinal": true
  },
  "401909955": {
   "label": "MEM @ TOR",
@@ -37,7 +61,15 @@
    "spread": "TOR -3.5",
    "provider": "DraftKings",
    "at": "2026-11-09T12:10:55.303Z"
-  }
+  },
+  "close": {
+   "total": 225.5,
+   "spread": "MEM -1.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-09T23:45:38.463Z"
+  },
+  "closeMinsBeforeTip": 44,
+  "closeFinal": false
  },
  "401909956": {
   "label": "IND @ DAL",

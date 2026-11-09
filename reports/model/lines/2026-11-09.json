@@ -1,0 +1,1037 @@
+{
+  "401909953|3908809|pts": {
+    "name": "Donovan Mitchell",
+    "open": {
+      "line": 23.5,
+      "books": 3,
+      "proj": 23.98,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|3908809|tpm": {
+    "name": "Donovan Mitchell",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 2.8,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|3992|pts": {
+    "name": "James Harden",
+    "open": {
+      "line": 16.5,
+      "books": 3,
+      "proj": 15,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|3992|tpm": {
+    "name": "James Harden",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 1.82,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4432158|pts": {
+    "name": "Evan Mobley",
+    "open": {
+      "line": 17.5,
+      "books": 3,
+      "proj": 17.01,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4432158|tpm": {
+    "name": "Evan Mobley",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.88,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4576087|pts": {
+    "name": "Peyton Watson",
+    "open": {
+      "line": 12.5,
+      "books": 3,
+      "proj": 14.99,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4576087|tpm": {
+    "name": "Peyton Watson",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.26,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4066328|pts": {
+    "name": "Jarrett Allen",
+    "open": {
+      "line": 11.5,
+      "books": 3,
+      "proj": 11.57,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4396971|pts": {
+    "name": "Naz Reid",
+    "open": {
+      "line": 19.5,
+      "books": 3,
+      "proj": 22.85,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4396971|tpm": {
+    "name": "Naz Reid",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 2.92,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|3135045|pts": {
+    "name": "Grayson Allen",
+    "open": {
+      "line": 16.5,
+      "books": 3,
+      "proj": 18.1,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|3135045|tpm": {
+    "name": "Grayson Allen",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 4.03,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4602025|pts": {
+    "name": "Sion James",
+    "open": {
+      "line": 6.5,
+      "books": 3,
+      "proj": 8.41,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4602025|tpm": {
+    "name": "Sion James",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.45,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|2583632|pts": {
+    "name": "Royce O'Neale",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 6.96,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|2583632|tpm": {
+    "name": "Royce O'Neale",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 1.83,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4576060|pts": {
+    "name": "Ryan Kalkbrenner",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 6.36,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4395651|pts": {
+    "name": "Coby White",
+    "open": {
+      "line": 14.5,
+      "books": 3,
+      "proj": 13.66,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909953|4395651|tpm": {
+    "name": "Coby White",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 2.2,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4432166|reb": {
+    "name": "Cade Cunningham",
+    "open": {
+      "line": 5.5,
+      "books": 3,
+      "proj": 5.67,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4432166|tpm": {
+    "name": "Cade Cunningham",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 1.96,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|3157465|reb": {
+    "name": "Duncan Robinson",
+    "open": {
+      "line": 2.5,
+      "books": 2,
+      "proj": 1.98,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|3157465|tpm": {
+    "name": "Duncan Robinson",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 3.9,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4278562|reb": {
+    "name": "Paul Reed",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 7.14,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4684742|reb": {
+    "name": "Ausar Thompson",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 8.66,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|3908845|reb": {
+    "name": "John Collins",
+    "open": {
+      "line": 5.5,
+      "books": 3,
+      "proj": 5.1,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5107199|reb": {
+    "name": "Daniss Jenkins",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 3.15,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5107199|tpm": {
+    "name": "Daniss Jenkins",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.91,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4066372|tpm": {
+    "name": "Kevin Huerter",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.73,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4277905|reb": {
+    "name": "Trae Young",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 3.06,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|4277905|tpm": {
+    "name": "Trae Young",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.67,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5174563|reb": {
+    "name": "Kyshawn George",
+    "open": {
+      "line": 4.5,
+      "books": 3,
+      "proj": 4.52,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5174563|tpm": {
+    "name": "Kyshawn George",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 2.26,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|6583|reb": {
+    "name": "Anthony Davis",
+    "open": {
+      "line": 9.5,
+      "books": 3,
+      "proj": 9.39,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5142718|reb": {
+    "name": "AJ Dybantsa",
+    "open": {
+      "line": 5.5,
+      "books": 3,
+      "proj": 5.99,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5142718|tpm": {
+    "name": "AJ Dybantsa",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 0.98,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5160992|reb": {
+    "name": "Alex Sarr",
+    "open": {
+      "line": 6.5,
+      "books": 3,
+      "proj": 7.7,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909954|5160992|tpm": {
+    "name": "Alex Sarr",
+    "open": {
+      "line": 1.5,
+      "books": 2,
+      "proj": 0.97,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4433134|pts": {
+    "name": "Scottie Barnes",
+    "open": {
+      "line": 23.5,
+      "books": 3,
+      "proj": 23.54,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4433134|reb": {
+    "name": "Scottie Barnes",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 7.33,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4395724|pts": {
+    "name": "Immanuel Quickley",
+    "open": {
+      "line": 18.5,
+      "books": 3,
+      "proj": 14.75,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4395724|reb": {
+    "name": "Immanuel Quickley",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 3.77,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4684272|pts": {
+    "name": "Ja'Kobe Walter",
+    "open": {
+      "line": 12.5,
+      "books": 3,
+      "proj": 11.01,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4684272|reb": {
+    "name": "Ja'Kobe Walter",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 4.13,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5093267|pts": {
+    "name": "Collin Murray-Boyles",
+    "open": {
+      "line": 12.5,
+      "books": 3,
+      "proj": 12.57,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5093267|reb": {
+    "name": "Collin Murray-Boyles",
+    "open": {
+      "line": 6.5,
+      "books": 3,
+      "proj": 5.34,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|3134908|pts": {
+    "name": "Jakob Poeltl",
+    "open": {
+      "line": 10.5,
+      "books": 3,
+      "proj": 6.53,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|3134908|reb": {
+    "name": "Jakob Poeltl",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 6.13,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5041935|pts": {
+    "name": "Cameron Boozer",
+    "open": {
+      "line": 16.5,
+      "books": 3,
+      "proj": 17.4,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5041935|reb": {
+    "name": "Cameron Boozer",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 10.66,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4065733|pts": {
+    "name": "Ty Jerome",
+    "open": {
+      "line": 21.5,
+      "books": 3,
+      "proj": 27.32,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4065733|reb": {
+    "name": "Ty Jerome",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 3.63,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4903027|pts": {
+    "name": "Cedric Coward",
+    "open": {
+      "line": 13.5,
+      "books": 3,
+      "proj": 14.95,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4903027|reb": {
+    "name": "Cedric Coward",
+    "open": {
+      "line": 6.5,
+      "books": 3,
+      "proj": 7.7,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5112087|pts": {
+    "name": "Jaylen Wells",
+    "open": {
+      "line": 9.5,
+      "books": 3,
+      "proj": 9.96,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|5112087|reb": {
+    "name": "Jaylen Wells",
+    "open": {
+      "line": 2.5,
+      "books": 2,
+      "proj": 2.66,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|2991070|pts": {
+    "name": "Jerami Grant",
+    "open": {
+      "line": 10.5,
+      "books": 3,
+      "proj": 10.1,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|2991070|reb": {
+    "name": "Jerami Grant",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 1.81,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4433083|pts": {
+    "name": "Cam Spencer",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 9.55,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4433083|reb": {
+    "name": "Cam Spencer",
+    "open": {
+      "line": 2.5,
+      "books": 2,
+      "proj": 4.12,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4600663|pts": {
+    "name": "Zach Edey",
+    "open": {
+      "line": 9.5,
+      "books": 3,
+      "proj": 10.49,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909955|4600663|reb": {
+    "name": "Zach Edey",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 10.52,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3936299|pts": {
+    "name": "Jamal Murray",
+    "open": {
+      "line": 21.5,
+      "books": 3,
+      "proj": 24.02,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3936299|tpm": {
+    "name": "Jamal Murray",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 3.26,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3112335|pts": {
+    "name": "Nikola Jokic",
+    "open": {
+      "line": 24.5,
+      "books": 3,
+      "proj": 23.75,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3112335|tpm": {
+    "name": "Nikola Jokic",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.22,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4431767|pts": {
+    "name": "Christian Braun",
+    "open": {
+      "line": 10.5,
+      "books": 3,
+      "proj": 12.55,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4431767|tpm": {
+    "name": "Christian Braun",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.52,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3064290|pts": {
+    "name": "Aaron Gordon",
+    "open": {
+      "line": 12.5,
+      "books": 3,
+      "proj": 11.79,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3064290|tpm": {
+    "name": "Aaron Gordon",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.26,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3138196|pts": {
+    "name": "Cameron Johnson",
+    "open": {
+      "line": 11.5,
+      "books": 3,
+      "proj": 9.88,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3138196|tpm": {
+    "name": "Cameron Johnson",
+    "open": {
+      "line": 1.5,
+      "books": 2,
+      "proj": 1.69,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3978|pts": {
+    "name": "DeMar DeRozan",
+    "open": {
+      "line": 11.5,
+      "books": 3,
+      "proj": 11.32,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3978|tpm": {
+    "name": "DeMar DeRozan",
+    "open": {
+      "line": 0.5,
+      "books": 2,
+      "proj": 0.49,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4592427|pts": {
+    "name": "Spencer Jones",
+    "open": {
+      "line": 4.5,
+      "books": 2,
+      "proj": 6.16,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4432639|pts": {
+    "name": "Jabari Smith Jr.",
+    "open": {
+      "line": 15.5,
+      "books": 3,
+      "proj": 16.68,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4432639|tpm": {
+    "name": "Jabari Smith Jr.",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 2.78,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4871144|pts": {
+    "name": "Alperen Sengun",
+    "open": {
+      "line": 20.5,
+      "books": 3,
+      "proj": 21.86,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4871144|tpm": {
+    "name": "Alperen Sengun",
+    "open": {
+      "line": 0.5,
+      "books": 1,
+      "proj": 0.65,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3202|pts": {
+    "name": "Kevin Durant",
+    "open": {
+      "line": 20.5,
+      "books": 3,
+      "proj": 19.68,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|3202|tpm": {
+    "name": "Kevin Durant",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.37,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4684740|pts": {
+    "name": "Amen Thompson",
+    "open": {
+      "line": 15.5,
+      "books": 3,
+      "proj": 15.59,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|2991230|pts": {
+    "name": "Fred VanVleet",
+    "open": {
+      "line": 11.5,
+      "books": 3,
+      "proj": 13.51,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|2991230|tpm": {
+    "name": "Fred VanVleet",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 2.8,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4433192|pts": {
+    "name": "Tari Eason",
+    "open": {
+      "line": 9.5,
+      "books": 3,
+      "proj": 13.39,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|4433192|tpm": {
+    "name": "Tari Eason",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.41,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|2990992|pts": {
+    "name": "Marcus Smart",
+    "open": {
+      "line": 6.5,
+      "books": 3,
+      "proj": 9.22,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909957|2990992|tpm": {
+    "name": "Marcus Smart",
+    "open": {
+      "line": 1.5,
+      "books": 3,
+      "proj": 1.89,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|3907497|pts": {
+    "name": "Dejounte Murray",
+    "open": {
+      "line": 18.5,
+      "books": 2,
+      "proj": 15.92,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|3907497|reb": {
+    "name": "Dejounte Murray",
+    "open": {
+      "line": 5.5,
+      "books": 2,
+      "proj": 4.38,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|5144091|pts": {
+    "name": "Jeremiah Fears",
+    "open": {
+      "line": 17.5,
+      "books": 2,
+      "proj": 19.96,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|5144091|reb": {
+    "name": "Jeremiah Fears",
+    "open": {
+      "line": 4.5,
+      "books": 2,
+      "proj": 5.48,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4397136|pts": {
+    "name": "Saddiq Bey",
+    "open": {
+      "line": 18.5,
+      "books": 2,
+      "proj": 19.59,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4397136|reb": {
+    "name": "Saddiq Bey",
+    "open": {
+      "line": 5.5,
+      "books": 1,
+      "proj": 5.66,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4869780|pts": {
+    "name": "Derik Queen",
+    "open": {
+      "line": 12.5,
+      "books": 2,
+      "proj": 14.84,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4869780|reb": {
+    "name": "Derik Queen",
+    "open": {
+      "line": 7.5,
+      "books": 1,
+      "proj": 8.45,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4997538|pts": {
+    "name": "Karlo Matkovic",
+    "open": {
+      "line": 8.5,
+      "books": 2,
+      "proj": 10.9,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4997538|reb": {
+    "name": "Karlo Matkovic",
+    "open": {
+      "line": 4.5,
+      "books": 2,
+      "proj": 5.98,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4683634|pts": {
+    "name": "Bennedict Mathurin",
+    "open": {
+      "line": 9.5,
+      "books": 1,
+      "proj": 8.71,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4683634|reb": {
+    "name": "Bennedict Mathurin",
+    "open": {
+      "line": 3.5,
+      "books": 1,
+      "proj": 2.42,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4709138|pts": {
+    "name": "Brandin Podziemski",
+    "open": {
+      "line": 15.5,
+      "books": 3,
+      "proj": 16.72,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4709138|reb": {
+    "name": "Brandin Podziemski",
+    "open": {
+      "line": 5.5,
+      "books": 3,
+      "proj": 6.06,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|5175737|pts": {
+    "name": "Yaxel Lendeborg",
+    "open": {
+      "line": 19.5,
+      "books": 3,
+      "proj": 18.53,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|5175737|reb": {
+    "name": "Yaxel Lendeborg",
+    "open": {
+      "line": 7.5,
+      "books": 3,
+      "proj": 6.29,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|3975|pts": {
+    "name": "Stephen Curry",
+    "open": {
+      "line": 28.5,
+      "books": 3,
+      "proj": 29.59,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|3975|reb": {
+    "name": "Stephen Curry",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 4.41,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|6589|pts": {
+    "name": "Draymond Green",
+    "open": {
+      "line": 5.5,
+      "books": 2,
+      "proj": 5.79,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|6589|reb": {
+    "name": "Draymond Green",
+    "open": {
+      "line": 5.5,
+      "books": 3,
+      "proj": 6.17,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4066436|pts": {
+    "name": "De'Anthony Melton",
+    "open": {
+      "line": 9.5,
+      "books": 3,
+      "proj": 18.28,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4066436|reb": {
+    "name": "De'Anthony Melton",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 5.35,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|2990969|pts": {
+    "name": "Georges Niang",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 8.32,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|2990969|reb": {
+    "name": "Georges Niang",
+    "open": {
+      "line": 2.5,
+      "books": 3,
+      "proj": 3.43,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4997536|pts": {
+    "name": "Gui Santos",
+    "open": {
+      "line": 8.5,
+      "books": 3,
+      "proj": 7.32,
+      "at": "2026-11-09 17:29"
+    }
+  },
+  "401909959|4997536|reb": {
+    "name": "Gui Santos",
+    "open": {
+      "line": 3.5,
+      "books": 3,
+      "proj": 3.89,
+      "at": "2026-11-09 17:29"
+    }
+  }
+}

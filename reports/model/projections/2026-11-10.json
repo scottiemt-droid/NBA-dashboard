@@ -1,0 +1,7172 @@
+{
+ "date": "2026-11-10",
+ "at": "2026-11-10T13:33:46.943Z",
+ "weights": {
+  "vt": 30,
+  "l5": 40,
+  "op": 30
+ },
+ "boxScores": 154,
+ "games": [
+  {
+   "gid": "401909960",
+   "label": "MIL @ NY",
+   "tip": "2026-11-11T00:30Z",
+   "modelTotal": 222.48,
+   "modelMargin": 11.58,
+   "pace": 100.36,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 220.5,
+    "spread": "NY -15.5"
+   }
+  },
+  {
+   "gid": "401909961",
+   "label": "BOS @ PHI",
+   "tip": "2026-11-11T01:00Z",
+   "modelTotal": 217.81,
+   "modelMargin": -1.33,
+   "pace": 100.83,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 218.5,
+    "spread": "BOS -1.5"
+   }
+  },
+  {
+   "gid": "401909962",
+   "label": "LAC @ PHX",
+   "tip": "2026-11-11T02:00Z",
+   "modelTotal": 227.41,
+   "modelMargin": 0.26,
+   "pace": 100.08,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 224.5,
+    "spread": "PHX -3.5"
+   }
+  },
+  {
+   "gid": "401909963",
+   "label": "MIA @ UTAH",
+   "tip": "2026-11-11T02:00Z",
+   "modelTotal": 226.8,
+   "modelMargin": -0.89,
+   "pace": 103.99,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 227.5,
+    "spread": "MIA -9.5"
+   }
+  },
+  {
+   "gid": "401909964",
+   "label": "ORL @ SAC",
+   "tip": "2026-11-11T03:00Z",
+   "modelTotal": 226.22,
+   "modelMargin": 0.26,
+   "pace": 100.57,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 222.5,
+    "spread": "ORL -6.5"
+   }
+  },
+  {
+   "gid": "401909965",
+   "label": "OKC @ POR",
+   "tip": "2026-11-11T04:00Z",
+   "modelTotal": 224.13,
+   "modelMargin": 0.9,
+   "pace": 103.44,
+   "paceSource": "market",
+   "marketAtSnapshot": {
+    "total": 226.5,
+    "spread": "OKC -1.5"
+   }
+  }
+ ],
+ "rows": [
+  {
+   "gid": "401909960",
+   "pid": "4395725",
+   "name": "Tyler Herro",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "PG",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 30.65,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 27.4
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 18.19,
+    "reb": 3.87,
+    "ast": 3.6,
+    "tpm": 2.65,
+    "stl": 0.79,
+    "blk": 0.06,
+    "fga": 14.17,
+    "tpa": 6.85,
+    "fta": 3.42
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 18.52,
+     "reb": 3.84,
+     "ast": 3.66,
+     "tpm": 2.7,
+     "stl": 0.81,
+     "blk": 0.06,
+     "fga": 14.42,
+     "tpa": 6.98,
+     "fta": 3.49
+    },
+    "op": {
+     "pts": 17.75,
+     "reb": 3.92,
+     "ast": 3.52,
+     "tpm": 2.58,
+     "stl": 0.75,
+     "blk": 0.07,
+     "fga": 13.83,
+     "tpa": 6.67,
+     "fta": 3.34
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3133628",
+   "name": "Myles Turner",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 27.45,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 24.2
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.25,
+    "reb": 4.73,
+    "ast": 2.45,
+    "tpm": 1.38,
+    "stl": 0.46,
+    "blk": 2.08,
+    "fga": 6.73,
+    "tpa": 4.66,
+    "fta": 1.26
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.53,
+     "reb": 4.17,
+     "ast": 1.67,
+     "tpm": 1.57,
+     "stl": 0.28,
+     "blk": 1.67,
+     "fga": 6.67,
+     "tpa": 5.28,
+     "fta": 3.06
+    },
+    "l5": {
+     "pts": 6.89,
+     "reb": 5.18,
+     "ast": 2.59,
+     "tpm": 1.16,
+     "stl": 0.58,
+     "blk": 2.13,
+     "fga": 6.86,
+     "tpa": 3.92,
+     "fta": 0.52
+    },
+    "op": {
+     "pts": 6.43,
+     "reb": 4.7,
+     "ast": 3.05,
+     "tpm": 1.49,
+     "stl": 0.48,
+     "blk": 2.41,
+     "fga": 6.61,
+     "tpa": 5.03,
+     "fta": 0.44
+    }
+   },
+   "n": {
+    "vt": 3,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "4432848",
+   "name": "Jaime Jaquez Jr.",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 27.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 23.95
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.69,
+    "reb": 4.36,
+    "ast": 2.55,
+    "tpm": 1.44,
+    "stl": 0.45,
+    "blk": 0.13,
+    "fga": 9.94,
+    "tpa": 3.65,
+    "fta": 2.4
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 12.41,
+     "reb": 4.54,
+     "ast": 2.33,
+     "tpm": 1.37,
+     "stl": 0.46,
+     "blk": 0.11,
+     "fga": 9.67,
+     "tpa": 3.47,
+     "fta": 2.44
+    },
+    "op": {
+     "pts": 13.07,
+     "reb": 4.11,
+     "ast": 2.83,
+     "tpm": 1.53,
+     "stl": 0.43,
+     "blk": 0.15,
+     "fga": 10.3,
+     "tpa": 3.89,
+     "fta": 2.36
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909960",
+   "pid": "3134907",
+   "name": "Kyle Kuzma",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 27.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 23.95
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.14,
+    "reb": 4.03,
+    "ast": 2.31,
+    "tpm": 1.55,
+    "stl": 0.81,
+    "blk": 0.18,
+    "fga": 8.36,
+    "tpa": 4.57,
+    "fta": 1.5
+   },
+   "inputs": {
+    "vt": {
+     "pts": 10.65,
+     "reb": 3.72,
+     "ast": 1.86,
+     "tpm": 1.26,
+     "stl": 0.62,
+     "blk": 0,
+     "fga": 7.86,
+     "tpa": 3.72,
+     "fta": 2.9
+    },
+    "l5": {
+     "pts": 9.7,
+     "reb": 4.34,
+     "ast": 2.29,
+     "tpm": 1.59,
+     "stl": 0.92,
+     "blk": 0.23,
+     "fga": 8.35,
+     "tpa": 4.69,
+     "fta": 0.92
+    },
+    "op": {
+     "pts": 10.23,
+     "reb": 3.93,
+     "ast": 2.78,
+     "tpm": 1.78,
+     "stl": 0.87,
+     "blk": 0.29,
+     "fga": 8.89,
+     "tpa": 5.25,
+     "fta": 0.89
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909960",
+   "pid": "5082206",
+   "name": "Brayden Burries",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 24.1,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 20.85
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.49,
+    "reb": 5.35,
+    "ast": 2.06,
+    "tpm": 0.99,
+    "stl": 0.38,
+    "blk": 0.26,
+    "fga": 8.05,
+    "tpa": 3.59,
+    "fta": 3.17
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 10.33,
+     "reb": 5.35,
+     "ast": 2.17,
+     "tpm": 0.96,
+     "stl": 0.42,
+     "blk": 0.23,
+     "fga": 7.93,
+     "tpa": 3.47,
+     "fta": 3.1
+    },
+    "op": {
+     "pts": 10.69,
+     "reb": 5.35,
+     "ast": 1.92,
+     "tpm": 1.04,
+     "stl": 0.32,
+     "blk": 0.31,
+     "fga": 8.2,
+     "tpa": 3.75,
+     "fta": 3.28
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "4591725",
+   "name": "Ryan Rollins",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 21.75,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.75
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.46,
+    "reb": 3.76,
+    "ast": 3.78,
+    "tpm": 1.2,
+    "stl": 0.62,
+    "blk": 0.29,
+    "fga": 8.58,
+    "tpa": 3.53,
+    "fta": 1.41
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.36,
+     "reb": 2.77,
+     "ast": 3.23,
+     "tpm": 0.94,
+     "stl": 0.46,
+     "blk": 0,
+     "fga": 7.85,
+     "tpa": 2.77,
+     "fta": 0.92
+    },
+    "l5": {
+     "pts": 10.11,
+     "reb": 4.15,
+     "ast": 4.08,
+     "tpm": 1.33,
+     "stl": 0.71,
+     "blk": 0.38,
+     "fga": 9.05,
+     "tpa": 3.93,
+     "fta": 1.65
+    },
+    "op": {
+     "pts": 9.7,
+     "reb": 4.23,
+     "ast": 3.92,
+     "tpm": 1.27,
+     "stl": 0.65,
+     "blk": 0.46,
+     "fga": 8.68,
+     "tpa": 3.75,
+     "fta": 1.58
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "4397475",
+   "name": "AJ Green",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 20.65,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 20.65
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.65,
+    "reb": 1.81,
+    "ast": 1.17,
+    "tpm": 1.96,
+    "stl": 0.04,
+    "blk": 0.21,
+    "fga": 5.37,
+    "tpa": 4.85,
+    "fta": 0.28
+   },
+   "inputs": {
+    "vt": {
+     "pts": 5.21,
+     "reb": 1.58,
+     "ast": 0.4,
+     "tpm": 1.6,
+     "stl": 0,
+     "blk": 0,
+     "fga": 4.35,
+     "tpa": 3.95,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 7.15,
+     "reb": 1.9,
+     "ast": 1.57,
+     "tpm": 2.05,
+     "stl": 0.07,
+     "blk": 0.26,
+     "fga": 5.72,
+     "tpa": 5.06,
+     "fta": 0.39
+    },
+    "op": {
+     "pts": 7.44,
+     "reb": 1.91,
+     "ast": 1.39,
+     "tpm": 2.21,
+     "stl": 0.05,
+     "blk": 0.35,
+     "fga": 5.91,
+     "tpa": 5.46,
+     "fta": 0.41
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "5105623",
+   "name": "Kel'el Ware",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 16.55,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 16.55
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.27,
+    "reb": 5.89,
+    "ast": 0.84,
+    "tpm": 0.88,
+    "stl": 0.42,
+    "blk": 0.96,
+    "fga": 7.57,
+    "tpa": 3.24,
+    "fta": 1.43
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 8.55,
+     "reb": 6.14,
+     "ast": 0.78,
+     "tpm": 0.78,
+     "stl": 0.45,
+     "blk": 0.91,
+     "fga": 7.69,
+     "tpa": 2.89,
+     "fta": 1.52
+    },
+    "op": {
+     "pts": 7.9,
+     "reb": 5.57,
+     "ast": 0.91,
+     "tpm": 1.01,
+     "stl": 0.37,
+     "blk": 1.03,
+     "fga": 7.41,
+     "tpa": 3.71,
+     "fta": 1.3
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "5214640",
+   "name": "Kasparas Jakucionis",
+   "team": "MIL",
+   "opp": "NY",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 16.5,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 16.5
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.46,
+    "reb": 2.28,
+    "ast": 2.88,
+    "tpm": 0.62,
+    "stl": 0.35,
+    "blk": 0.06,
+    "fga": 3.94,
+    "tpa": 2.16,
+    "fta": 1.93
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.56,
+     "reb": 2.26,
+     "ast": 2.93,
+     "tpm": 0.63,
+     "stl": 0.36,
+     "blk": 0.06,
+     "fga": 4.02,
+     "tpa": 2.21,
+     "fta": 1.97
+    },
+    "op": {
+     "pts": 5.33,
+     "reb": 2.31,
+     "ast": 2.82,
+     "tpm": 0.6,
+     "stl": 0.34,
+     "blk": 0.07,
+     "fga": 3.85,
+     "tpa": 2.11,
+     "fta": 1.88
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3934672",
+   "name": "Jalen Brunson",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 33.54,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 30.29
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 23.99,
+    "reb": 3.03,
+    "ast": 5.38,
+    "tpm": 2.59,
+    "stl": 0.72,
+    "blk": 0.14,
+    "fga": 18.94,
+    "tpa": 7.15,
+    "fta": 6.47
+   },
+   "inputs": {
+    "vt": {
+     "pts": 23.51,
+     "reb": 3.49,
+     "ast": 4.78,
+     "tpm": 2.14,
+     "stl": 0.92,
+     "blk": 0,
+     "fga": 18.94,
+     "tpa": 5.88,
+     "fta": 6.07
+    },
+    "l5": {
+     "pts": 24.22,
+     "reb": 2.78,
+     "ast": 5.29,
+     "tpm": 2.71,
+     "stl": 0.64,
+     "blk": 0.2,
+     "fga": 18.91,
+     "tpa": 7.45,
+     "fta": 6.76
+    },
+    "op": {
+     "pts": 24.17,
+     "reb": 2.9,
+     "ast": 6.12,
+     "tpm": 2.9,
+     "stl": 0.64,
+     "blk": 0.21,
+     "fga": 18.99,
+     "tpa": 8,
+     "fta": 6.49
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3934719",
+   "name": "OG Anunoby",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 32.66,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 29.41
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.57,
+    "reb": 4.46,
+    "ast": 2.37,
+    "tpm": 1.88,
+    "stl": 1.21,
+    "blk": 0.59,
+    "fga": 11.34,
+    "tpa": 6.07,
+    "fta": 5.29
+   },
+   "inputs": {
+    "vt": {
+     "pts": 15.59,
+     "reb": 3.31,
+     "ast": 3.13,
+     "tpm": 2.05,
+     "stl": 1.66,
+     "blk": 0.74,
+     "fga": 12.15,
+     "tpa": 6.63,
+     "fta": 4.42
+    },
+    "l5": {
+     "pts": 15.34,
+     "reb": 4.85,
+     "ast": 2.08,
+     "tpm": 1.78,
+     "stl": 1.09,
+     "blk": 0.46,
+     "fga": 10.78,
+     "tpa": 5.75,
+     "fta": 5.67
+    },
+    "op": {
+     "pts": 15.85,
+     "reb": 5.07,
+     "ast": 2,
+     "tpm": 1.84,
+     "stl": 0.91,
+     "blk": 0.64,
+     "fga": 11.3,
+     "tpa": 5.94,
+     "fta": 5.66
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909960",
+   "pid": "3136195",
+   "name": "Karl-Anthony Towns",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 31.48,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 28.23
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 17.52,
+    "reb": 11.96,
+    "ast": 2.64,
+    "tpm": 1.39,
+    "stl": 0.72,
+    "blk": 0.32,
+    "fga": 12.15,
+    "tpa": 3.46,
+    "fta": 3.89
+   },
+   "inputs": {
+    "vt": {
+     "pts": 16.15,
+     "reb": 10.67,
+     "ast": 1.86,
+     "tpm": 0.95,
+     "stl": 0.68,
+     "blk": 0.34,
+     "fga": 11,
+     "tpa": 2.37,
+     "fta": 3.89
+    },
+    "l5": {
+     "pts": 17.61,
+     "reb": 12.13,
+     "ast": 2.89,
+     "tpm": 1.6,
+     "stl": 0.64,
+     "blk": 0.33,
+     "fga": 12.27,
+     "tpa": 3.99,
+     "fta": 3.81
+    },
+    "op": {
+     "pts": 18.77,
+     "reb": 13.03,
+     "ast": 3.09,
+     "tpm": 1.54,
+     "stl": 0.85,
+     "blk": 0.29,
+     "fga": 13.13,
+     "tpa": 3.85,
+     "fta": 3.99
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3062679",
+   "name": "Josh Hart",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "SG",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 31.46,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 28.21
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.27,
+    "reb": 6.99,
+    "ast": 3.83,
+    "tpm": 1.49,
+    "stl": 1.91,
+    "blk": 0.29,
+    "fga": 7.03,
+    "tpa": 4.33,
+    "fta": 1.27
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.37,
+     "reb": 8.29,
+     "ast": 4.74,
+     "tpm": 1.05,
+     "stl": 1.52,
+     "blk": 0.34,
+     "fga": 6.94,
+     "tpa": 3.05,
+     "fta": 2.88
+    },
+    "l5": {
+     "pts": 7.72,
+     "reb": 6.33,
+     "ast": 3.46,
+     "tpm": 1.66,
+     "stl": 1.94,
+     "blk": 0.23,
+     "fga": 7.03,
+     "tpa": 4.83,
+     "fta": 0.56
+    },
+    "op": {
+     "pts": 7.88,
+     "reb": 6.57,
+     "ast": 3.41,
+     "tpm": 1.71,
+     "stl": 2.24,
+     "blk": 0.31,
+     "fga": 7.14,
+     "tpa": 4.95,
+     "fta": 0.62
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3914044",
+   "name": "Landry Shamet",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 25.87,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 3.25,
+    "final": 22.62
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.89,
+    "reb": 1.21,
+    "ast": 1.67,
+    "tpm": 2.17,
+    "stl": 0.49,
+    "blk": 0.32,
+    "fga": 6.87,
+    "tpa": 5.51,
+    "fta": 1.28
+   },
+   "inputs": {
+    "vt": {
+     "pts": 10.12,
+     "reb": 1.29,
+     "ast": 1.72,
+     "tpm": 2.71,
+     "stl": 0.86,
+     "blk": 0.43,
+     "fga": 8.17,
+     "tpa": 6.88,
+     "fta": 0.86
+    },
+    "l5": {
+     "pts": 8.27,
+     "reb": 1.16,
+     "ast": 1.65,
+     "tpm": 1.91,
+     "stl": 0.31,
+     "blk": 0.25,
+     "fga": 6.27,
+     "tpa": 4.86,
+     "fta": 1.39
+    },
+    "op": {
+     "pts": 8.51,
+     "reb": 1.2,
+     "ast": 1.63,
+     "tpm": 1.96,
+     "stl": 0.36,
+     "blk": 0.32,
+     "fga": 6.37,
+     "tpa": 4.99,
+     "fta": 1.55
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "3147657",
+   "name": "Mikal Bridges",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 24.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 24.2
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.6,
+    "reb": 3.29,
+    "ast": 2.1,
+    "tpm": 1.08,
+    "stl": 0.9,
+    "blk": 0.64,
+    "fga": 7.59,
+    "tpa": 3.56,
+    "fta": 0.59
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 7.53,
+     "reb": 3.24,
+     "ast": 2.11,
+     "tpm": 1.06,
+     "stl": 0.84,
+     "blk": 0.56,
+     "fga": 7.54,
+     "tpa": 3.52,
+     "fta": 0.56
+    },
+    "op": {
+     "pts": 7.69,
+     "reb": 3.37,
+     "ast": 2.08,
+     "tpm": 1.09,
+     "stl": 0.97,
+     "blk": 0.74,
+     "fga": 7.66,
+     "tpa": 3.61,
+     "fta": 0.63
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "4431823",
+   "name": "Miles McBride",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 16.87,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 16.87
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.73,
+    "reb": 1.8,
+    "ast": 0.85,
+    "tpm": 1.69,
+    "stl": 0.91,
+    "blk": 0.4,
+    "fga": 5.52,
+    "tpa": 4.25,
+    "fta": 0.46
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.67,
+     "reb": 1.78,
+     "ast": 0.86,
+     "tpm": 1.67,
+     "stl": 0.85,
+     "blk": 0.36,
+     "fga": 5.48,
+     "tpa": 4.2,
+     "fta": 0.44
+    },
+    "op": {
+     "pts": 6.81,
+     "reb": 1.84,
+     "ast": 0.85,
+     "tpm": 1.71,
+     "stl": 0.98,
+     "blk": 0.47,
+     "fga": 5.57,
+     "tpa": 4.31,
+     "fta": 0.49
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "6585",
+   "name": "Andre Drummond",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 13.16,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 13.16
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.74,
+    "reb": 8.37,
+    "ast": 0.84,
+    "tpm": 0.03,
+    "stl": 0.41,
+    "blk": 0.54,
+    "fga": 4.86,
+    "tpa": 0.08,
+    "fta": 1.33
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.58,
+     "reb": 8.11,
+     "ast": 0.82,
+     "tpm": 0.03,
+     "stl": 0.36,
+     "blk": 0.57,
+     "fga": 4.72,
+     "tpa": 0.08,
+     "fta": 1.3
+    },
+    "op": {
+     "pts": 5.95,
+     "reb": 8.71,
+     "ast": 0.87,
+     "tpm": 0.02,
+     "stl": 0.48,
+     "blk": 0.5,
+     "fga": 5.05,
+     "tpa": 0.07,
+     "fta": 1.36
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909960",
+   "pid": "4433225",
+   "name": "Tyler Kolek",
+   "team": "NY",
+   "opp": "MIL",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 12.31,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 12.31
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 3.26,
+    "reb": 1.36,
+    "ast": 4.57,
+    "tpm": 0.68,
+    "stl": 0.48,
+    "blk": 0,
+    "fga": 3.19,
+    "tpa": 2.13,
+    "fta": 0.14
+   },
+   "inputs": {
+    "vt": {
+     "pts": 4.43,
+     "reb": 0.53,
+     "ast": 2.64,
+     "tpm": 0.93,
+     "stl": 0.53,
+     "blk": 0,
+     "fga": 4.49,
+     "tpa": 2.9,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 2.76,
+     "reb": 1.69,
+     "ast": 5.06,
+     "tpm": 0.56,
+     "stl": 0.46,
+     "blk": 0,
+     "fga": 2.63,
+     "tpa": 1.75,
+     "fta": 0.2
+    },
+    "op": {
+     "pts": 2.75,
+     "reb": 1.76,
+     "ast": 5.85,
+     "tpm": 0.6,
+     "stl": 0.46,
+     "blk": 0,
+     "fga": 2.64,
+     "tpa": 1.87,
+     "fta": 0.19
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "4065648",
+   "name": "Jayson Tatum",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 32.79,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 32.79
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 24.7,
+    "reb": 6.94,
+    "ast": 7.08,
+    "tpm": 2.51,
+    "stl": 0.75,
+    "blk": 0.46,
+    "fga": 17.57,
+    "tpa": 7.79,
+    "fta": 8.34
+   },
+   "inputs": {
+    "vt": {
+     "pts": 19.04,
+     "reb": 9.55,
+     "ast": 6.13,
+     "tpm": 2.62,
+     "stl": 0.9,
+     "blk": 0,
+     "fga": 15.14,
+     "tpa": 8.11,
+     "fta": 4.69
+    },
+    "l5": {
+     "pts": 27.48,
+     "reb": 6.01,
+     "ast": 7.81,
+     "tpm": 2.45,
+     "stl": 0.73,
+     "blk": 0.65,
+     "fga": 19.27,
+     "tpa": 7.59,
+     "fta": 9.54
+    },
+    "op": {
+     "pts": 26.67,
+     "reb": 5.57,
+     "ast": 7.04,
+     "tpm": 2.5,
+     "stl": 0.63,
+     "blk": 0.66,
+     "fga": 17.72,
+     "tpa": 7.74,
+     "fta": 10.4
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "3078576",
+   "name": "Derrick White",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 30.1,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 30.1
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.23,
+    "reb": 3.4,
+    "ast": 4.39,
+    "tpm": 1.88,
+    "stl": 1.24,
+    "blk": 0.89,
+    "fga": 10.88,
+    "tpa": 5.63,
+    "fta": 2.13
+   },
+   "inputs": {
+    "vt": {
+     "pts": 12.23,
+     "reb": 3.08,
+     "ast": 2.22,
+     "tpm": 2.17,
+     "stl": 0.85,
+     "blk": 1.37,
+     "fga": 10.09,
+     "tpa": 6.5,
+     "fta": 2.05
+    },
+    "l5": {
+     "pts": 13.67,
+     "reb": 3.28,
+     "ast": 5.27,
+     "tpm": 1.83,
+     "stl": 1.44,
+     "blk": 0.61,
+     "fga": 11.28,
+     "tpa": 5.47,
+     "fta": 2.12
+    },
+    "op": {
+     "pts": 13.66,
+     "reb": 3.89,
+     "ast": 5.4,
+     "tpm": 1.66,
+     "stl": 1.37,
+     "blk": 0.77,
+     "fga": 11.14,
+     "tpa": 4.96,
+     "fta": 2.23
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "4251",
+   "name": "Paul George",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 29.56,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.56
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 19.67,
+    "reb": 4.94,
+    "ast": 4.16,
+    "tpm": 3.39,
+    "stl": 2.25,
+    "blk": 0.58,
+    "fga": 15.29,
+    "tpa": 8.34,
+    "fta": 2.81
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 20.14,
+     "reb": 5.1,
+     "ast": 4.34,
+     "tpm": 3.36,
+     "stl": 2.39,
+     "blk": 0.57,
+     "fga": 15.84,
+     "tpa": 8.27,
+     "fta": 2.7
+    },
+    "op": {
+     "pts": 19.03,
+     "reb": 4.73,
+     "ast": 3.91,
+     "tpm": 3.43,
+     "stl": 2.06,
+     "blk": 0.58,
+     "fga": 14.56,
+     "tpa": 8.43,
+     "fta": 2.95
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4066354",
+   "name": "Payton Pritchard",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 26,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 26
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.57,
+    "reb": 3.67,
+    "ast": 3.96,
+    "tpm": 2.12,
+    "stl": 0.65,
+    "blk": 0.16,
+    "fga": 10.37,
+    "tpa": 5.98,
+    "fta": 2.07
+   },
+   "inputs": {
+    "vt": {
+     "pts": 12.51,
+     "reb": 2.83,
+     "ast": 3.93,
+     "tpm": 2.34,
+     "stl": 0.31,
+     "blk": 0,
+     "fga": 11.33,
+     "tpa": 6.61,
+     "fta": 0.79
+    },
+    "l5": {
+     "pts": 12.61,
+     "reb": 3.73,
+     "ast": 3.93,
+     "tpm": 2.11,
+     "stl": 0.81,
+     "blk": 0.2,
+     "fga": 10.01,
+     "tpa": 5.95,
+     "fta": 2.56
+    },
+    "op": {
+     "pts": 12.58,
+     "reb": 4.42,
+     "ast": 4.03,
+     "tpm": 1.91,
+     "stl": 0.77,
+     "blk": 0.25,
+     "fga": 9.88,
+     "tpa": 5.4,
+     "fta": 2.7
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "4397424",
+   "name": "Neemias Queta",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 22.75,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 22.75
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.43,
+    "reb": 8.22,
+    "ast": 1.42,
+    "tpm": 0.1,
+    "stl": 0.16,
+    "blk": 1.22,
+    "fga": 6.8,
+    "tpa": 0.27,
+    "fta": 2.92
+   },
+   "inputs": {
+    "vt": {
+     "pts": 7.72,
+     "reb": 11.1,
+     "ast": 0.64,
+     "tpm": 0,
+     "stl": 0.21,
+     "blk": 1.07,
+     "fga": 5.33,
+     "tpa": 0,
+     "fta": 2.77
+    },
+    "l5": {
+     "pts": 9.91,
+     "reb": 6.91,
+     "ast": 1.79,
+     "tpm": 0.13,
+     "stl": 0.14,
+     "blk": 1.25,
+     "fga": 7.18,
+     "tpa": 0.34,
+     "fta": 3.02
+    },
+    "op": {
+     "pts": 10.49,
+     "reb": 7.09,
+     "ast": 1.7,
+     "tpm": 0.17,
+     "stl": 0.12,
+     "blk": 1.33,
+     "fga": 7.76,
+     "tpa": 0.45,
+     "fta": 2.93
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4065804",
+   "name": "Sam Hauser",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 21.1,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.1
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.05,
+    "reb": 3.01,
+    "ast": 0.91,
+    "tpm": 1.99,
+    "stl": 0.18,
+    "blk": 0.1,
+    "fga": 6.11,
+    "tpa": 5.16,
+    "fta": 0
+   },
+   "inputs": {
+    "vt": {
+     "pts": 7.15,
+     "reb": 3.69,
+     "ast": 0.58,
+     "tpm": 1.8,
+     "stl": 0,
+     "blk": 0,
+     "fga": 6.22,
+     "tpa": 4.66,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 7.24,
+     "reb": 2.8,
+     "ast": 1.09,
+     "tpm": 2.06,
+     "stl": 0.27,
+     "blk": 0.14,
+     "fga": 6.28,
+     "tpa": 5.33,
+     "fta": 0
+    },
+    "op": {
+     "pts": 6.68,
+     "reb": 2.6,
+     "ast": 0.98,
+     "tpm": 2.1,
+     "stl": 0.24,
+     "blk": 0.14,
+     "fga": 5.78,
+     "tpa": 5.43,
+     "fta": 0
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4593841",
+   "name": "Baylor Scheierman",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 21.05,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.05
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.53,
+    "reb": 4.41,
+    "ast": 1.21,
+    "tpm": 1.51,
+    "stl": 0.9,
+    "blk": 0,
+    "fga": 5.47,
+    "tpa": 3.84,
+    "fta": 0.41
+   },
+   "inputs": {
+    "vt": {
+     "pts": 6.6,
+     "reb": 5.08,
+     "ast": 1.2,
+     "tpm": 2,
+     "stl": 1.49,
+     "blk": 0,
+     "fga": 5.68,
+     "tpa": 5.08,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 6.49,
+     "reb": 4.15,
+     "ast": 1.25,
+     "tpm": 1.33,
+     "stl": 0.7,
+     "blk": 0,
+     "fga": 5.39,
+     "tpa": 3.38,
+     "fta": 0.55
+    },
+    "op": {
+     "pts": 6.52,
+     "reb": 4.1,
+     "ast": 1.18,
+     "tpm": 1.26,
+     "stl": 0.58,
+     "blk": 0,
+     "fga": 5.38,
+     "tpa": 3.2,
+     "fta": 0.63
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4351852",
+   "name": "Mitchell Robinson",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 18.03,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 18.03
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.71,
+    "reb": 6.04,
+    "ast": 0.64,
+    "tpm": 0,
+    "stl": 0.8,
+    "blk": 0.81,
+    "fga": 4.69,
+    "tpa": 0,
+    "fta": 2
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.54,
+     "reb": 5.98,
+     "ast": 0.65,
+     "tpm": 0,
+     "stl": 0.86,
+     "blk": 0.79,
+     "fga": 4.53,
+     "tpa": 0,
+     "fta": 2.02
+    },
+    "op": {
+     "pts": 6.94,
+     "reb": 6.13,
+     "ast": 0.62,
+     "tpm": 0,
+     "stl": 0.71,
+     "blk": 0.84,
+     "fga": 4.9,
+     "tpa": 0,
+     "fta": 1.96
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4277951",
+   "name": "Luka Garza",
+   "team": "BOS",
+   "opp": "PHI",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 15,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 15
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.98,
+    "reb": 4,
+    "ast": 1.63,
+    "tpm": 1.4,
+    "stl": 0.28,
+    "blk": 0.5,
+    "fga": 5.65,
+    "tpa": 3.2,
+    "fta": 2.02
+   },
+   "inputs": {
+    "vt": {
+     "pts": 6.66,
+     "reb": 2.44,
+     "ast": 1.74,
+     "tpm": 1.22,
+     "stl": 0,
+     "blk": 0.35,
+     "fga": 4.88,
+     "tpa": 2.79,
+     "fta": 1.39
+    },
+    "l5": {
+     "pts": 8.23,
+     "reb": 4.61,
+     "ast": 1.62,
+     "tpm": 1.3,
+     "stl": 0.43,
+     "blk": 0.56,
+     "fga": 5.78,
+     "tpa": 2.97,
+     "fta": 2.31
+    },
+    "op": {
+     "pts": 8.95,
+     "reb": 4.73,
+     "ast": 1.54,
+     "tpm": 1.71,
+     "stl": 0.36,
+     "blk": 0.59,
+     "fga": 6.24,
+     "tpa": 3.91,
+     "fta": 2.25
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 11
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4431678",
+   "name": "Tyrese Maxey",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 35.77,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 35.77
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 23.86,
+    "reb": 3.97,
+    "ast": 5.39,
+    "tpm": 2.48,
+    "stl": 1.03,
+    "blk": 0.53,
+    "fga": 17.55,
+    "tpa": 7.05,
+    "fta": 5.63
+   },
+   "inputs": {
+    "vt": {
+     "pts": 21.53,
+     "reb": 4.86,
+     "ast": 4.86,
+     "tpm": 2.3,
+     "stl": 0.84,
+     "blk": 0.67,
+     "fga": 17.28,
+     "tpa": 6.54,
+     "fta": 3.19
+    },
+    "l5": {
+     "pts": 25.21,
+     "reb": 3.46,
+     "ast": 5.74,
+     "tpm": 2.54,
+     "stl": 1.16,
+     "blk": 0.47,
+     "fga": 18,
+     "tpa": 7.23,
+     "fta": 6.66
+    },
+    "op": {
+     "pts": 24.39,
+     "reb": 3.74,
+     "ast": 5.44,
+     "tpm": 2.58,
+     "stl": 1.05,
+     "blk": 0.46,
+     "fga": 17.23,
+     "tpa": 7.33,
+     "fta": 6.7
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "3917376",
+   "name": "Jaylen Brown",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 35.65,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 35.65
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 22.65,
+    "reb": 6.57,
+    "ast": 4.14,
+    "tpm": 2.07,
+    "stl": 1.21,
+    "blk": 0.31,
+    "fga": 17.76,
+    "tpa": 5.49,
+    "fta": 5.04
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 22.19,
+     "reb": 6.62,
+     "ast": 3.86,
+     "tpm": 1.98,
+     "stl": 1.18,
+     "blk": 0.33,
+     "fga": 17.42,
+     "tpa": 5.24,
+     "fta": 4.91
+    },
+    "op": {
+     "pts": 23.27,
+     "reb": 6.52,
+     "ast": 4.5,
+     "tpm": 2.2,
+     "stl": 1.24,
+     "blk": 0.29,
+     "fga": 18.21,
+     "tpa": 5.81,
+     "fta": 5.2
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "5124612",
+   "name": "VJ Edgecombe",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 33.95,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 33.95
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.15,
+    "reb": 5.94,
+    "ast": 3.03,
+    "tpm": 1.93,
+    "stl": 1.38,
+    "blk": 0.41,
+    "fga": 11.22,
+    "tpa": 5.15,
+    "fta": 1.31
+   },
+   "inputs": {
+    "vt": {
+     "pts": 12.5,
+     "reb": 5.88,
+     "ast": 2.69,
+     "tpm": 2.14,
+     "stl": 0.5,
+     "blk": 0.5,
+     "fga": 10.42,
+     "tpa": 5.71,
+     "fta": 1.51
+    },
+    "l5": {
+     "pts": 13.16,
+     "reb": 6.01,
+     "ast": 2.97,
+     "tpm": 1.75,
+     "stl": 1.71,
+     "blk": 0.4,
+     "fga": 11.34,
+     "tpa": 4.69,
+     "fta": 1.19
+    },
+    "op": {
+     "pts": 13.79,
+     "reb": 5.92,
+     "ast": 3.46,
+     "tpm": 1.95,
+     "stl": 1.8,
+     "blk": 0.35,
+     "fga": 11.85,
+     "tpa": 5.2,
+     "fta": 1.26
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "1966",
+   "name": "LeBron James",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 32.74,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 32.74
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.92,
+    "reb": 7,
+    "ast": 6.21,
+    "tpm": 1.18,
+    "stl": 1.25,
+    "blk": 0.76,
+    "fga": 13.27,
+    "tpa": 3.99,
+    "fta": 3.8
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 15.85,
+     "reb": 7.15,
+     "ast": 6.53,
+     "tpm": 1.06,
+     "stl": 1.34,
+     "blk": 0.71,
+     "fga": 13.07,
+     "tpa": 3.57,
+     "fta": 3.89
+    },
+    "op": {
+     "pts": 16.02,
+     "reb": 6.79,
+     "ast": 5.78,
+     "tpm": 1.34,
+     "stl": 1.12,
+     "blk": 0.83,
+     "fga": 13.53,
+     "tpa": 4.55,
+     "fta": 3.67
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "3059318",
+   "name": "Joel Embiid",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 30.44,
+    "restCut": 0,
+    "vacated": 5.1,
+    "blowout": 0,
+    "final": 35.54
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 22.41,
+    "reb": 10.05,
+    "ast": 5.03,
+    "tpm": 0.85,
+    "stl": 0.76,
+    "blk": 0.85,
+    "fga": 17.68,
+    "tpa": 3.88,
+    "fta": 7.4
+   },
+   "inputs": {
+    "vt": {
+     "pts": 26.52,
+     "reb": 8.6,
+     "ast": 6.35,
+     "tpm": 0.99,
+     "stl": 0.41,
+     "blk": 1.02,
+     "fga": 20.67,
+     "tpa": 4.5,
+     "fta": 9.01
+    },
+    "l5": {
+     "pts": 21.48,
+     "reb": 10.85,
+     "ast": 4.46,
+     "tpm": 0.77,
+     "stl": 0.89,
+     "blk": 0.81,
+     "fga": 16.69,
+     "tpa": 3.49,
+     "fta": 7.29
+    },
+    "op": {
+     "pts": 19.54,
+     "reb": 10.45,
+     "ast": 4.49,
+     "tpm": 0.83,
+     "stl": 0.92,
+     "blk": 0.73,
+     "fga": 16.01,
+     "tpa": 3.76,
+     "fta": 5.93
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "3912848",
+   "name": "Dean Wade",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 23.79,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 23.79
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 3.5,
+    "reb": 3.3,
+    "ast": 2.28,
+    "tpm": 0.6,
+    "stl": 1.21,
+    "blk": 0.37,
+    "fga": 2.92,
+    "tpa": 1.78,
+    "fta": 0.65
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 3.48,
+     "reb": 3.18,
+     "ast": 2.14,
+     "tpm": 0.58,
+     "stl": 1.26,
+     "blk": 0.42,
+     "fga": 2.9,
+     "tpa": 1.73,
+     "fta": 0.63
+    },
+    "op": {
+     "pts": 3.52,
+     "reb": 3.46,
+     "ast": 2.47,
+     "tpm": 0.62,
+     "stl": 1.14,
+     "blk": 0.31,
+     "fga": 2.93,
+     "tpa": 1.83,
+     "fta": 0.66
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909961",
+   "pid": "4351851",
+   "name": "Anfernee Simons",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 20.26,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 20.26
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.64,
+    "reb": 1.91,
+    "ast": 1.41,
+    "tpm": 1.97,
+    "stl": 0.58,
+    "blk": 0.11,
+    "fga": 7.05,
+    "tpa": 5.24,
+    "fta": 1.21
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 8.44,
+     "reb": 1.92,
+     "ast": 1.31,
+     "tpm": 1.88,
+     "stl": 0.56,
+     "blk": 0.12,
+     "fga": 6.92,
+     "tpa": 5,
+     "fta": 1.18
+    },
+    "op": {
+     "pts": 8.89,
+     "reb": 1.89,
+     "ast": 1.53,
+     "tpm": 2.09,
+     "stl": 0.59,
+     "blk": 0.1,
+     "fga": 7.23,
+     "tpa": 5.55,
+     "fta": 1.25
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "2581018",
+   "name": "Kentavious Caldwell-Pope",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 19.88,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 19.88
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 4.24,
+    "reb": 2.39,
+    "ast": 1.2,
+    "tpm": 1,
+    "stl": 0.6,
+    "blk": 0.39,
+    "fga": 3.19,
+    "tpa": 2.35,
+    "fta": 0.44
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 4.15,
+     "reb": 2.41,
+     "ast": 1.12,
+     "tpm": 0.96,
+     "stl": 0.59,
+     "blk": 0.42,
+     "fga": 3.13,
+     "tpa": 2.24,
+     "fta": 0.43
+    },
+    "op": {
+     "pts": 4.37,
+     "reb": 2.37,
+     "ast": 1.3,
+     "tpm": 1.06,
+     "stl": 0.62,
+     "blk": 0.36,
+     "fga": 3.27,
+     "tpa": 2.49,
+     "fta": 0.45
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909961",
+   "pid": "4432446",
+   "name": "Jabari Walker",
+   "team": "PHI",
+   "opp": "BOS",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 12.33,
+    "restCut": 0,
+    "vacated": 5.1,
+    "blowout": 0,
+    "final": 17.43
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.37,
+    "reb": 4.61,
+    "ast": 1.1,
+    "tpm": 0.73,
+    "stl": 0.17,
+    "blk": 0,
+    "fga": 5.61,
+    "tpa": 2.17,
+    "fta": 1.8
+   },
+   "inputs": {
+    "vt": {
+     "pts": 5.88,
+     "reb": 1.66,
+     "ast": 1.66,
+     "tpm": 1.12,
+     "stl": 0,
+     "blk": 0,
+     "fga": 5.54,
+     "tpa": 3.32,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 8.29,
+     "reb": 5.97,
+     "ast": 0.86,
+     "tpm": 0.55,
+     "stl": 0.23,
+     "blk": 0,
+     "fga": 5.74,
+     "tpa": 1.63,
+     "fta": 2.79
+    },
+    "op": {
+     "pts": 7.64,
+     "reb": 5.76,
+     "ast": 0.86,
+     "tpm": 0.59,
+     "stl": 0.24,
+     "blk": 0,
+     "fga": 5.5,
+     "tpa": 1.75,
+     "fta": 2.27
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4396907",
+   "name": "Darius Garland",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 33.88,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 33.88
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 20.68,
+    "reb": 1.48,
+    "ast": 6.85,
+    "tpm": 2.55,
+    "stl": 0.62,
+    "blk": 0,
+    "fga": 15.11,
+    "tpa": 6.99,
+    "fta": 5.13
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 20.41,
+     "reb": 1.41,
+     "ast": 7.02,
+     "tpm": 2.44,
+     "stl": 0.64,
+     "blk": 0,
+     "fga": 15.03,
+     "tpa": 6.7,
+     "fta": 4.91
+    },
+    "op": {
+     "pts": 21.04,
+     "reb": 1.58,
+     "ast": 6.61,
+     "tpm": 2.69,
+     "stl": 0.59,
+     "blk": 0,
+     "fga": 15.22,
+     "tpa": 7.39,
+     "fta": 5.43
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4066648",
+   "name": "Rui Hachimura",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 30.01,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 30.01
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.08,
+    "reb": 5.86,
+    "ast": 1.89,
+    "tpm": 2.07,
+    "stl": 0.86,
+    "blk": 0.09,
+    "fga": 13.28,
+    "tpa": 6.02,
+    "fta": 2.51
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 15.16,
+     "reb": 5.74,
+     "ast": 1.7,
+     "tpm": 2.1,
+     "stl": 0.92,
+     "blk": 0.1,
+     "fga": 13.41,
+     "tpa": 6.11,
+     "fta": 2.44
+    },
+    "op": {
+     "pts": 14.96,
+     "reb": 6.01,
+     "ast": 2.16,
+     "tpm": 2.03,
+     "stl": 0.79,
+     "blk": 0.09,
+     "fga": 13.1,
+     "tpa": 5.91,
+     "fta": 2.6
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "3936099",
+   "name": "Derrick Jones Jr.",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 29.74,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.74
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.78,
+    "reb": 4.48,
+    "ast": 1.49,
+    "tpm": 1.64,
+    "stl": 1.18,
+    "blk": 0.71,
+    "fga": 8.02,
+    "tpa": 3.91,
+    "fta": 1.96
+   },
+   "inputs": {
+    "vt": {
+     "pts": 11.36,
+     "reb": 2.99,
+     "ast": 1.38,
+     "tpm": 1.74,
+     "stl": 1.61,
+     "blk": 0.69,
+     "fga": 7.82,
+     "tpa": 4.14,
+     "fta": 2.99
+    },
+    "l5": {
+     "pts": 10.43,
+     "reb": 4.98,
+     "ast": 1.46,
+     "tpm": 1.56,
+     "stl": 0.98,
+     "blk": 0.87,
+     "fga": 8.05,
+     "tpa": 3.71,
+     "fta": 1.5
+    },
+    "op": {
+     "pts": 10.67,
+     "reb": 5.31,
+     "ast": 1.63,
+     "tpm": 1.66,
+     "stl": 1.03,
+     "blk": 0.52,
+     "fga": 8.19,
+     "tpa": 3.95,
+     "fta": 1.56
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "2991139",
+   "name": "Kris Dunn",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 29.59,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.59
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.93,
+    "reb": 3.79,
+    "ast": 3.83,
+    "tpm": 0.94,
+    "stl": 2.22,
+    "blk": 0.28,
+    "fga": 6.4,
+    "tpa": 2.56,
+    "fta": 2.2
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.03,
+     "reb": 2.49,
+     "ast": 3.32,
+     "tpm": 0.99,
+     "stl": 1.87,
+     "blk": 0,
+     "fga": 6.43,
+     "tpa": 2.7,
+     "fta": 2.28
+    },
+    "l5": {
+     "pts": 8.77,
+     "reb": 4.13,
+     "ast": 4.15,
+     "tpm": 0.88,
+     "stl": 2.45,
+     "blk": 0.43,
+     "fga": 6.35,
+     "tpa": 2.39,
+     "fta": 2.08
+    },
+    "op": {
+     "pts": 9.04,
+     "reb": 4.63,
+     "ast": 3.91,
+     "tpm": 0.97,
+     "stl": 2.27,
+     "blk": 0.37,
+     "fga": 6.44,
+     "tpa": 2.64,
+     "fta": 2.29
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4702352",
+   "name": "Kobe Sanders",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 25.26,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 25.26
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.73,
+    "reb": 2.45,
+    "ast": 2.29,
+    "tpm": 1.64,
+    "stl": 0.73,
+    "blk": 0.11,
+    "fga": 8.27,
+    "tpa": 4.58,
+    "fta": 1.05
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.79,
+     "reb": 1.38,
+     "ast": 2.76,
+     "tpm": 1.23,
+     "stl": 0.69,
+     "blk": 0,
+     "fga": 8.27,
+     "tpa": 3.44,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 10.16,
+     "reb": 2.92,
+     "ast": 2.15,
+     "tpm": 1.87,
+     "stl": 0.76,
+     "blk": 0.14,
+     "fga": 8.36,
+     "tpa": 5.22,
+     "fta": 1.43
+    },
+    "op": {
+     "pts": 10.11,
+     "reb": 2.9,
+     "ast": 2.01,
+     "tpm": 1.74,
+     "stl": 0.75,
+     "blk": 0.19,
+     "fga": 8.17,
+     "tpa": 4.87,
+     "fta": 1.61
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909962",
+   "pid": "3448",
+   "name": "Brook Lopez",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 24.24,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 24.24
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.42,
+    "reb": 5.03,
+    "ast": 1.02,
+    "tpm": 1.16,
+    "stl": 0.42,
+    "blk": 1.23,
+    "fga": 9.24,
+    "tpa": 2.99,
+    "fta": 1.99
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.51,
+     "reb": 3.74,
+     "ast": 1.36,
+     "tpm": 1.32,
+     "stl": 0.34,
+     "blk": 1.7,
+     "fga": 7.82,
+     "tpa": 3.4,
+     "fta": 0.34
+    },
+    "l5": {
+     "pts": 13.22,
+     "reb": 5.41,
+     "ast": 0.86,
+     "tpm": 1.18,
+     "stl": 0.49,
+     "blk": 0.92,
+     "fga": 9.57,
+     "tpa": 3.04,
+     "fta": 2.54
+    },
+    "op": {
+     "pts": 14.27,
+     "reb": 5.8,
+     "ast": 0.88,
+     "tpm": 0.98,
+     "stl": 0.42,
+     "blk": 1.18,
+     "fga": 10.2,
+     "tpa": 2.52,
+     "fta": 2.91
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "5254165",
+   "name": "Keaton Wagler",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 21.81,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.81
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.13,
+    "reb": 3.84,
+    "ast": 3.09,
+    "tpm": 1.59,
+    "stl": 0.47,
+    "blk": 0.19,
+    "fga": 7.48,
+    "tpa": 4.24,
+    "fta": 5.26
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 11.86,
+     "reb": 3.65,
+     "ast": 3.17,
+     "tpm": 1.52,
+     "stl": 0.48,
+     "blk": 0.21,
+     "fga": 7.44,
+     "tpa": 4.07,
+     "fta": 5.03
+    },
+    "op": {
+     "pts": 12.49,
+     "reb": 4.09,
+     "ast": 2.98,
+     "tpm": 1.68,
+     "stl": 0.45,
+     "blk": 0.18,
+     "fga": 7.53,
+     "tpa": 4.48,
+     "fta": 5.56
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4065778",
+   "name": "Max Strus",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 21.67,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.67
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.8,
+    "reb": 4.48,
+    "ast": 4.15,
+    "tpm": 2.52,
+    "stl": 0.63,
+    "blk": 0,
+    "fga": 8.89,
+    "tpa": 7.52,
+    "fta": 1.03
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 9.74,
+     "reb": 4.25,
+     "ast": 4.25,
+     "tpm": 2.42,
+     "stl": 0.65,
+     "blk": 0,
+     "fga": 8.84,
+     "tpa": 7.2,
+     "fta": 0.98
+    },
+    "op": {
+     "pts": 9.9,
+     "reb": 4.77,
+     "ast": 4.01,
+     "tpm": 2.67,
+     "stl": 0.61,
+     "blk": 0,
+     "fga": 8.95,
+     "tpa": 7.94,
+     "fta": 1.08
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 3,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4432170",
+   "name": "Isaiah Jackson",
+   "team": "LAC",
+   "opp": "PHX",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 20.76,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 20.76
+   },
+   "pace": 0.98,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.12,
+    "reb": 6.18,
+    "ast": 2.43,
+    "tpm": 0.05,
+    "stl": 1.15,
+    "blk": 0.71,
+    "fga": 6.19,
+    "tpa": 0.14,
+    "fta": 1.83
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 8.15,
+     "reb": 6.06,
+     "ast": 2.18,
+     "tpm": 0.05,
+     "stl": 1.23,
+     "blk": 0.75,
+     "fga": 6.25,
+     "tpa": 0.14,
+     "fta": 1.78
+    },
+    "op": {
+     "pts": 8.07,
+     "reb": 6.34,
+     "ast": 2.77,
+     "tpm": 0.05,
+     "stl": 1.06,
+     "blk": 0.65,
+     "fga": 6.1,
+     "tpa": 0.14,
+     "fta": 1.9
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "3136193",
+   "name": "Devin Booker",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 34.27,
+    "restCut": 1.5,
+    "vacated": 0.67,
+    "blowout": 0,
+    "final": 33.43
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 24.21,
+    "reb": 3.3,
+    "ast": 5.23,
+    "tpm": 1.97,
+    "stl": 1.06,
+    "blk": 0.19,
+    "fga": 17.44,
+    "tpa": 5.54,
+    "fta": 5.85
+   },
+   "inputs": {
+    "vt": {
+     "pts": 20.26,
+     "reb": 5.63,
+     "ast": 7.08,
+     "tpm": 1.81,
+     "stl": 0.73,
+     "blk": 0,
+     "fga": 15.06,
+     "tpa": 5.08,
+     "fta": 4.36
+    },
+    "l5": {
+     "pts": 25.73,
+     "reb": 2.31,
+     "ast": 4.51,
+     "tpm": 2.06,
+     "stl": 1.17,
+     "blk": 0.28,
+     "fga": 18.21,
+     "tpa": 5.77,
+     "fta": 6.61
+    },
+    "op": {
+     "pts": 26.12,
+     "reb": 2.3,
+     "ast": 4.35,
+     "tpm": 2.02,
+     "stl": 1.24,
+     "blk": 0.26,
+     "fga": 18.79,
+     "tpa": 5.68,
+     "fta": 6.34
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "3155526",
+   "name": "Dillon Brooks",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 31.43,
+    "restCut": 1.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.93
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.81,
+    "reb": 3.74,
+    "ast": 1.86,
+    "tpm": 1.93,
+    "stl": 0.87,
+    "blk": 0.14,
+    "fga": 12.33,
+    "tpa": 4.61,
+    "fta": 3.26
+   },
+   "inputs": {
+    "vt": {
+     "pts": 19.39,
+     "reb": 3.3,
+     "ast": 1.98,
+     "tpm": 2.63,
+     "stl": 1.32,
+     "blk": 0,
+     "fga": 14.21,
+     "tpa": 6.28,
+     "fta": 4.96
+    },
+    "l5": {
+     "pts": 14.82,
+     "reb": 3.92,
+     "ast": 1.94,
+     "tpm": 1.75,
+     "stl": 0.69,
+     "blk": 0.21,
+     "fga": 11.93,
+     "tpa": 4.18,
+     "fta": 2.63
+    },
+    "op": {
+     "pts": 13.57,
+     "reb": 3.95,
+     "ast": 1.63,
+     "tpm": 1.47,
+     "stl": 0.67,
+     "blk": 0.21,
+     "fga": 11,
+     "tpa": 3.52,
+     "fta": 2.41
+    }
+   },
+   "n": {
+    "vt": 3,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909962",
+   "pid": "4066383",
+   "name": "Miles Bridges",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 31.23,
+    "restCut": 1.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.73
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.77,
+    "reb": 7.15,
+    "ast": 3.18,
+    "tpm": 1.81,
+    "stl": 1.16,
+    "blk": 0.74,
+    "fga": 11.25,
+    "tpa": 5.55,
+    "fta": 2.36
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 14.37,
+     "reb": 7.45,
+     "ast": 3.27,
+     "tpm": 1.78,
+     "stl": 1.27,
+     "blk": 0.81,
+     "fga": 11.73,
+     "tpa": 5.46,
+     "fta": 2.41
+    },
+    "op": {
+     "pts": 12.97,
+     "reb": 6.76,
+     "ast": 3.06,
+     "tpm": 1.85,
+     "stl": 1.02,
+     "blk": 0.66,
+     "fga": 10.61,
+     "tpa": 5.67,
+     "fta": 2.29
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909962",
+   "pid": "4437244",
+   "name": "Jalen Green",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 29.28,
+    "restCut": 1.5,
+    "vacated": 0.67,
+    "blowout": 0,
+    "final": 28.44
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 16.08,
+    "reb": 3.35,
+    "ast": 3.79,
+    "tpm": 1.68,
+    "stl": 1.1,
+    "blk": 0.47,
+    "fga": 14.42,
+    "tpa": 6.09,
+    "fta": 3.53
+   },
+   "inputs": {
+    "vt": {
+     "pts": 22.97,
+     "reb": 3.77,
+     "ast": 3.77,
+     "tpm": 3.65,
+     "stl": 1.88,
+     "blk": 0,
+     "fga": 21.66,
+     "tpa": 13.19,
+     "fta": 4.71
+    },
+    "l5": {
+     "pts": 13.01,
+     "reb": 3.18,
+     "ast": 3.85,
+     "tpm": 0.85,
+     "stl": 0.75,
+     "blk": 0.69,
+     "fga": 11.17,
+     "tpa": 3.07,
+     "fta": 3.08
+    },
+    "op": {
+     "pts": 13.29,
+     "reb": 3.16,
+     "ast": 3.72,
+     "tpm": 0.84,
+     "stl": 0.8,
+     "blk": 0.64,
+     "fga": 11.53,
+     "tpa": 3.03,
+     "fta": 2.95
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4278585",
+   "name": "Collin Gillespie",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 23.72,
+    "restCut": 0.5,
+    "vacated": 0.67,
+    "blowout": 0,
+    "final": 23.89
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 8.03,
+    "reb": 2.86,
+    "ast": 3.61,
+    "tpm": 1.81,
+    "stl": 1.53,
+    "blk": 0.12,
+    "fga": 8.05,
+    "tpa": 5.81,
+    "fta": 0.47
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.72,
+     "reb": 4.44,
+     "ast": 3.99,
+     "tpm": 2.28,
+     "stl": 0.67,
+     "blk": 0.22,
+     "fga": 9.54,
+     "tpa": 7.32,
+     "fta": 0.89
+    },
+    "l5": {
+     "pts": 7.21,
+     "reb": 2.19,
+     "ast": 3.5,
+     "tpm": 1.62,
+     "stl": 1.86,
+     "blk": 0.07,
+     "fga": 7.31,
+     "tpa": 5.19,
+     "fta": 0.29
+    },
+    "op": {
+     "pts": 7.44,
+     "reb": 2.18,
+     "ast": 3.38,
+     "tpm": 1.6,
+     "stl": 1.97,
+     "blk": 0.07,
+     "fga": 7.54,
+     "tpa": 5.11,
+     "fta": 0.28
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4601023",
+   "name": "Oso Ighodaro",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 21.77,
+    "restCut": 0.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.27
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.08,
+    "reb": 4.62,
+    "ast": 2.58,
+    "tpm": 0,
+    "stl": 0.11,
+    "blk": 0.61,
+    "fga": 4.27,
+    "tpa": 0,
+    "fta": 1.85
+   },
+   "inputs": {
+    "vt": {
+     "pts": 6.06,
+     "reb": 4.3,
+     "ast": 1.43,
+     "tpm": 0,
+     "stl": 0.36,
+     "blk": 0.36,
+     "fga": 4.3,
+     "tpa": 0,
+     "fta": 1.79
+    },
+    "l5": {
+     "pts": 6.32,
+     "reb": 4.96,
+     "ast": 3.15,
+     "tpm": 0,
+     "stl": 0,
+     "blk": 0.78,
+     "fga": 4.45,
+     "tpa": 0,
+     "fta": 1.92
+    },
+    "op": {
+     "pts": 5.77,
+     "reb": 4.5,
+     "ast": 2.95,
+     "tpm": 0,
+     "stl": 0,
+     "blk": 0.64,
+     "fga": 4.02,
+     "tpa": 0,
+     "fta": 1.82
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909962",
+   "pid": "5203685",
+   "name": "Khaman Maluach",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 18.73,
+    "restCut": 0.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 18.23
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.81,
+    "reb": 5.9,
+    "ast": 1.19,
+    "tpm": 0.2,
+    "stl": 0.73,
+    "blk": 0.95,
+    "fga": 4.88,
+    "tpa": 0.56,
+    "fta": 1.61
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.88,
+     "reb": 5.86,
+     "ast": 1.16,
+     "tpm": 0.21,
+     "stl": 0.68,
+     "blk": 0.95,
+     "fga": 4.96,
+     "tpa": 0.61,
+     "fta": 1.57
+    },
+    "op": {
+     "pts": 6.73,
+     "reb": 5.97,
+     "ast": 1.24,
+     "tpm": 0.17,
+     "stl": 0.79,
+     "blk": 0.95,
+     "fga": 4.77,
+     "tpa": 0.5,
+     "fta": 1.66
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909962",
+   "pid": "4888725",
+   "name": "Ryan Dunn",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 18.29,
+    "restCut": 0.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 17.79
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.7,
+    "reb": 3.42,
+    "ast": 1.19,
+    "tpm": 0.82,
+    "stl": 0.69,
+    "blk": 0.61,
+    "fga": 4.79,
+    "tpa": 2.05,
+    "fta": 0.57
+   },
+   "inputs": {
+    "vt": {
+     "pts": 6.75,
+     "reb": 3.27,
+     "ast": 0.82,
+     "tpm": 0.98,
+     "stl": 0.65,
+     "blk": 0.16,
+     "fga": 5.56,
+     "tpa": 2.45,
+     "fta": 0.82
+    },
+    "l5": {
+     "pts": 5.45,
+     "reb": 3.63,
+     "ast": 1.39,
+     "tpm": 0.74,
+     "stl": 0.76,
+     "blk": 0.86,
+     "fga": 4.65,
+     "tpa": 1.84,
+     "fta": 0.48
+    },
+    "op": {
+     "pts": 4.99,
+     "reb": 3.29,
+     "ast": 1.3,
+     "tpm": 0.77,
+     "stl": 0.61,
+     "blk": 0.7,
+     "fga": 4.2,
+     "tpa": 1.91,
+     "fta": 0.45
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909962",
+   "pid": "3913174",
+   "name": "Luke Kennard",
+   "team": "PHX",
+   "opp": "LAC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 16.04,
+    "restCut": 0.5,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 15.54
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.44,
+    "reb": 1.19,
+    "ast": 1.79,
+    "tpm": 1.69,
+    "stl": 0.09,
+    "blk": 0,
+    "fga": 4.82,
+    "tpa": 4.07,
+    "fta": 0.66
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.42,
+     "reb": 1.22,
+     "ast": 1.71,
+     "tpm": 1.7,
+     "stl": 0.08,
+     "blk": 0,
+     "fga": 4.83,
+     "tpa": 4.09,
+     "fta": 0.62
+    },
+    "op": {
+     "pts": 6.47,
+     "reb": 1.16,
+     "ast": 1.9,
+     "tpm": 1.68,
+     "stl": 0.1,
+     "blk": 0,
+     "fga": 4.81,
+     "tpa": 4.04,
+     "fta": 0.72
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4278053",
+   "name": "Davion Mitchell",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 36.25,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 36.25
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.89,
+    "reb": 2.11,
+    "ast": 7.7,
+    "tpm": 1.69,
+    "stl": 0.93,
+    "blk": 0.42,
+    "fga": 9.88,
+    "tpa": 4.4,
+    "fta": 3.58
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.96,
+     "reb": 2.32,
+     "ast": 5.79,
+     "tpm": 0.44,
+     "stl": 0,
+     "blk": 0,
+     "fga": 3.47,
+     "tpa": 1.16,
+     "fta": 6.95
+    },
+    "l5": {
+     "pts": 15.61,
+     "reb": 1.99,
+     "ast": 8.77,
+     "tpm": 2.22,
+     "stl": 1.2,
+     "blk": 0.6,
+     "fga": 12.37,
+     "tpa": 5.78,
+     "fta": 2
+    },
+    "op": {
+     "pts": 16.53,
+     "reb": 2.06,
+     "ast": 8.18,
+     "tpm": 2.23,
+     "stl": 1.5,
+     "blk": 0.6,
+     "fga": 12.97,
+     "tpa": 5.8,
+     "fta": 2.32
+    }
+   },
+   "n": {
+    "vt": 1,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4066261",
+   "name": "Bam Adebayo",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 33.6,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 33.6
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 19.79,
+    "reb": 9.62,
+    "ast": 3.12,
+    "tpm": 0.94,
+    "stl": 1.73,
+    "blk": 0.75,
+    "fga": 13.94,
+    "tpa": 3.64,
+    "fta": 5.82
+   },
+   "inputs": {
+    "vt": {
+     "pts": 21.63,
+     "reb": 11.09,
+     "ast": 3.25,
+     "tpm": 1.25,
+     "stl": 1.08,
+     "blk": 1.08,
+     "fga": 15.15,
+     "tpa": 4.87,
+     "fta": 7.03
+    },
+    "l5": {
+     "pts": 19.21,
+     "reb": 8.65,
+     "ast": 3.13,
+     "tpm": 0.81,
+     "stl": 2.06,
+     "blk": 0.6,
+     "fga": 13.5,
+     "tpa": 3.13,
+     "fta": 5.45
+    },
+    "op": {
+     "pts": 18.73,
+     "reb": 9.45,
+     "ast": 2.99,
+     "tpm": 0.8,
+     "stl": 1.95,
+     "blk": 0.63,
+     "fga": 13.31,
+     "tpa": 3.1,
+     "fta": 5.11
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "3032977",
+   "name": "Giannis Antetokounmpo",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 33.55,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 33.55
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 27.23,
+    "reb": 13.81,
+    "ast": 5.41,
+    "tpm": 0.7,
+    "stl": 0.97,
+    "blk": 1.29,
+    "fga": 18.57,
+    "tpa": 2.51,
+    "fta": 8.92
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 27.52,
+     "reb": 13.28,
+     "ast": 5.51,
+     "tpm": 0.71,
+     "stl": 1,
+     "blk": 1.26,
+     "fga": 18.68,
+     "tpa": 2.52,
+     "fta": 9.17
+    },
+    "op": {
+     "pts": 26.85,
+     "reb": 14.51,
+     "ast": 5.27,
+     "tpm": 0.7,
+     "stl": 0.94,
+     "blk": 1.32,
+     "fga": 18.42,
+     "tpa": 2.5,
+     "fta": 8.59
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "4601025",
+   "name": "Pelle Larsson",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 28.7,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 28.7
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.75,
+    "reb": 2.73,
+    "ast": 3.38,
+    "tpm": 1.63,
+    "stl": 0.97,
+    "blk": 0.39,
+    "fga": 8.62,
+    "tpa": 4.07,
+    "fta": 3.77
+   },
+   "inputs": {
+    "vt": {
+     "pts": 16.89,
+     "reb": 2.27,
+     "ast": 3.41,
+     "tpm": 2.72,
+     "stl": 0,
+     "blk": 1.14,
+     "fga": 12.5,
+     "tpa": 6.82,
+     "fta": 3.41
+    },
+    "l5": {
+     "pts": 10.61,
+     "reb": 2.88,
+     "ast": 3.47,
+     "tpm": 1.15,
+     "stl": 1.24,
+     "blk": 0.06,
+     "fga": 6.81,
+     "tpa": 2.88,
+     "fta": 3.67
+    },
+    "op": {
+     "pts": 11.45,
+     "reb": 2.98,
+     "ast": 3.24,
+     "tpm": 1.16,
+     "stl": 1.56,
+     "blk": 0.06,
+     "fga": 7.14,
+     "tpa": 2.9,
+     "fta": 4.25
+    }
+   },
+   "n": {
+    "vt": 1,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "6475",
+   "name": "Klay Thompson",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 26.4,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 26.4
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.33,
+    "reb": 1.61,
+    "ast": 2.06,
+    "tpm": 4,
+    "stl": 0.08,
+    "blk": 0.62,
+    "fga": 12.22,
+    "tpa": 9.62,
+    "fta": 0.63
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 15.71,
+     "reb": 1.64,
+     "ast": 2.22,
+     "tpm": 4.2,
+     "stl": 0.07,
+     "blk": 0.74,
+     "fga": 12.52,
+     "tpa": 10.11,
+     "fta": 0.6
+    },
+    "op": {
+     "pts": 14.82,
+     "reb": 1.58,
+     "ast": 1.84,
+     "tpm": 3.73,
+     "stl": 0.09,
+     "blk": 0.46,
+     "fga": 11.82,
+     "tpa": 8.98,
+     "fta": 0.67
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "3059319",
+   "name": "Andrew Wiggins",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 26.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 26.2
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.17,
+    "reb": 3.35,
+    "ast": 2.02,
+    "tpm": 1.51,
+    "stl": 0.48,
+    "blk": 0.69,
+    "fga": 8.77,
+    "tpa": 4.58,
+    "fta": 1.73
+   },
+   "inputs": {
+    "vt": {
+     "pts": 15.9,
+     "reb": 4.53,
+     "ast": 3.29,
+     "tpm": 2.17,
+     "stl": 0.41,
+     "blk": 0.41,
+     "fga": 12.35,
+     "tpa": 6.59,
+     "fta": 4.53
+    },
+    "l5": {
+     "pts": 8.06,
+     "reb": 3.03,
+     "ast": 1.65,
+     "tpm": 1.28,
+     "stl": 0.53,
+     "blk": 0.79,
+     "fga": 7.57,
+     "tpa": 3.88,
+     "fta": 0.53
+    },
+    "op": {
+     "pts": 7.25,
+     "reb": 2.61,
+     "ast": 1.24,
+     "tpm": 1.16,
+     "stl": 0.48,
+     "blk": 0.82,
+     "fga": 6.78,
+     "tpa": 3.51,
+     "fta": 0.53
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "3064482",
+   "name": "Bobby Portis",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 19.05,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 19.05
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.34,
+    "reb": 5.63,
+    "ast": 1.71,
+    "tpm": 1.19,
+    "stl": 0.49,
+    "blk": 0.38,
+    "fga": 5.88,
+    "tpa": 3.57,
+    "fta": 0.55
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.38,
+     "reb": 5.42,
+     "ast": 1.74,
+     "tpm": 1.2,
+     "stl": 0.5,
+     "blk": 0.38,
+     "fga": 5.91,
+     "tpa": 3.59,
+     "fta": 0.57
+    },
+    "op": {
+     "pts": 6.27,
+     "reb": 5.92,
+     "ast": 1.67,
+     "tpm": 1.19,
+     "stl": 0.47,
+     "blk": 0.4,
+     "fga": 5.83,
+     "tpa": 3.55,
+     "fta": 0.53
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "5107157",
+   "name": "Ryan Conwell",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 13.79,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 13.79
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 4.86,
+    "reb": 1.02,
+    "ast": 1.2,
+    "tpm": 1.04,
+    "stl": 1.02,
+    "blk": 0,
+    "fga": 4,
+    "tpa": 2.82,
+    "fta": 0.65
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 4.95,
+     "reb": 1.04,
+     "ast": 1.3,
+     "tpm": 1.09,
+     "stl": 0.93,
+     "blk": 0,
+     "fga": 4.1,
+     "tpa": 2.96,
+     "fta": 0.62
+    },
+    "op": {
+     "pts": 4.74,
+     "reb": 1,
+     "ast": 1.08,
+     "tpm": 0.97,
+     "stl": 1.13,
+     "blk": 0,
+     "fga": 3.87,
+     "tpa": 2.63,
+     "fta": 0.69
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4997528",
+   "name": "Nikola Jovic",
+   "team": "MIA",
+   "opp": "UTAH",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 10.87,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 10.87
+   },
+   "pace": 0.99,
+   "paceSource": "market",
+   "proj": {
+    "pts": 3.97,
+    "reb": 2.09,
+    "ast": 0.67,
+    "tpm": 0.48,
+    "stl": 0.25,
+    "blk": 0.35,
+    "fga": 2.95,
+    "tpa": 1.67,
+    "fta": 1.54
+   },
+   "inputs": {
+    "vt": {
+     "pts": 6.37,
+     "reb": 1.79,
+     "ast": 0.26,
+     "tpm": 0.74,
+     "stl": 0.26,
+     "blk": 0.26,
+     "fga": 4.1,
+     "tpa": 2.56,
+     "fta": 3.33
+    },
+    "l5": {
+     "pts": 2.92,
+     "reb": 2.27,
+     "ast": 0.89,
+     "tpm": 0.39,
+     "stl": 0.24,
+     "blk": 0.33,
+     "fga": 2.51,
+     "tpa": 1.35,
+     "fta": 0.67
+    },
+    "op": {
+     "pts": 2.98,
+     "reb": 2.15,
+     "ast": 0.8,
+     "tpm": 0.34,
+     "stl": 0.24,
+     "blk": 0.45,
+     "fga": 2.37,
+     "tpa": 1.19,
+     "fta": 0.9
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "5041955",
+   "name": "Darryn Peterson",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 31.75,
+    "restCut": 0,
+    "vacated": 6.25,
+    "blowout": 0,
+    "final": 38
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 19.06,
+    "reb": 4.69,
+    "ast": 5.35,
+    "tpm": 2.5,
+    "stl": 1.48,
+    "blk": 1.3,
+    "fga": 16.39,
+    "tpa": 6.93,
+    "fta": 3.31
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 19.26,
+     "reb": 4.77,
+     "ast": 5.31,
+     "tpm": 2.47,
+     "stl": 1.56,
+     "blk": 1.22,
+     "fga": 16.49,
+     "tpa": 6.87,
+     "fta": 3.45
+    },
+    "op": {
+     "pts": 18.8,
+     "reb": 4.58,
+     "ast": 5.4,
+     "tpm": 2.53,
+     "stl": 1.37,
+     "blk": 1.41,
+     "fga": 16.25,
+     "tpa": 7.02,
+     "fta": 3.14
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4873138",
+   "name": "Ace Bailey",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 31,
+    "restCut": 0,
+    "vacated": 4.29,
+    "blowout": 0,
+    "final": 35.29
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.26,
+    "reb": 6.76,
+    "ast": 2.12,
+    "tpm": 1.59,
+    "stl": 1.04,
+    "blk": 1.29,
+    "fga": 14.19,
+    "tpa": 5.98,
+    "fta": 0.92
+   },
+   "inputs": {
+    "vt": {
+     "pts": 18.19,
+     "reb": 5.52,
+     "ast": 2.21,
+     "tpm": 1.17,
+     "stl": 1.1,
+     "blk": 1.1,
+     "fga": 16,
+     "tpa": 4.41,
+     "fta": 1.1
+    },
+    "l5": {
+     "pts": 13.64,
+     "reb": 6.98,
+     "ast": 2.02,
+     "tpm": 1.66,
+     "stl": 1.08,
+     "blk": 1.4,
+     "fga": 13.02,
+     "tpa": 6.27,
+     "fta": 0.78
+    },
+    "op": {
+     "pts": 14.5,
+     "reb": 7.72,
+     "ast": 2.18,
+     "tpm": 1.9,
+     "stl": 0.91,
+     "blk": 1.32,
+     "fga": 13.94,
+     "tpa": 7.16,
+     "fta": 0.92
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4066336",
+   "name": "Lauri Markkanen",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "PF",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 29.34,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.34
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 18.99,
+    "reb": 6.42,
+    "ast": 2.04,
+    "tpm": 3.57,
+    "stl": 0.69,
+    "blk": 0.57,
+    "fga": 15.18,
+    "tpa": 9.26,
+    "fta": 3.24
+   },
+   "inputs": {
+    "vt": {
+     "pts": 21.87,
+     "reb": 6.18,
+     "ast": 1.82,
+     "tpm": 4.07,
+     "stl": 0.73,
+     "blk": 0.36,
+     "fga": 18.54,
+     "tpa": 10.54,
+     "fta": 2.55
+    },
+    "l5": {
+     "pts": 18.12,
+     "reb": 6.62,
+     "ast": 1.93,
+     "tpm": 3.53,
+     "stl": 0.68,
+     "blk": 0.68,
+     "fga": 13.87,
+     "tpa": 9.14,
+     "fta": 3.73
+    },
+    "op": {
+     "pts": 17.27,
+     "reb": 6.39,
+     "ast": 2.41,
+     "tpm": 3.14,
+     "stl": 0.66,
+     "blk": 0.63,
+     "fga": 13.58,
+     "tpa": 8.13,
+     "fta": 3.28
+    }
+   },
+   "n": {
+    "vt": 3,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909963",
+   "pid": "4397077",
+   "name": "Jaxson Hayes",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 24.67,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 24.67
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.85,
+    "reb": 6.32,
+    "ast": 1.57,
+    "tpm": 0.02,
+    "stl": 0.78,
+    "blk": 1.46,
+    "fga": 5.02,
+    "tpa": 0.07,
+    "fta": 2.58
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 8.36,
+     "reb": 6.33,
+     "ast": 1.74,
+     "tpm": 0.03,
+     "stl": 0.87,
+     "blk": 1.52,
+     "fga": 5.31,
+     "tpa": 0.07,
+     "fta": 2.81
+    },
+    "op": {
+     "pts": 7.15,
+     "reb": 6.29,
+     "ast": 1.34,
+     "tpm": 0.02,
+     "stl": 0.67,
+     "blk": 1.37,
+     "fga": 4.62,
+     "tpa": 0.07,
+     "fta": 2.28
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4065663",
+   "name": "Josh Okogie",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 19.28,
+    "restCut": 0,
+    "vacated": 4.29,
+    "blowout": 0,
+    "final": 23.57
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.83,
+    "reb": 4.16,
+    "ast": 1.04,
+    "tpm": 0.72,
+    "stl": 0.74,
+    "blk": 0.27,
+    "fga": 4.49,
+    "tpa": 1.99,
+    "fta": 1.51
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.59,
+     "reb": 3.98,
+     "ast": 1.01,
+     "tpm": 0.68,
+     "stl": 0.79,
+     "blk": 0.27,
+     "fga": 4.36,
+     "tpa": 1.88,
+     "fta": 1.39
+    },
+    "op": {
+     "pts": 6.14,
+     "reb": 4.4,
+     "ast": 1.09,
+     "tpm": 0.77,
+     "stl": 0.67,
+     "blk": 0.26,
+     "fga": 4.67,
+     "tpa": 2.15,
+     "fta": 1.66
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4432811",
+   "name": "Josh Green",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 18.2,
+    "restCut": 0,
+    "vacated": 4.29,
+    "blowout": 0,
+    "final": 22.49
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.7,
+    "reb": 1.66,
+    "ast": 0.84,
+    "tpm": 0.91,
+    "stl": 0.38,
+    "blk": 0.11,
+    "fga": 4.63,
+    "tpa": 2.64,
+    "fta": 1.12
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.49,
+     "reb": 1.59,
+     "ast": 0.81,
+     "tpm": 0.86,
+     "stl": 0.41,
+     "blk": 0.11,
+     "fga": 4.5,
+     "tpa": 2.49,
+     "fta": 1.04
+    },
+    "op": {
+     "pts": 5.97,
+     "reb": 1.76,
+     "ast": 0.88,
+     "tpm": 0.98,
+     "stl": 0.34,
+     "blk": 0.1,
+     "fga": 4.82,
+     "tpa": 2.84,
+     "fta": 1.24
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4277919",
+   "name": "Mo Bamba",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 16.53,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 16.53
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.9,
+    "reb": 5.86,
+    "ast": 0.58,
+    "tpm": 0,
+    "stl": 0.32,
+    "blk": 1.44,
+    "fga": 4.01,
+    "tpa": 0,
+    "fta": 1.45
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.28,
+     "reb": 5.88,
+     "ast": 0.64,
+     "tpm": 0,
+     "stl": 0.35,
+     "blk": 1.51,
+     "fga": 4.24,
+     "tpa": 0,
+     "fta": 1.57
+    },
+    "op": {
+     "pts": 5.39,
+     "reb": 5.84,
+     "ast": 0.49,
+     "tpm": 0,
+     "stl": 0.27,
+     "blk": 1.36,
+     "fga": 3.69,
+     "tpa": 0,
+     "fta": 1.28
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "3133602",
+   "name": "Svi Mykhailiuk",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 14.45,
+    "restCut": 0,
+    "vacated": 4.29,
+    "blowout": 0,
+    "final": 18.74
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 5.98,
+    "reb": 2.07,
+    "ast": 1.08,
+    "tpm": 1.12,
+    "stl": 0.72,
+    "blk": 0,
+    "fga": 6.53,
+    "tpa": 4.05,
+    "fta": 0.18
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.81,
+     "reb": 1.98,
+     "ast": 1.04,
+     "tpm": 1.06,
+     "stl": 0.77,
+     "blk": 0,
+     "fga": 6.34,
+     "tpa": 3.82,
+     "fta": 0.17
+    },
+    "op": {
+     "pts": 6.2,
+     "reb": 2.19,
+     "ast": 1.12,
+     "tpm": 1.2,
+     "stl": 0.65,
+     "blk": 0,
+     "fga": 6.79,
+     "tpa": 4.36,
+     "fta": 0.2
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909963",
+   "pid": "4683766",
+   "name": "Isaiah Collier",
+   "team": "UTAH",
+   "opp": "MIA",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 14.2,
+    "restCut": 0,
+    "vacated": 8,
+    "blowout": 0,
+    "final": 22.2
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.52,
+    "reb": 4.49,
+    "ast": 5.28,
+    "tpm": 0.22,
+    "stl": 0.5,
+    "blk": 0,
+    "fga": 6.99,
+    "tpa": 0.78,
+    "fta": 3.55
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 9.66,
+     "reb": 4.57,
+     "ast": 5.25,
+     "tpm": 0.21,
+     "stl": 0.52,
+     "blk": 0,
+     "fga": 7.03,
+     "tpa": 0.77,
+     "fta": 3.69
+    },
+    "op": {
+     "pts": 9.33,
+     "reb": 4.39,
+     "ast": 5.33,
+     "tpm": 0.22,
+     "stl": 0.46,
+     "blk": 0,
+     "fga": 6.93,
+     "tpa": 0.79,
+     "fta": 3.36
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4566434",
+   "name": "Franz Wagner",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 37.72,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 37.72
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 23.12,
+    "reb": 5.82,
+    "ast": 7.99,
+    "tpm": 1.63,
+    "stl": 1.06,
+    "blk": 0,
+    "fga": 19.68,
+    "tpa": 5.89,
+    "fta": 4.9
+   },
+   "inputs": {
+    "vt": {
+     "pts": 27.72,
+     "reb": 5.16,
+     "ast": 4.42,
+     "tpm": 2.44,
+     "stl": 0,
+     "blk": 0,
+     "fga": 25.04,
+     "tpa": 8.84,
+     "fta": 4.42
+    },
+    "l5": {
+     "pts": 21.89,
+     "reb": 6.16,
+     "ast": 9.55,
+     "tpm": 1.32,
+     "stl": 1.43,
+     "blk": 0,
+     "fga": 17.99,
+     "tpa": 4.77,
+     "fta": 5.28
+    },
+    "op": {
+     "pts": 20.17,
+     "reb": 6.02,
+     "ast": 9.49,
+     "tpm": 1.23,
+     "stl": 1.61,
+     "blk": 0,
+     "fga": 16.58,
+     "tpa": 4.45,
+     "fta": 4.87
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "4066320",
+   "name": "Desmond Bane",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 35.35,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 35.35
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 17.18,
+    "reb": 3.2,
+    "ast": 3.06,
+    "tpm": 3.15,
+    "stl": 0.94,
+    "blk": 0.73,
+    "fga": 13.14,
+    "tpa": 8.65,
+    "fta": 4.02
+   },
+   "inputs": {
+    "vt": {
+     "pts": 15.71,
+     "reb": 2.1,
+     "ast": 4.2,
+     "tpm": 2.1,
+     "stl": 1.05,
+     "blk": 0.53,
+     "fga": 10.51,
+     "tpa": 5.78,
+     "fta": 5.78
+    },
+    "l5": {
+     "pts": 18.03,
+     "reb": 3.81,
+     "ast": 2.43,
+     "tpm": 3.49,
+     "stl": 0.86,
+     "blk": 0.77,
+     "fga": 14.41,
+     "tpa": 9.58,
+     "fta": 3.4
+    },
+    "op": {
+     "pts": 17.52,
+     "reb": 3.46,
+     "ast": 2.78,
+     "tpm": 3.75,
+     "stl": 0.94,
+     "blk": 0.9,
+     "fga": 14.07,
+     "tpa": 10.29,
+     "fta": 3.1
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4277847",
+   "name": "Wendell Carter Jr.",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 34.92,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 34.92
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.67,
+    "reb": 10.21,
+    "ast": 1.1,
+    "tpm": 1.07,
+    "stl": 1.13,
+    "blk": 0.66,
+    "fga": 8.36,
+    "tpa": 2.64,
+    "fta": 4.58
+   },
+   "inputs": {
+    "vt": {
+     "pts": 11.83,
+     "reb": 11.01,
+     "ast": 1.74,
+     "tpm": 0.94,
+     "stl": 1.16,
+     "blk": 0.58,
+     "fga": 7.53,
+     "tpa": 2.32,
+     "fta": 3.48
+    },
+    "l5": {
+     "pts": 14.05,
+     "reb": 9.81,
+     "ast": 0.89,
+     "tpm": 1.06,
+     "stl": 1.15,
+     "blk": 0.65,
+     "fga": 8.43,
+     "tpa": 2.6,
+     "fta": 5
+    },
+    "op": {
+     "pts": 15,
+     "reb": 9.93,
+     "ast": 0.75,
+     "tpm": 1.22,
+     "stl": 1.09,
+     "blk": 0.75,
+     "fga": 9.11,
+     "tpa": 3.01,
+     "fta": 5.14
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "4702382",
+   "name": "Tristan da Silva",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 31.12,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 31.12
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 13.9,
+    "reb": 3.87,
+    "ast": 1.71,
+    "tpm": 3.16,
+    "stl": 0.22,
+    "blk": 0.22,
+    "fga": 11.16,
+    "tpa": 8.13,
+    "fta": 1.46
+   },
+   "inputs": {
+    "vt": {
+     "pts": 11.94,
+     "reb": 3.72,
+     "ast": 1.86,
+     "tpm": 2.41,
+     "stl": 0,
+     "blk": 0,
+     "fga": 8.06,
+     "tpa": 6.2,
+     "fta": 3.72
+    },
+    "l5": {
+     "pts": 15.26,
+     "reb": 3.97,
+     "ast": 1.65,
+     "tpm": 3.58,
+     "stl": 0.29,
+     "blk": 0.29,
+     "fga": 12.92,
+     "tpa": 9.21,
+     "fta": 0.51
+    },
+    "op": {
+     "pts": 14.07,
+     "reb": 3.88,
+     "ast": 1.64,
+     "tpm": 3.35,
+     "stl": 0.33,
+     "blk": 0.34,
+     "fga": 11.91,
+     "tpa": 8.61,
+     "fta": 0.47
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "4712849",
+   "name": "Anthony Black",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 30.58,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 30.58
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.78,
+    "reb": 5.06,
+    "ast": 4.76,
+    "tpm": 1.73,
+    "stl": 1.91,
+    "blk": 0.68,
+    "fga": 11.53,
+    "tpa": 4.45,
+    "fta": 4.2
+   },
+   "inputs": {
+    "vt": {
+     "pts": 16,
+     "reb": 3.38,
+     "ast": 3.38,
+     "tpm": 1.64,
+     "stl": 2.54,
+     "blk": 0,
+     "fga": 12.69,
+     "tpa": 4.23,
+     "fta": 2.96
+    },
+    "l5": {
+     "pts": 15.66,
+     "reb": 5.82,
+     "ast": 5.19,
+     "tpm": 1.77,
+     "stl": 1.65,
+     "blk": 0.88,
+     "fga": 11.2,
+     "tpa": 4.55,
+     "fta": 4.47
+    },
+    "op": {
+     "pts": 15.73,
+     "reb": 5.73,
+     "ast": 5.55,
+     "tpm": 1.76,
+     "stl": 1.61,
+     "blk": 1.09,
+     "fga": 10.8,
+     "tpa": 4.52,
+     "fta": 5.09
+    }
+   },
+   "n": {
+    "vt": 3,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "5239561",
+   "name": "Jase Richardson",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 25.68,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 25.68
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.84,
+    "reb": 2.33,
+    "ast": 3.21,
+    "tpm": 1.08,
+    "stl": 0.83,
+    "blk": 0.64,
+    "fga": 8.02,
+    "tpa": 3.68,
+    "fta": 0.58
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 7.95,
+     "reb": 2.42,
+     "ast": 3.02,
+     "tpm": 1.05,
+     "stl": 0.8,
+     "blk": 0.6,
+     "fga": 8.1,
+     "tpa": 3.56,
+     "fta": 0.6
+    },
+    "op": {
+     "pts": 7.71,
+     "reb": 2.2,
+     "ast": 3.46,
+     "tpm": 1.13,
+     "stl": 0.88,
+     "blk": 0.7,
+     "fga": 7.91,
+     "tpa": 3.83,
+     "fta": 0.55
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4278572",
+   "name": "Jamal Cain",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 21.62,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.62
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.6,
+    "reb": 3.52,
+    "ast": 0.42,
+    "tpm": 1.31,
+    "stl": 0.33,
+    "blk": 0.15,
+    "fga": 6.41,
+    "tpa": 4.03,
+    "fta": 1.25
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 7.86,
+     "reb": 3.56,
+     "ast": 0.42,
+     "tpm": 1.34,
+     "stl": 0.31,
+     "blk": 0.14,
+     "fga": 6.64,
+     "tpa": 4.15,
+     "fta": 1.29
+    },
+    "op": {
+     "pts": 7.24,
+     "reb": 3.48,
+     "ast": 0.42,
+     "tpm": 1.26,
+     "stl": 0.35,
+     "blk": 0.16,
+     "fga": 6.12,
+     "tpa": 3.88,
+     "fta": 1.19
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "3133635",
+   "name": "Jevon Carter",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 14.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 14.2
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 4.65,
+    "reb": 0.75,
+    "ast": 1.64,
+    "tpm": 1.12,
+    "stl": 0.55,
+    "blk": 0,
+    "fga": 4.41,
+    "tpa": 3.28,
+    "fta": 0.11
+   },
+   "inputs": {
+    "vt": {
+     "pts": 5.06,
+     "reb": 1.15,
+     "ast": 1.53,
+     "tpm": 0.79,
+     "stl": 0.38,
+     "blk": 0,
+     "fga": 4.59,
+     "tpa": 2.29,
+     "fta": 0.38
+    },
+    "l5": {
+     "pts": 4.52,
+     "reb": 0.6,
+     "ast": 1.59,
+     "tpm": 1.23,
+     "stl": 0.6,
+     "blk": 0,
+     "fga": 4.38,
+     "tpa": 3.59,
+     "fta": 0
+    },
+    "op": {
+     "pts": 4.41,
+     "reb": 0.54,
+     "ast": 1.82,
+     "tpm": 1.32,
+     "stl": 0.66,
+     "blk": 0,
+     "fga": 4.28,
+     "tpa": 3.85,
+     "fta": 0
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4593034",
+   "name": "Alex Morales",
+   "team": "ORL",
+   "opp": "SAC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 9.68,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 9.68
+   },
+   "pace": 1,
+   "paceSource": "market",
+   "proj": {
+    "pts": 1.13,
+    "reb": 1.33,
+    "ast": 0.38,
+    "tpm": 0.12,
+    "stl": 0.56,
+    "blk": 0,
+    "fga": 0.84,
+    "tpa": 0.37,
+    "fta": 0.34
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 1.15,
+     "reb": 1.38,
+     "ast": 0.36,
+     "tpm": 0.12,
+     "stl": 0.54,
+     "blk": 0,
+     "fga": 0.84,
+     "tpa": 0.36,
+     "fta": 0.36
+    },
+    "op": {
+     "pts": 1.11,
+     "reb": 1.25,
+     "ast": 0.41,
+     "tpm": 0.13,
+     "stl": 0.59,
+     "blk": 0,
+     "fga": 0.82,
+     "tpa": 0.38,
+     "fta": 0.33
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "5142620",
+   "name": "Darius Acuff Jr.",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 37.3,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 37.3
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 25.17,
+    "reb": 3.73,
+    "ast": 7.5,
+    "tpm": 3.02,
+    "stl": 1.1,
+    "blk": 0.06,
+    "fga": 22.08,
+    "tpa": 9.31,
+    "fta": 4.21
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 25.42,
+     "reb": 3.83,
+     "ast": 7.47,
+     "tpm": 3.01,
+     "stl": 0.97,
+     "blk": 0.07,
+     "fga": 22.16,
+     "tpa": 9.29,
+     "fta": 4.42
+    },
+    "op": {
+     "pts": 24.84,
+     "reb": 3.58,
+     "ast": 7.53,
+     "tpm": 3.03,
+     "stl": 1.26,
+     "blk": 0.06,
+     "fga": 21.97,
+     "tpa": 9.34,
+     "fta": 3.94
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "3155942",
+   "name": "Domantas Sabonis",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 35.28,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 35.28
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 15.42,
+    "reb": 14.11,
+    "ast": 5.11,
+    "tpm": 0.23,
+    "stl": 0.75,
+    "blk": 0.09,
+    "fga": 9.5,
+    "tpa": 0.64,
+    "fta": 4.75
+   },
+   "inputs": {
+    "vt": {
+     "pts": 20.86,
+     "reb": 14.62,
+     "ast": 3.94,
+     "tpm": 0.41,
+     "stl": 0.56,
+     "blk": 0,
+     "fga": 12.37,
+     "tpa": 1.12,
+     "fta": 7.31
+    },
+    "l5": {
+     "pts": 13.19,
+     "reb": 13.62,
+     "ast": 5.5,
+     "tpm": 0.18,
+     "stl": 0.9,
+     "blk": 0.14,
+     "fga": 8.28,
+     "tpa": 0.48,
+     "fta": 3.8
+    },
+    "op": {
+     "pts": 12.93,
+     "reb": 14.25,
+     "ast": 5.75,
+     "tpm": 0.13,
+     "stl": 0.74,
+     "blk": 0.12,
+     "fga": 8.26,
+     "tpa": 0.37,
+     "fta": 3.47
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4065732",
+   "name": "De'Andre Hunter",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 33.01,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 33.01
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 14.52,
+    "reb": 4.3,
+    "ast": 1.34,
+    "tpm": 2.06,
+    "stl": 0.22,
+    "blk": 0.08,
+    "fga": 11.2,
+    "tpa": 5.87,
+    "fta": 3.73
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 14.19,
+     "reb": 4.36,
+     "ast": 1.21,
+     "tpm": 2.1,
+     "stl": 0.21,
+     "blk": 0.08,
+     "fga": 11.14,
+     "tpa": 5.97,
+     "fta": 3.37
+    },
+    "op": {
+     "pts": 14.96,
+     "reb": 4.21,
+     "ast": 1.51,
+     "tpm": 2.02,
+     "stl": 0.23,
+     "blk": 0.09,
+     "fga": 11.29,
+     "tpa": 5.74,
+     "fta": 4.21
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "3064440",
+   "name": "Zach LaVine",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 30.75,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 30.75
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 17.24,
+    "reb": 2.65,
+    "ast": 2.37,
+    "tpm": 1.88,
+    "stl": 0.63,
+    "blk": 0.27,
+    "fga": 11.92,
+    "tpa": 5.41,
+    "fta": 4.64
+   },
+   "inputs": {
+    "vt": {
+     "pts": 15.73,
+     "reb": 1.49,
+     "ast": 2.99,
+     "tpm": 1.04,
+     "stl": 0.5,
+     "blk": 0,
+     "fga": 10.46,
+     "tpa": 2.99,
+     "fta": 4.48
+    },
+    "l5": {
+     "pts": 18.3,
+     "reb": 3.12,
+     "ast": 2.14,
+     "tpm": 2.25,
+     "stl": 0.69,
+     "blk": 0.38,
+     "fga": 12.92,
+     "tpa": 6.46,
+     "fta": 4.67
+    },
+    "op": {
+     "pts": 17.35,
+     "reb": 3.18,
+     "ast": 2.06,
+     "tpm": 2.24,
+     "stl": 0.68,
+     "blk": 0.39,
+     "fga": 12.05,
+     "tpa": 6.44,
+     "fta": 4.76
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "4431679",
+   "name": "Precious Achiuwa",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 26.5,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 26.5
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.69,
+    "reb": 6.82,
+    "ast": 1.24,
+    "tpm": 0.27,
+    "stl": 1.39,
+    "blk": 1.37,
+    "fga": 8.14,
+    "tpa": 0.78,
+    "fta": 1.32
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.97,
+     "reb": 7.2,
+     "ast": 1.14,
+     "tpm": 0.26,
+     "stl": 2.27,
+     "blk": 1.52,
+     "fga": 9.09,
+     "tpa": 0.76,
+     "fta": 0
+    },
+    "l5": {
+     "pts": 9.28,
+     "reb": 6.6,
+     "ast": 1.22,
+     "tpm": 0.29,
+     "stl": 1.01,
+     "blk": 1.36,
+     "fga": 7.45,
+     "tpa": 0.83,
+     "fta": 1.92
+    },
+    "op": {
+     "pts": 9.97,
+     "reb": 6.73,
+     "ast": 1.37,
+     "tpm": 0.25,
+     "stl": 1.01,
+     "blk": 1.25,
+     "fga": 8.11,
+     "tpa": 0.73,
+     "fta": 1.83
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4594327",
+   "name": "Keegan Murray",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "SF",
+   "status": "Day-To-Day",
+   "min": {
+    "recent": 25.67,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 25.67
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.84,
+    "reb": 2.23,
+    "ast": 1.08,
+    "tpm": 0.84,
+    "stl": 1.35,
+    "blk": 0.35,
+    "fga": 8.8,
+    "tpa": 3.19,
+    "fta": 2.87
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 10.54,
+     "reb": 2.27,
+     "ast": 0.97,
+     "tpm": 0.86,
+     "stl": 1.3,
+     "blk": 0.32,
+     "fga": 8.75,
+     "tpa": 3.24,
+     "fta": 2.59
+    },
+    "op": {
+     "pts": 11.24,
+     "reb": 2.19,
+     "ast": 1.22,
+     "tpm": 0.82,
+     "stl": 1.41,
+     "blk": 0.38,
+     "fga": 8.87,
+     "tpa": 3.12,
+     "fta": 3.23
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 3,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4395650",
+   "name": "Leaky Black",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 23,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 23
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.05,
+    "reb": 3.45,
+    "ast": 1.94,
+    "tpm": 1.66,
+    "stl": 1.82,
+    "blk": 0.42,
+    "fga": 4.89,
+    "tpa": 4.21,
+    "fta": 0.43
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.99,
+     "reb": 3.5,
+     "ast": 1.75,
+     "tpm": 1.69,
+     "stl": 1.75,
+     "blk": 0.39,
+     "fga": 4.86,
+     "tpa": 4.28,
+     "fta": 0.39
+    },
+    "op": {
+     "pts": 6.12,
+     "reb": 3.38,
+     "ast": 2.19,
+     "tpm": 1.62,
+     "stl": 1.91,
+     "blk": 0.45,
+     "fga": 4.93,
+     "tpa": 4.12,
+     "fta": 0.49
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909964",
+   "pid": "4066262",
+   "name": "Malik Monk",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 19.14,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 19.14
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.61,
+    "reb": 1.03,
+    "ast": 3.64,
+    "tpm": 1.52,
+    "stl": 0.5,
+    "blk": 0.2,
+    "fga": 8.19,
+    "tpa": 4.47,
+    "fta": 1.81
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.08,
+     "reb": 0.72,
+     "ast": 2.51,
+     "tpm": 1.83,
+     "stl": 0.36,
+     "blk": 0.36,
+     "fga": 7.16,
+     "tpa": 5.37,
+     "fta": 1.07
+    },
+    "l5": {
+     "pts": 10.38,
+     "reb": 1.19,
+     "ast": 4.11,
+     "tpm": 1.39,
+     "stl": 0.5,
+     "blk": 0.14,
+     "fga": 8.66,
+     "tpa": 4.08,
+     "fta": 2.22
+    },
+    "op": {
+     "pts": 10.11,
+     "reb": 1.12,
+     "ast": 4.14,
+     "tpm": 1.4,
+     "stl": 0.65,
+     "blk": 0.13,
+     "fga": 8.59,
+     "tpa": 4.1,
+     "fta": 1.98
+    }
+   },
+   "n": {
+    "vt": 2,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909964",
+   "pid": "5106058",
+   "name": "Emanuel Sharp",
+   "team": "SAC",
+   "opp": "ORL",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 18.7,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 18.7
+   },
+   "pace": 0.97,
+   "paceSource": "market",
+   "proj": {
+    "pts": 4.95,
+    "reb": 1.64,
+    "ast": 0.71,
+    "tpm": 1.24,
+    "stl": 0.65,
+    "blk": 0.2,
+    "fga": 4.33,
+    "tpa": 3.21,
+    "fta": 0.14
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.08,
+     "reb": 1.63,
+     "ast": 0.72,
+     "tpm": 1.24,
+     "stl": 0.65,
+     "blk": 0.2,
+     "fga": 4.46,
+     "tpa": 3.21,
+     "fta": 0.13
+    },
+    "op": {
+     "pts": 4.78,
+     "reb": 1.66,
+     "ast": 0.7,
+     "tpm": 1.24,
+     "stl": 0.64,
+     "blk": 0.2,
+     "fga": 4.16,
+     "tpa": 3.2,
+     "fta": 0.14
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909965",
+   "pid": "4683021",
+   "name": "Deni Avdija",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "PF",
+   "status": null,
+   "min": {
+    "recent": 32.36,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 32.36
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 22.46,
+    "reb": 7.32,
+    "ast": 6.44,
+    "tpm": 1.84,
+    "stl": 0.97,
+    "blk": 0.23,
+    "fga": 15.35,
+    "tpa": 5.43,
+    "fta": 9.19
+   },
+   "inputs": {
+    "vt": {
+     "pts": 22.95,
+     "reb": 9.49,
+     "ast": 6.78,
+     "tpm": 1.97,
+     "stl": 1.36,
+     "blk": 0.58,
+     "fga": 14.91,
+     "tpa": 5.81,
+     "fta": 10.65
+    },
+    "l5": {
+     "pts": 22.73,
+     "reb": 6.23,
+     "ast": 6.34,
+     "tpm": 1.71,
+     "stl": 0.87,
+     "blk": 0.08,
+     "fga": 15.35,
+     "tpa": 5.04,
+     "fta": 9.56
+    },
+    "op": {
+     "pts": 21.61,
+     "reb": 6.62,
+     "ast": 6.23,
+     "tpm": 1.89,
+     "stl": 0.74,
+     "blk": 0.08,
+     "fga": 15.8,
+     "tpa": 5.58,
+     "fta": 7.24
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909965",
+   "pid": "6606",
+   "name": "Damian Lillard",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 29.42,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 29.42
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 18.87,
+    "reb": 3.19,
+    "ast": 4.58,
+    "tpm": 2.69,
+    "stl": 0.74,
+    "blk": 0.14,
+    "fga": 13.13,
+    "tpa": 7.81,
+    "fta": 6.1
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 19.55,
+     "reb": 3.1,
+     "ast": 4.71,
+     "tpm": 2.7,
+     "stl": 0.79,
+     "blk": 0.14,
+     "fga": 13.43,
+     "tpa": 7.86,
+     "fta": 6.52
+    },
+    "op": {
+     "pts": 17.97,
+     "reb": 3.32,
+     "ast": 4.41,
+     "tpm": 2.66,
+     "stl": 0.66,
+     "blk": 0.14,
+     "fga": 12.72,
+     "tpa": 7.74,
+     "fta": 5.54
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4431736",
+   "name": "Toumani Camara",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "SF",
+   "status": null,
+   "min": {
+    "recent": 28.11,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 28.11
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 11.74,
+    "reb": 4.6,
+    "ast": 1.45,
+    "tpm": 2.63,
+    "stl": 0.59,
+    "blk": 0.32,
+    "fga": 8.59,
+    "tpa": 6.2,
+    "fta": 1.49
+   },
+   "inputs": {
+    "vt": {
+     "pts": 11.08,
+     "reb": 5.98,
+     "ast": 2.49,
+     "tpm": 2.11,
+     "stl": 0.5,
+     "blk": 0.66,
+     "fga": 7.81,
+     "tpa": 4.99,
+     "fta": 1.99
+    },
+    "l5": {
+     "pts": 12.33,
+     "reb": 3.79,
+     "ast": 1.03,
+     "tpm": 2.9,
+     "stl": 0.67,
+     "blk": 0.16,
+     "fga": 9.16,
+     "tpa": 6.86,
+     "fta": 1.28
+    },
+    "op": {
+     "pts": 11.62,
+     "reb": 4.28,
+     "ast": 0.95,
+     "tpm": 2.77,
+     "stl": 0.58,
+     "blk": 0.19,
+     "fga": 8.6,
+     "tpa": 6.54,
+     "fta": 1.25
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": true
+  },
+  {
+   "gid": "401909965",
+   "pid": "3995",
+   "name": "Jrue Holiday",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 26.14,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 26.14
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 12.69,
+    "reb": 3.9,
+    "ast": 3.42,
+    "tpm": 2.42,
+    "stl": 0.84,
+    "blk": 0.15,
+    "fga": 9.38,
+    "tpa": 6.02,
+    "fta": 1.88
+   },
+   "inputs": {
+    "vt": {
+     "pts": 15.5,
+     "reb": 4.51,
+     "ast": 2.25,
+     "tpm": 3.02,
+     "stl": 0.75,
+     "blk": 0,
+     "fga": 12.02,
+     "tpa": 7.51,
+     "fta": 1.5
+    },
+    "l5": {
+     "pts": 11.82,
+     "reb": 3.54,
+     "ast": 4.04,
+     "tpm": 2.17,
+     "stl": 0.94,
+     "blk": 0.22,
+     "fga": 8.44,
+     "tpa": 5.41,
+     "fta": 2.18
+    },
+    "op": {
+     "pts": 11.03,
+     "reb": 3.78,
+     "ast": 3.78,
+     "tpm": 2.14,
+     "stl": 0.8,
+     "blk": 0.22,
+     "fga": 8,
+     "tpa": 5.34,
+     "fta": 1.86
+    }
+   },
+   "n": {
+    "vt": 1,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "5105565",
+   "name": "Donovan Clingan",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 24.99,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 24.99
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 11.18,
+    "reb": 9.85,
+    "ast": 1.15,
+    "tpm": 1.19,
+    "stl": 0.38,
+    "blk": 1.92,
+    "fga": 8.08,
+    "tpa": 3.01,
+    "fta": 2.34
+   },
+   "inputs": {
+    "vt": {
+     "pts": 9.4,
+     "reb": 9.42,
+     "ast": 0.97,
+     "tpm": 1.24,
+     "stl": 0.48,
+     "blk": 1.69,
+     "fga": 6.52,
+     "tpa": 3.14,
+     "fta": 2.42
+    },
+    "l5": {
+     "pts": 11.46,
+     "reb": 10.34,
+     "ast": 1.24,
+     "tpm": 0.99,
+     "stl": 0.36,
+     "blk": 2.09,
+     "fga": 8.39,
+     "tpa": 2.51,
+     "fta": 2.23
+    },
+    "op": {
+     "pts": 12.58,
+     "reb": 9.62,
+     "ast": 1.22,
+     "tpm": 1.39,
+     "stl": 0.31,
+     "blk": 1.93,
+     "fga": 9.24,
+     "tpa": 3.52,
+     "fta": 2.4
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4683678",
+   "name": "Scoot Henderson",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 23.82,
+    "restCut": 0,
+    "vacated": 2.53,
+    "blowout": 0,
+    "final": 26.36
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 11.82,
+    "reb": 2.89,
+    "ast": 2.15,
+    "tpm": 1.22,
+    "stl": 0.65,
+    "blk": 0.17,
+    "fga": 9.81,
+    "tpa": 4.99,
+    "fta": 3.9
+   },
+   "inputs": {
+    "vt": {
+     "pts": 13.55,
+     "reb": 3.71,
+     "ast": 4.21,
+     "tpm": 1.45,
+     "stl": 0.25,
+     "blk": 0.25,
+     "fga": 11.89,
+     "tpa": 5.94,
+     "fta": 3.71
+    },
+    "l5": {
+     "pts": 11.22,
+     "reb": 2.52,
+     "ast": 1.32,
+     "tpm": 1.1,
+     "stl": 0.87,
+     "blk": 0.16,
+     "fga": 8.8,
+     "tpa": 4.49,
+     "fta": 4.29
+    },
+    "op": {
+     "pts": 10.89,
+     "reb": 2.57,
+     "ast": 1.2,
+     "tpm": 1.15,
+     "stl": 0.77,
+     "blk": 0.12,
+     "fga": 9.09,
+     "tpa": 4.7,
+     "fta": 3.56
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "5081727",
+   "name": "Sidy Cissoko",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 20.56,
+    "restCut": 0,
+    "vacated": 2.53,
+    "blowout": 0,
+    "final": 23.09
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.54,
+    "reb": 3.45,
+    "ast": 2.01,
+    "tpm": 1.12,
+    "stl": 0.32,
+    "blk": 0.47,
+    "fga": 4.9,
+    "tpa": 3.26,
+    "fta": 1.86
+   },
+   "inputs": {
+    "vt": {
+     "pts": 7.46,
+     "reb": 2.24,
+     "ast": 1.68,
+     "tpm": 1.43,
+     "stl": 0,
+     "blk": 0.56,
+     "fga": 6.43,
+     "tpa": 4.19,
+     "fta": 0.84
+    },
+    "l5": {
+     "pts": 6.21,
+     "reb": 3.94,
+     "ast": 2.25,
+     "tpm": 0.96,
+     "stl": 0.48,
+     "blk": 0.47,
+     "fga": 4.18,
+     "tpa": 2.81,
+     "fta": 2.48
+    },
+    "op": {
+     "pts": 6.06,
+     "reb": 4.01,
+     "ast": 2.04,
+     "tpm": 1,
+     "stl": 0.42,
+     "blk": 0.37,
+     "fga": 4.32,
+     "tpa": 2.94,
+     "fta": 2.06
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4066211",
+   "name": "Robert Williams III",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 16.41,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 16.41
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.47,
+    "reb": 6.83,
+    "ast": 1.03,
+    "tpm": 0.02,
+    "stl": 0.86,
+    "blk": 1.07,
+    "fga": 4.89,
+    "tpa": 0.06,
+    "fta": 1.08
+   },
+   "inputs": {
+    "vt": {
+     "pts": 4.67,
+     "reb": 7.47,
+     "ast": 0.59,
+     "tpm": 0.07,
+     "stl": 0.39,
+     "blk": 0.59,
+     "fga": 3.54,
+     "tpa": 0.2,
+     "fta": 0.79
+    },
+    "l5": {
+     "pts": 6.95,
+     "reb": 6.76,
+     "ast": 1.22,
+     "tpm": 0,
+     "stl": 1.12,
+     "blk": 1.33,
+     "fga": 5.24,
+     "tpa": 0,
+     "fta": 1.17
+    },
+    "op": {
+     "pts": 7.63,
+     "reb": 6.29,
+     "ast": 1.21,
+     "tpm": 0,
+     "stl": 0.97,
+     "blk": 1.22,
+     "fga": 5.78,
+     "tpa": 0,
+     "fta": 1.25
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4706557",
+   "name": "Chris Youngblood",
+   "team": "POR",
+   "opp": "OKC",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 13.4,
+    "restCut": 0,
+    "vacated": 2.53,
+    "blowout": 0,
+    "final": 15.93
+   },
+   "pace": 1.01,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.8,
+    "reb": 1.69,
+    "ast": 1.38,
+    "tpm": 1.56,
+    "stl": 0.45,
+    "blk": 0.22,
+    "fga": 5.34,
+    "tpa": 4.63,
+    "fta": 1.77
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 6.83,
+     "reb": 1.67,
+     "ast": 1.43,
+     "tpm": 1.53,
+     "stl": 0.48,
+     "blk": 0.24,
+     "fga": 5.26,
+     "tpa": 4.54,
+     "fta": 1.91
+    },
+    "op": {
+     "pts": 6.76,
+     "reb": 1.7,
+     "ast": 1.3,
+     "tpm": 1.6,
+     "stl": 0.42,
+     "blk": 0.19,
+     "fga": 5.44,
+     "tpa": 4.75,
+     "fta": 1.59
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 10
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4278073",
+   "name": "Shai Gilgeous-Alexander",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 32.85,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 32.85
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 31.13,
+    "reb": 3.98,
+    "ast": 4.99,
+    "tpm": 2.3,
+    "stl": 1.24,
+    "blk": 0.74,
+    "fga": 22.89,
+    "tpa": 6.04,
+    "fta": 8.73
+   },
+   "inputs": {
+    "vt": {
+     "pts": 28.19,
+     "reb": 4.91,
+     "ast": 4.51,
+     "tpm": 1.27,
+     "stl": 1.96,
+     "blk": 0,
+     "fga": 19.43,
+     "tpa": 3.34,
+     "fta": 9.81
+    },
+    "l5": {
+     "pts": 31.44,
+     "reb": 3.72,
+     "ast": 5.48,
+     "tpm": 2.68,
+     "stl": 0.95,
+     "blk": 1.01,
+     "fga": 24.02,
+     "tpa": 7.04,
+     "fta": 7.58
+    },
+    "op": {
+     "pts": 33.67,
+     "reb": 3.4,
+     "ast": 4.83,
+     "tpm": 2.82,
+     "stl": 0.91,
+     "blk": 1.11,
+     "fga": 24.86,
+     "tpa": 7.4,
+     "fta": 9.18
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4900671",
+   "name": "Ajay Mitchell",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 28.1,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 28.1
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 17.45,
+    "reb": 3.84,
+    "ast": 3.38,
+    "tpm": 0.88,
+    "stl": 1.14,
+    "blk": 0.33,
+    "fga": 12.45,
+    "tpa": 2.86,
+    "fta": 4.65
+   },
+   "inputs": {
+    "vt": {
+     "pts": 14.82,
+     "reb": 4.27,
+     "ast": 4,
+     "tpm": 0.57,
+     "stl": 1.33,
+     "blk": 0.27,
+     "fga": 8.53,
+     "tpa": 1.87,
+     "fta": 6.67
+    },
+    "l5": {
+     "pts": 19.71,
+     "reb": 3.9,
+     "ast": 3.29,
+     "tpm": 1.07,
+     "stl": 1.04,
+     "blk": 0.35,
+     "fga": 15.13,
+     "tpa": 3.49,
+     "fta": 3.83
+    },
+    "op": {
+     "pts": 17.06,
+     "reb": 3.35,
+     "ast": 2.88,
+     "tpm": 0.93,
+     "stl": 1.08,
+     "blk": 0.38,
+     "fga": 12.79,
+     "tpa": 3.02,
+     "fta": 3.74
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4683778",
+   "name": "Jared McCain",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 25.8,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 25.8
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 11.96,
+    "reb": 3.7,
+    "ast": 1.49,
+    "tpm": 1.71,
+    "stl": 1.18,
+    "blk": 0.36,
+    "fga": 10.82,
+    "tpa": 5.47,
+    "fta": 1.22
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 12.75,
+     "reb": 3.94,
+     "ast": 1.58,
+     "tpm": 1.82,
+     "stl": 1.16,
+     "blk": 0.34,
+     "fga": 11.59,
+     "tpa": 5.8,
+     "fta": 1.24
+    },
+    "op": {
+     "pts": 10.89,
+     "reb": 3.39,
+     "ast": 1.38,
+     "tpm": 1.57,
+     "stl": 1.21,
+     "blk": 0.38,
+     "fga": 9.8,
+     "tpa": 5.02,
+     "fta": 1.21
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4222252",
+   "name": "Isaiah Hartenstein",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 24.4,
+    "restCut": 0,
+    "vacated": 4.6,
+    "blowout": 0,
+    "final": 29
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 9.8,
+    "reb": 12.63,
+    "ast": 4.44,
+    "tpm": 0.1,
+    "stl": 1.46,
+    "blk": 0.82,
+    "fga": 7.65,
+    "tpa": 0.31,
+    "fta": 2.67
+   },
+   "inputs": {
+    "vt": {
+     "pts": 11.67,
+     "reb": 13.06,
+     "ast": 3.84,
+     "tpm": 0.08,
+     "stl": 0.51,
+     "blk": 2.05,
+     "fga": 7.94,
+     "tpa": 0.26,
+     "fta": 4.61
+    },
+    "l5": {
+     "pts": 8.75,
+     "reb": 12.42,
+     "ast": 4.35,
+     "tpm": 0.11,
+     "stl": 1.77,
+     "blk": 0.32,
+     "fga": 7.27,
+     "tpa": 0.32,
+     "fta": 1.86
+    },
+    "op": {
+     "pts": 9.33,
+     "reb": 12.47,
+     "ast": 5.16,
+     "tpm": 0.12,
+     "stl": 1.99,
+     "blk": 0.26,
+     "fga": 7.87,
+     "tpa": 0.35,
+     "fta": 1.83
+    }
+   },
+   "n": {
+    "vt": 4,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "5174983",
+   "name": "Aday Mara",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "C",
+   "status": null,
+   "min": {
+    "recent": 21.7,
+    "restCut": 0,
+    "vacated": 4.6,
+    "blowout": 0,
+    "final": 26.3
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 10.79,
+    "reb": 8.19,
+    "ast": 1.91,
+    "tpm": 0.06,
+    "stl": 0.09,
+    "blk": 2.38,
+    "fga": 8.03,
+    "tpa": 0.17,
+    "fta": 2.19
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 10.48,
+     "reb": 8.17,
+     "ast": 1.77,
+     "tpm": 0.06,
+     "stl": 0.09,
+     "blk": 2.61,
+     "fga": 7.75,
+     "tpa": 0.17,
+     "fta": 2.21
+    },
+    "op": {
+     "pts": 11.21,
+     "reb": 8.2,
+     "ast": 2.1,
+     "tpm": 0.07,
+     "stl": 0.1,
+     "blk": 2.07,
+     "fga": 8.4,
+     "tpa": 0.18,
+     "fta": 2.17
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "3133626",
+   "name": "Kenrich Williams",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 21.5,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 21.5
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.74,
+    "reb": 4.2,
+    "ast": 1.4,
+    "tpm": 1.26,
+    "stl": 0.14,
+    "blk": 0.14,
+    "fga": 5.93,
+    "tpa": 3.07,
+    "fta": 1.24
+   },
+   "inputs": {
+    "vt": {
+     "pts": 8.67,
+     "reb": 4.31,
+     "ast": 1.15,
+     "tpm": 0.94,
+     "stl": 0.29,
+     "blk": 0.29,
+     "fga": 6.61,
+     "tpa": 2.3,
+     "fta": 1.72
+    },
+    "l5": {
+     "pts": 7.8,
+     "reb": 4.43,
+     "ast": 1.6,
+     "tpm": 1.48,
+     "stl": 0.08,
+     "blk": 0.08,
+     "fga": 6.05,
+     "tpa": 3.62,
+     "fta": 1.05
+    },
+    "op": {
+     "pts": 6.71,
+     "reb": 3.8,
+     "ast": 1.4,
+     "tpm": 1.28,
+     "stl": 0.08,
+     "blk": 0.09,
+     "fga": 5.11,
+     "tpa": 3.13,
+     "fta": 1.02
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "5241364",
+   "name": "Bennett Stirtz",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 20.3,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 20.3
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 7.88,
+    "reb": 1.43,
+    "ast": 1.33,
+    "tpm": 1.67,
+    "stl": 0.64,
+    "blk": 0.14,
+    "fga": 5.94,
+    "tpa": 4.14,
+    "fta": 1.13
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 8.38,
+     "reb": 1.52,
+     "ast": 1.4,
+     "tpm": 1.77,
+     "stl": 0.62,
+     "blk": 0.14,
+     "fga": 6.36,
+     "tpa": 4.39,
+     "fta": 1.14
+    },
+    "op": {
+     "pts": 7.21,
+     "reb": 1.31,
+     "ast": 1.23,
+     "tpm": 1.53,
+     "stl": 0.65,
+     "blk": 0.15,
+     "fga": 5.37,
+     "tpa": 3.8,
+     "fta": 1.12
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "4432185",
+   "name": "Micah Peavy",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "SG",
+   "status": null,
+   "min": {
+    "recent": 18.2,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 18.2
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 4.93,
+    "reb": 3.8,
+    "ast": 0.17,
+    "tpm": 0.67,
+    "stl": 0.75,
+    "blk": 0.19,
+    "fga": 4.46,
+    "tpa": 1.9,
+    "fta": 0.36
+   },
+   "inputs": {
+    "vt": null,
+    "l5": {
+     "pts": 5.26,
+     "reb": 4.04,
+     "ast": 0.18,
+     "tpm": 0.71,
+     "stl": 0.73,
+     "blk": 0.18,
+     "fga": 4.78,
+     "tpa": 2.02,
+     "fta": 0.37
+    },
+    "op": {
+     "pts": 4.49,
+     "reb": 3.47,
+     "ast": 0.16,
+     "tpm": 0.62,
+     "stl": 0.77,
+     "blk": 0.2,
+     "fga": 4.04,
+     "tpa": 1.75,
+     "fta": 0.36
+    }
+   },
+   "n": {
+    "vt": 0,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  },
+  {
+   "gid": "401909965",
+   "pid": "2991350",
+   "name": "Alex Caruso",
+   "team": "OKC",
+   "opp": "POR",
+   "pos": "PG",
+   "status": null,
+   "min": {
+    "recent": 17.61,
+    "restCut": 0,
+    "vacated": 0,
+    "blowout": 0,
+    "final": 17.61
+   },
+   "pace": 1.02,
+   "paceSource": "market",
+   "proj": {
+    "pts": 6.62,
+    "reb": 3.61,
+    "ast": 2.71,
+    "tpm": 1.2,
+    "stl": 1.02,
+    "blk": 0.43,
+    "fga": 4.94,
+    "tpa": 3.03,
+    "fta": 1.14
+   },
+   "inputs": {
+    "vt": {
+     "pts": 7.89,
+     "reb": 1.89,
+     "ast": 1.68,
+     "tpm": 1.08,
+     "stl": 1.47,
+     "blk": 0.42,
+     "fga": 6.31,
+     "tpa": 2.74,
+     "fta": 0.84
+    },
+    "l5": {
+     "pts": 5.92,
+     "reb": 4.51,
+     "ast": 3.31,
+     "tpm": 1.22,
+     "stl": 0.84,
+     "blk": 0.42,
+     "fga": 4.29,
+     "tpa": 3.09,
+     "fta": 1.16
+    },
+    "op": {
+     "pts": 6.29,
+     "reb": 4.12,
+     "ast": 2.92,
+     "tpm": 1.28,
+     "stl": 0.8,
+     "blk": 0.46,
+     "fga": 4.44,
+     "tpa": 3.25,
+     "fta": 1.4
+    }
+   },
+   "n": {
+    "vt": 5,
+    "own5": 5,
+    "oppGp": 9
+   },
+   "defAdj": false
+  }
+ ]
+}

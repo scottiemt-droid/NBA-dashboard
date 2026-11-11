@@ -73,6 +73,14 @@
    "spread": "OKC -1.5",
    "provider": "Draft Kings",
    "at": "2026-11-10T05:17:30.961Z"
-  }
+  },
+  "close": {
+   "total": 226.5,
+   "spread": "OKC -1.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-11T03:49:34.471Z"
+  },
+  "closeMinsBeforeTip": 10,
+  "closeFinal": true
  }
 }

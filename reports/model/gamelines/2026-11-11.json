@@ -1,0 +1,102 @@
+{
+ "401909966": {
+  "label": "WSH @ IND",
+  "tip": "2026-11-12T00:00Z",
+  "open": {
+   "total": 226.5,
+   "spread": "IND -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909967": {
+  "label": "CLE @ NY",
+  "tip": "2026-11-12T00:00Z",
+  "open": {
+   "total": 221.5,
+   "spread": "NY -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909968": {
+  "label": "BOS @ TOR",
+  "tip": "2026-11-12T00:00Z",
+  "open": {
+   "total": 216.5,
+   "spread": "BOS -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909969": {
+  "label": "SA @ CHI",
+  "tip": "2026-11-12T01:00Z",
+  "open": {
+   "total": 239.5,
+   "spread": "SA -15.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909970": {
+  "label": "DEN @ MEM",
+  "tip": "2026-11-12T01:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "DEN -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909971": {
+  "label": "LAL @ MIL",
+  "tip": "2026-11-12T01:00Z",
+  "open": {
+   "total": 231.5,
+   "spread": "LAL -12.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909972": {
+  "label": "BKN @ NO",
+  "tip": "2026-11-12T01:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "NO -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909973": {
+  "label": "ORL @ UTAH",
+  "tip": "2026-11-12T02:00Z",
+  "open": {
+   "total": 217.5,
+   "spread": "ORL -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909974": {
+  "label": "GS @ HOU",
+  "tip": "2026-11-12T02:30Z",
+  "open": {
+   "total": 222.5,
+   "spread": "HOU -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ },
+ "401909975": {
+  "label": "OKC @ POR",
+  "tip": "2026-11-12T03:00Z",
+  "open": {
+   "total": 225.5,
+   "spread": "OKC -1.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T11:29:04.196Z"
+  }
+ }
+}

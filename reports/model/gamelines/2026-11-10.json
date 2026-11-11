@@ -27,7 +27,15 @@
    "spread": "PHX -4.5",
    "provider": "Draft Kings",
    "at": "2026-11-10T05:17:30.961Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "PHX -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T01:18:30.791Z"
+  },
+  "closeMinsBeforeTip": 41,
+  "closeFinal": false
  },
  "401909963": {
   "label": "MIA @ UTAH",
@@ -37,7 +45,15 @@
    "spread": "MIA -9.5",
    "provider": "Draft Kings",
    "at": "2026-11-10T05:17:30.961Z"
-  }
+  },
+  "close": {
+   "total": 227.5,
+   "spread": "MIA -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-11T01:18:30.791Z"
+  },
+  "closeMinsBeforeTip": 41,
+  "closeFinal": false
  },
  "401909964": {
   "label": "ORL @ SAC",

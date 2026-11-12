@@ -97,6 +97,14 @@
    "spread": "OKC -1.5",
    "provider": "DraftKings",
    "at": "2026-11-11T11:29:04.196Z"
-  }
+  },
+  "close": {
+   "total": 224.5,
+   "spread": "POR -2.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-12T02:48:56.301Z"
+  },
+  "closeMinsBeforeTip": 11,
+  "closeFinal": true
  }
 }

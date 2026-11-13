@@ -1,0 +1,92 @@
+{
+ "401909296": {
+  "label": "NY @ IND",
+  "tip": "2026-11-14T00:00Z",
+  "open": {
+   "total": 219.5,
+   "spread": "NY -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.259Z"
+  }
+ },
+ "401909297": {
+  "label": "MIL @ ORL",
+  "tip": "2026-11-14T00:00Z",
+  "open": {
+   "total": 223.5,
+   "spread": "ORL -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909298": {
+  "label": "CLE @ MIA",
+  "tip": "2026-11-14T01:00Z",
+  "open": {
+   "total": 235.5,
+   "spread": "MIA -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909299": {
+  "label": "ATL @ CHI",
+  "tip": "2026-11-14T01:00Z",
+  "open": {
+   "total": 245.5,
+   "spread": "ATL -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909300": {
+  "label": "MEM @ NO",
+  "tip": "2026-11-14T01:00Z",
+  "open": {
+   "total": 235.5,
+   "spread": "MEM -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909301": {
+  "label": "UTAH @ HOU",
+  "tip": "2026-11-14T01:30Z",
+  "open": {
+   "total": 219.5,
+   "spread": "HOU -17.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909302": {
+  "label": "GS @ SA",
+  "tip": "2026-11-14T02:30Z",
+  "open": {
+   "total": 219.5,
+   "spread": "SA -12.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909303": {
+  "label": "POR @ SAC",
+  "tip": "2026-11-14T03:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "POR -10.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ },
+ "401909304": {
+  "label": "OKC @ LAC",
+  "tip": "2026-11-14T03:30Z",
+  "open": {
+   "total": 222.5,
+   "spread": "OKC -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-13T12:15:10.260Z"
+  }
+ }
+}

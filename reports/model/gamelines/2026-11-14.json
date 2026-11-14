@@ -1,0 +1,52 @@
+{
+ "401909980": {
+  "label": "DEN @ NO",
+  "tip": "2026-11-15T00:00Z",
+  "open": {
+   "total": 235.5,
+   "spread": "DEN -11.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T11:23:31.926Z"
+  }
+ },
+ "401909981": {
+  "label": "DAL @ CLE",
+  "tip": "2026-11-15T00:30Z",
+  "open": {
+   "total": 231.5,
+   "spread": "CLE -1.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T11:23:31.927Z"
+  }
+ },
+ "401909982": {
+  "label": "DET @ MIA",
+  "tip": "2026-11-15T01:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "DET -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T11:23:31.927Z"
+  }
+ },
+ "401909983": {
+  "label": "BKN @ MEM",
+  "tip": "2026-11-15T01:00Z",
+  "open": {
+   "total": 227.5,
+   "spread": "MEM -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T11:23:31.927Z"
+  }
+ },
+ "401909984": {
+  "label": "CHI @ MIN",
+  "tip": "2026-11-15T01:00Z",
+  "open": {
+   "total": 235.5,
+   "spread": "MIN -14.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T11:23:31.927Z"
+  }
+ }
+}

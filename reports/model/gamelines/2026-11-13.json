@@ -67,7 +67,15 @@
    "spread": "SA -12.5",
    "provider": "DraftKings",
    "at": "2026-11-13T12:15:10.260Z"
-  }
+  },
+  "close": {
+   "total": 215.5,
+   "spread": "SA -12.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-14T01:40:07.511Z"
+  },
+  "closeMinsBeforeTip": 50,
+  "closeFinal": false
  },
  "401909303": {
   "label": "POR @ SAC",

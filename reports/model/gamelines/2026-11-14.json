@@ -7,7 +7,15 @@
    "spread": "DEN -11.5",
    "provider": "DraftKings",
    "at": "2026-11-14T11:23:31.926Z"
-  }
+  },
+  "close": {
+   "total": 235.5,
+   "spread": "DEN -12.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T23:49:08.613Z"
+  },
+  "closeMinsBeforeTip": 11,
+  "closeFinal": true
  },
  "401909981": {
   "label": "DAL @ CLE",
@@ -17,7 +25,15 @@
    "spread": "CLE -1.5",
    "provider": "DraftKings",
    "at": "2026-11-14T11:23:31.927Z"
-  }
+  },
+  "close": {
+   "total": 227.5,
+   "spread": "DAL -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-14T23:49:08.613Z"
+  },
+  "closeMinsBeforeTip": 41,
+  "closeFinal": false
  },
  "401909982": {
   "label": "DET @ MIA",

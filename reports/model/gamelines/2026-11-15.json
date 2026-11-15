@@ -17,7 +17,15 @@
    "spread": "LAL -2.5",
    "provider": "Draft Kings",
    "at": "2026-11-15T11:39:48.891Z"
-  }
+  },
+  "close": {
+   "total": 226.5,
+   "spread": "LAL -3.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-15T20:17:22.429Z"
+  },
+  "closeMinsBeforeTip": 43,
+  "closeFinal": false
  },
  "401909987": {
   "label": "CHA @ LAC",

@@ -1,258 +1,258 @@
 {
- "updated": "2026-11-14T23:49:08.709Z",
- "days": 8,
- "pending": 1,
- "playerGames": 1011,
- "dnp": 58,
+ "updated": "2026-11-15T11:39:49.043Z",
+ "days": 9,
+ "pending": 0,
+ "playerGames": 1086,
+ "dnp": 73,
  "byStat": {
   "pts": {
-   "n": 1011,
-   "mae": 4.99,
-   "bias": 0.15,
-   "meanActual": 12.18,
+   "n": 1086,
+   "mae": 4.96,
+   "bias": 0.06,
+   "meanActual": 12.27,
    "inputs": {
     "vt": {
-     "n": 699,
-     "mae": 5.47,
-     "bias": 0.43
+     "n": 753,
+     "mae": 5.39,
+     "bias": 0.4
     },
     "l5": {
-     "n": 699,
-     "mae": 5.14,
-     "bias": 0.09
+     "n": 753,
+     "mae": 5.06,
+     "bias": 0.01
     },
     "op": {
-     "n": 699,
-     "mae": 5.1,
-     "bias": 0.07
+     "n": 753,
+     "mae": 5.04,
+     "bias": -0.02
     }
    },
    "blendOnSameRows": {
-    "n": 699,
-    "mae": 5.13
+    "n": 753,
+    "mae": 5.05
    }
   },
   "reb": {
-   "n": 1011,
-   "mae": 2,
-   "bias": 0.28,
-   "meanActual": 4.44,
+   "n": 1086,
+   "mae": 2.01,
+   "bias": 0.24,
+   "meanActual": 4.46,
    "inputs": {
     "vt": {
-     "n": 699,
-     "mae": 2.24,
-     "bias": 0.31
+     "n": 753,
+     "mae": 2.26,
+     "bias": 0.29
     },
     "l5": {
-     "n": 699,
-     "mae": 2.04,
-     "bias": 0.26
+     "n": 753,
+     "mae": 2.03,
+     "bias": 0.21
     },
     "op": {
-     "n": 699,
-     "mae": 2.06,
-     "bias": 0.26
+     "n": 753,
+     "mae": 2.05,
+     "bias": 0.22
     }
    },
    "blendOnSameRows": {
-    "n": 699,
+    "n": 753,
     "mae": 2.04
    }
   },
   "ast": {
-   "n": 1011,
-   "mae": 1.48,
-   "bias": 0.08,
-   "meanActual": 2.8,
+   "n": 1086,
+   "mae": 1.47,
+   "bias": 0.05,
+   "meanActual": 2.83,
    "inputs": {
     "vt": {
-     "n": 699,
-     "mae": 1.77,
-     "bias": 0.05
+     "n": 753,
+     "mae": 1.76,
+     "bias": 0.02
     },
     "l5": {
-     "n": 699,
-     "mae": 1.55,
-     "bias": 0.01
+     "n": 753,
+     "mae": 1.53,
+     "bias": -0.01
     },
     "op": {
-     "n": 699,
-     "mae": 1.56,
-     "bias": 0.02
+     "n": 753,
+     "mae": 1.53,
+     "bias": 0
     }
    },
    "blendOnSameRows": {
-    "n": 699,
-    "mae": 1.54
+    "n": 753,
+    "mae": 1.52
    }
   },
   "tpm": {
-   "n": 1011,
-   "mae": 0.96,
+   "n": 1086,
+   "mae": 0.97,
    "bias": -0.04,
    "meanActual": 1.48,
    "inputs": {
     "vt": {
-     "n": 699,
-     "mae": 1.04,
+     "n": 753,
+     "mae": 1.03,
      "bias": -0.07
     },
     "l5": {
-     "n": 699,
-     "mae": 0.99,
+     "n": 753,
+     "mae": 0.98,
      "bias": -0.04
     },
     "op": {
-     "n": 699,
+     "n": 753,
      "mae": 0.99,
      "bias": -0.04
     }
    },
    "blendOnSameRows": {
-    "n": 699,
+    "n": 753,
     "mae": 0.99
    }
   },
   "stl": {
-   "n": 1011,
+   "n": 1086,
    "mae": 0.77,
-   "bias": 0.08,
+   "bias": 0.07,
    "meanActual": 0.79,
    "inputs": {
     "vt": {
-     "n": 699,
+     "n": 753,
      "mae": 0.87,
      "bias": 0.07
     },
     "l5": {
-     "n": 699,
-     "mae": 0.8,
+     "n": 753,
+     "mae": 0.79,
      "bias": 0.06
     },
     "op": {
-     "n": 699,
+     "n": 753,
      "mae": 0.8,
-     "bias": 0.06
+     "bias": 0.05
     }
    },
    "blendOnSameRows": {
-    "n": 699,
+    "n": 753,
     "mae": 0.79
    }
   },
   "blk": {
-   "n": 1011,
+   "n": 1086,
    "mae": 0.59,
    "bias": 0.01,
    "meanActual": 0.53,
    "inputs": {
     "vt": {
-     "n": 699,
+     "n": 753,
      "mae": 0.64,
-     "bias": 0.01
+     "bias": 0
     },
     "l5": {
-     "n": 699,
+     "n": 753,
      "mae": 0.61,
      "bias": 0
     },
     "op": {
-     "n": 699,
+     "n": 753,
      "mae": 0.61,
      "bias": -0.01
     }
    },
    "blendOnSameRows": {
-    "n": 699,
-    "mae": 0.6
+    "n": 753,
+    "mae": 0.61
    }
   },
   "fga": {
-   "n": 1011,
-   "mae": 2.79,
-   "bias": 0.2,
-   "meanActual": 9.35,
+   "n": 1086,
+   "mae": 2.83,
+   "bias": 0.12,
+   "meanActual": 9.4,
    "inputs": {
     "vt": {
-     "n": 699,
+     "n": 753,
      "mae": 3.23,
-     "bias": 0.55
+     "bias": 0.54
     },
     "l5": {
-     "n": 699,
+     "n": 753,
      "mae": 2.87,
-     "bias": 0.14
+     "bias": 0.08
     },
     "op": {
-     "n": 699,
-     "mae": 2.88,
-     "bias": 0.14
+     "n": 753,
+     "mae": 2.89,
+     "bias": 0.07
     }
    },
    "blendOnSameRows": {
-    "n": 699,
+    "n": 753,
     "mae": 2.84
    }
   },
   "tpa": {
-   "n": 1011,
-   "mae": 1.61,
-   "bias": 0.02,
+   "n": 1086,
+   "mae": 1.63,
+   "bias": 0.01,
    "meanActual": 4.05,
    "inputs": {
     "vt": {
-     "n": 699,
+     "n": 753,
      "mae": 1.91,
-     "bias": -0.04
+     "bias": -0.02
     },
     "l5": {
-     "n": 699,
-     "mae": 1.63,
+     "n": 753,
+     "mae": 1.64,
      "bias": 0.02
     },
     "op": {
-     "n": 699,
+     "n": 753,
      "mae": 1.66,
      "bias": 0.03
     }
    },
    "blendOnSameRows": {
-    "n": 699,
+    "n": 753,
     "mae": 1.64
    }
   },
   "fta": {
-   "n": 1011,
+   "n": 1086,
    "mae": 1.84,
-   "bias": 0.1,
-   "meanActual": 2.58,
+   "bias": 0.06,
+   "meanActual": 2.62,
    "inputs": {
     "vt": {
-     "n": 699,
-     "mae": 2.15,
-     "bias": -0.01
+     "n": 753,
+     "mae": 2.14,
+     "bias": -0.08
     },
     "l5": {
-     "n": 699,
+     "n": 753,
      "mae": 1.94,
-     "bias": 0.08
+     "bias": 0.02
     },
     "op": {
-     "n": 699,
+     "n": 753,
      "mae": 1.92,
-     "bias": 0.05
+     "bias": -0.01
     }
    },
    "blendOnSameRows": {
-    "n": 699,
-    "mae": 1.92
+    "n": 753,
+    "mae": 1.91
    }
   }
  },
  "minutes": {
-  "n": 1011,
-  "mae": 4.9,
-  "bias": 0.72
+  "n": 1086,
+  "mae": 4.96,
+  "bias": 0.57
  },
  "bestInput": {
   "pts": "op",
@@ -268,46 +268,46 @@
    "l5": 40,
    "op": 30
   },
-  "n": 699,
+  "n": 753,
   "threshold": 300,
-  "currentLoss": 4.01,
+  "currentLoss": 3.98,
   "suggested": {
    "vt": 20,
-   "l5": 45,
-   "op": 35
+   "l5": 60,
+   "op": 20
   },
-  "suggestedLoss": 4,
+  "suggestedLoss": 3.97,
   "verdict": "Suggestion from the misses so far — move the sliders (or W_DEFAULT in js/ui.js) yourself if you agree."
  },
  "market": {
   "gameTotals": {
-   "n": 15,
+   "n": 17,
    "threshold": 100,
-   "modelMae": 7.44,
-   "closeMae": 7.17,
-   "modelMinusClose": 0.9,
+   "modelMae": 7.94,
+   "closeMae": 7.97,
+   "modelMinusClose": 0.58,
    "sideRecord": {
-    "decided": 15,
-    "modelSideWon": 9
+    "decided": 17,
+    "modelSideWon": 11
    },
    "openToCloseMoveTowardModel": {
-    "moved": 10,
-    "towardModel": 5
+    "moved": 11,
+    "towardModel": 6
    },
-   "verdict": "n=15 — too small to conclude anything (needs 100+)."
+   "verdict": "n=17 — too small to conclude anything (needs 100+)."
   },
   "playerLines": {
-   "n": 694,
-   "withClose": 46,
-   "projMae": 2.9,
-   "lineMae": 2.87,
-   "projMinusLine": 0.16,
+   "n": 768,
+   "withClose": 67,
+   "projMae": 2.83,
+   "lineMae": 2.79,
+   "projMinusLine": 0.15,
    "sideRecord": {
-    "decided": 693,
-    "projSideWon": 367
+    "decided": 767,
+    "projSideWon": 399
    },
    "note": "Lines come only from props the odds agent fetched (budget mode: a few stats per day), so this sample grows slowly.",
-   "verdict": "n=694."
+   "verdict": "n=768."
   }
  },
  "days_list": [
@@ -318,6 +318,7 @@
   "2026-11-10",
   "2026-11-11",
   "2026-11-12",
-  "2026-11-13"
+  "2026-11-13",
+  "2026-11-14"
  ]
 }

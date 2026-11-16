@@ -85,7 +85,15 @@
    "spread": "ATL -7.5",
    "provider": "Draft Kings",
    "at": "2026-11-15T11:39:48.891Z"
-  }
+  },
+  "close": {
+   "total": 233.5,
+   "spread": "ATL -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T00:04:04.158Z"
+  },
+  "closeMinsBeforeTip": 56,
+  "closeFinal": false
  },
  "401909993": {
   "label": "OKC @ SAC",

@@ -7,7 +7,15 @@
    "spread": "BOS -8.5",
    "provider": "Draft Kings",
    "at": "2026-11-16T12:17:27.136Z"
-  }
+  },
+  "close": {
+   "total": 214.5,
+   "spread": "BOS -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T23:42:39.340Z"
+  },
+  "closeMinsBeforeTip": 17,
+  "closeFinal": true
  },
  "401909995": {
   "label": "CHI @ CLE",
@@ -17,7 +25,15 @@
    "spread": "CLE -8.5",
    "provider": "Draft Kings",
    "at": "2026-11-16T12:17:27.136Z"
-  }
+  },
+  "close": {
+   "total": 241.5,
+   "spread": "CLE -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T23:42:39.340Z"
+  },
+  "closeMinsBeforeTip": 17,
+  "closeFinal": true
  },
  "401909996": {
   "label": "MEM @ WSH",
@@ -27,7 +43,15 @@
    "spread": "MEM -3.5",
    "provider": "Draft Kings",
    "at": "2026-11-16T12:17:27.136Z"
-  }
+  },
+  "close": {
+   "total": 231.5,
+   "spread": "MEM -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T23:42:39.340Z"
+  },
+  "closeMinsBeforeTip": 17,
+  "closeFinal": true
  },
  "401909997": {
   "label": "PHI @ BKN",
@@ -37,7 +61,15 @@
    "spread": "PHI -5.5",
    "provider": "Draft Kings",
    "at": "2026-11-16T12:17:27.136Z"
-  }
+  },
+  "close": {
+   "total": 226.5,
+   "spread": "PHI -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T23:42:39.340Z"
+  },
+  "closeMinsBeforeTip": 47,
+  "closeFinal": false
  },
  "401909998": {
   "label": "HOU @ MIA",
@@ -47,7 +79,15 @@
    "spread": "HOU -2.5",
    "provider": "Draft Kings",
    "at": "2026-11-16T12:17:27.136Z"
-  }
+  },
+  "close": {
+   "total": 232.5,
+   "spread": "HOU -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-16T23:42:39.340Z"
+  },
+  "closeMinsBeforeTip": 47,
+  "closeFinal": false
  },
  "401909999": {
   "label": "POR @ MIN",

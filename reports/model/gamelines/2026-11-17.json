@@ -1,0 +1,52 @@
+{
+ "401910002": {
+  "label": "NY @ TOR",
+  "tip": "2026-11-18T00:30Z",
+  "open": {
+   "total": 216.5,
+   "spread": "NY -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-17T05:17:00.820Z"
+  }
+ },
+ "401910003": {
+  "label": "POR @ MIN",
+  "tip": "2026-11-18T01:00Z",
+  "open": {
+   "total": 226.5,
+   "spread": "MIN -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-17T05:17:00.820Z"
+  }
+ },
+ "401910004": {
+  "label": "DET @ SA",
+  "tip": "2026-11-18T01:00Z",
+  "open": {
+   "total": 221.5,
+   "spread": "SA -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-17T05:17:00.820Z"
+  }
+ },
+ "401910005": {
+  "label": "CHA @ LAL",
+  "tip": "2026-11-18T04:00Z",
+  "open": {
+   "total": 218.5,
+   "spread": "LAL -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-17T05:17:00.820Z"
+  }
+ },
+ "401910006": {
+  "label": "UTAH @ LAC",
+  "tip": "2026-11-18T03:30Z",
+  "open": {
+   "total": 225.5,
+   "spread": "LAC -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-17T05:17:00.820Z"
+  }
+ }
+}

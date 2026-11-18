@@ -1,0 +1,112 @@
+{
+ "401910007": {
+  "label": "MEM @ CLE",
+  "tip": "2026-11-19T00:00Z",
+  "open": {
+   "total": 234.5,
+   "spread": "CLE -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910008": {
+  "label": "HOU @ IND",
+  "tip": "2026-11-19T00:00Z",
+  "open": {
+   "total": 224.5,
+   "spread": "HOU -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910009": {
+  "label": "MIL @ MIA",
+  "tip": "2026-11-19T00:00Z",
+  "open": {
+   "total": 236.5,
+   "spread": "MIA -12.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910010": {
+  "label": "PHI @ ORL",
+  "tip": "2026-11-19T00:00Z",
+  "open": {
+   "total": 222.5,
+   "spread": "PHI -1.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910011": {
+  "label": "CHI @ BKN",
+  "tip": "2026-11-19T00:30Z",
+  "open": {
+   "total": 237.5,
+   "spread": "BKN -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910012": {
+  "label": "WSH @ TOR",
+  "tip": "2026-11-19T00:30Z",
+  "open": {
+   "total": 227.5,
+   "spread": "TOR -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910013": {
+  "label": "DET @ NO",
+  "tip": "2026-11-19T01:00Z",
+  "open": {
+   "total": 229.5,
+   "spread": "DET -8.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910014": {
+  "label": "ATL @ OKC",
+  "tip": "2026-11-19T01:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "OKC -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910015": {
+  "label": "BOS @ DEN",
+  "tip": "2026-11-19T02:30Z",
+  "open": {
+   "total": 222.5,
+   "spread": "BOS -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910016": {
+  "label": "GS @ DAL",
+  "tip": "2026-11-19T01:00Z",
+  "open": {
+   "total": 221.5,
+   "spread": "DAL -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ },
+ "401910018": {
+  "label": "PHX @ SAC",
+  "tip": "2026-11-19T03:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "PHX -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-18T05:11:58.151Z"
+  }
+ }
+}

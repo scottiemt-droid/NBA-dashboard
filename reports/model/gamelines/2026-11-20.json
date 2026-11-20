@@ -1,0 +1,92 @@
+{
+ "401909305": {
+  "label": "CHA @ ATL",
+  "tip": "2026-11-21T00:00Z",
+  "open": {
+   "total": 219.5,
+   "spread": "ATL -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.547Z"
+  }
+ },
+ "401909306": {
+  "label": "ORL @ BKN",
+  "tip": "2026-11-21T00:30Z",
+  "open": {
+   "total": 223.5,
+   "spread": "ORL -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909307": {
+  "label": "IND @ CLE",
+  "tip": "2026-11-21T00:30Z",
+  "open": {
+   "total": 232.5,
+   "spread": "CLE -6.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909308": {
+  "label": "TOR @ DET",
+  "tip": "2026-11-21T00:30Z",
+  "open": {
+   "total": 217.5,
+   "spread": "DET -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909309": {
+  "label": "WSH @ CHI",
+  "tip": "2026-11-21T01:00Z",
+  "open": {
+   "total": 239.5,
+   "spread": "CHI -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909310": {
+  "label": "NO @ OKC",
+  "tip": "2026-11-21T01:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "OKC -11.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909311": {
+  "label": "PHX @ UTAH",
+  "tip": "2026-11-21T02:30Z",
+  "open": {
+   "total": 225.5,
+   "spread": "PHX -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909312": {
+  "label": "HOU @ DEN",
+  "tip": "2026-11-21T03:00Z",
+  "open": {
+   "total": 226.5,
+   "spread": "DEN -1.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ },
+ "401909313": {
+  "label": "SAC @ LAL",
+  "tip": "2026-11-21T03:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "LAL -14.5",
+   "provider": "DraftKings",
+   "at": "2026-11-20T13:44:34.548Z"
+  }
+ }
+}

@@ -827,47 +827,58 @@ date,run_at_et,phase,check,game_id,game,player_id,player,stat,side,line,threshol
 2026-11-19,2026-11-19 09:20,flag,morning,401910020,POR @ MIL,5081727,Sidy Cissoko,reb,over,3.5,4,betmgm,1.950,-105,0.5764,0.4800,0.0964,0.0657,3,no,yes,1.00,,,,W,5
 2026-11-19,2026-11-19 09:20,flag,morning,401910019,GS @ MEM,4903027,Cedric Coward,reb,over,7.5,8,draftkings,1.950,-105,0.5685,0.4800,0.0885,0.0538,3,no,yes,1.00,,,,L,4
 2026-11-19,2026-11-19 09:20,flag,morning,401910021|401910019|401910020,NY @ MIN + GS @ MEM + POR @ MIL,,Ayo Dosunmu 18+ PTS | Cameron Boozer 9+ REB | Kyle Kuzma 5+ REB,parlay,,,,draftkings,7.533,+653,0.4074,,,,,yes,,0.50,401910021:4397002:pts:over:18;401910019:5041935:reb:over:9;401910020:3134907:reb:over:5,,,L,6/6/DNP
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4602025,Sion James,reb,over,3.5,4,draftkings,1.690,-145,0.8237,0.5529,0.2708,0.2478,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432165,Jalen Suggs,ast,over,4.5,5,draftkings,2.140,+114,0.6824,0.4383,0.2441,0.2024,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4702382,Tristan da Silva,pts,over,11.5,12,betmgm,1.910,-110,0.7170,0.4893,0.2277,0.2011,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4869342,Dyson Daniels,reb,over,7.5,8,betmgm,2.150,+115,0.6440,0.4342,0.2098,0.2007,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4712849,Anthony Black,ast,over,4.5,5,fanduel,1.770,-130,0.7295,0.5280,0.2015,0.1725,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433249,Moussa Diabate,reb,over,10.5,11,fanduel,1.910,-110,0.6639,0.4893,0.1746,0.1666,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4397136,Saddiq Bey,ast,over,2.5,3,fanduel,2.400,+140,0.6015,0.3893,0.2122,0.1585,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4277905,Trae Young,tpm,over,2.5,3,fanduel,2.620,+162,0.5511,0.3563,0.1948,0.1511,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4278039,Nickeil Alexander-Walker,reb,over,3.5,4,betmgm,2.100,+110,0.6056,0.4430,0.1626,0.1481,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4278104,Michael Porter Jr.,pts,over,20.5,21,fanduel,1.960,-104,0.6095,0.4759,0.1336,0.1254,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,4432639,Jabari Smith Jr.,pts,under,14.5,15,draftkings,1.980,-102,0.6047,0.4762,0.1285,0.1247,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4431680,Onyeka Okongwu,pts,over,14.5,15,draftkings,1.880,-114,0.6520,0.5013,0.1506,0.1200,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5174563,Kyshawn George,reb,over,4.5,5,fanduel,1.880,-114,0.6166,0.5000,0.1166,0.1139,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4278073,Shai Gilgeous-Alexander,reb,under,3.5,4,fanduel,2.200,+120,0.5672,0.4241,0.1432,0.1124,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4566434,Franz Wagner,ast,over,7.5,8,draftkings,2.100,+110,0.5781,0.4459,0.1322,0.1100,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3936299,Jamal Murray,pts,over,22.5,23,fanduel,1.880,-114,0.6267,0.5000,0.1267,0.1067,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4566434,Franz Wagner,pts,over,24.5,25,betmgm,1.900,-111,0.6202,0.4906,0.1296,0.1055,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3202,Kevin Durant,reb,under,4.5,5,fanduel,2.240,+124,0.5545,0.4167,0.1378,0.0997,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5160992,Alex Sarr,reb,over,6.5,7,draftkings,1.760,-132,0.6459,0.5307,0.1152,0.0995,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5142718,AJ Dybantsa,reb,over,6.5,7,betmgm,2.050,+105,0.5627,0.4548,0.1079,0.0985,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,2991230,Fred VanVleet,pts,over,12.5,13,draftkings,1.880,-114,0.5954,0.5013,0.0941,0.0941,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4066320,Desmond Bane,ast,over,2.5,3,betmgm,1.710,-141,0.6533,0.5452,0.1081,0.0890,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4711294,Matas Buzelis,tpm,over,2.5,3,draftkings,2.330,+133,0.5090,0.4026,0.1064,0.0849,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4711294,Matas Buzelis,reb,under,5.5,6,betmgm,1.950,-105,0.6017,0.4758,0.1259,0.0737,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,4432639,Jabari Smith Jr.,reb,over,6.5,7,draftkings,2.100,+110,0.5402,0.4459,0.0943,0.0590,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5174563,Kyshawn George,tpm,over,2.5,3,fanduel,2.340,+134,0.4820,0.4000,0.0820,0.0579,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3112335,Nikola Jokic,reb,over,11.5,12,draftkings,2.000,+100,0.5284,0.4681,0.0603,0.0564,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3202,Kevin Durant,pts,under,21.5,22,betmgm,1.900,-111,0.5734,0.4906,0.0828,0.0547,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432194,Day'Ron Sharpe,pts,under,8.5,9,draftkings,1.820,-122,0.5815,0.5185,0.0630,0.0496,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4395651,Coby White,reb,under,2.5,3,fanduel,2.060,+106,0.5494,0.4536,0.0958,0.0494,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432194,Day'Ron Sharpe,ast,over,3.5,4,draftkings,2.050,+105,0.5570,0.4562,0.1008,0.0463,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4397189,Jalen Smith,reb,under,8.5,9,betmgm,2.100,+110,0.5004,0.4430,0.0574,0.0429,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,5101761,Mikel Brown Jr.,pts,over,10.5,11,draftkings,1.880,-114,0.5733,0.5000,0.0733,0.0414,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4396971,Naz Reid,reb,over,7.5,8,betmgm,1.830,-120,0.5721,0.5107,0.0614,0.0402,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4900671,Ajay Mitchell,reb,under,3.5,4,fanduel,2.060,+106,0.5325,0.4536,0.0790,0.0379,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4871145,Josh Giddey,tpm,under,1.5,2,betmgm,1.710,-141,0.6294,0.5452,0.0842,0.0341,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,3133626,Kenrich Williams,reb,under,4.5,5,fanduel,1.780,-128,0.5684,0.5241,0.0443,0.0336,3,yes,no,0.37,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4277905,Trae Young,reb,over,2.5,3,fanduel,1.880,-114,0.5566,0.5000,0.0566,0.0324,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,3064514,Julius Randle,ast,over,4.5,5,draftkings,2.160,+116,0.5065,0.4331,0.0734,0.0305,3,yes,no,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433287,Brandon Miller,reb,over,4.5,5,draftkings,2.100,+110,0.6477,0.4459,0.2018,0.1929,3,no,yes,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433287,Brandon Miller,pts,over,20.5,21,draftkings,1.890,-112,0.6745,0.4987,0.1759,0.1599,3,no,yes,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4869342,Dyson Daniels,pts,over,10.5,11,draftkings,1.920,-109,0.6117,0.4907,0.1210,0.1170,3,no,yes,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4701230,Jalen Johnson,pts,over,20.5,21,betmgm,1.900,-111,0.5523,0.4906,0.0617,0.0364,3,no,yes,1.00,,,,,
-2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,,Jalen Suggs 5+ AST | Tristan da Silva 12+ PTS | Anthony Black 5+ AST,parlay,,,,draftkings,6.853,+585,0.4407,,,,,yes,,0.50,401909306:4432165:ast:over:5;401909306:4702382:pts:over:12;401909306:4712849:ast:over:5,,,,
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4602025,Sion James,reb,over,3.5,4,draftkings,1.690,-145,0.8237,0.5529,0.2708,0.2478,3,yes,no,1.00,,,,L,1
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432165,Jalen Suggs,ast,over,4.5,5,draftkings,2.140,+114,0.6824,0.4383,0.2441,0.2024,3,yes,no,1.00,,,,L,2
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4702382,Tristan da Silva,pts,over,11.5,12,betmgm,1.910,-110,0.7170,0.4893,0.2277,0.2011,3,yes,no,1.00,,,,L,6
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4869342,Dyson Daniels,reb,over,7.5,8,betmgm,2.150,+115,0.6440,0.4342,0.2098,0.2007,3,yes,no,1.00,,,,W,8
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4712849,Anthony Black,ast,over,4.5,5,fanduel,1.770,-130,0.7295,0.5280,0.2015,0.1725,3,yes,no,1.00,,,,W,6
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433249,Moussa Diabate,reb,over,10.5,11,fanduel,1.910,-110,0.6639,0.4893,0.1746,0.1666,3,yes,no,1.00,,,,W,15
+2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4397136,Saddiq Bey,ast,over,2.5,3,fanduel,2.400,+140,0.6015,0.3893,0.2122,0.1585,3,yes,no,1.00,,,,W,3
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4277905,Trae Young,tpm,over,2.5,3,fanduel,2.620,+162,0.5511,0.3563,0.1948,0.1511,3,yes,no,1.00,,,,W,4
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4278039,Nickeil Alexander-Walker,reb,over,3.5,4,betmgm,2.100,+110,0.6056,0.4430,0.1626,0.1481,3,yes,no,1.00,,,,W,4
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4278104,Michael Porter Jr.,pts,over,20.5,21,fanduel,1.960,-104,0.6095,0.4759,0.1336,0.1254,3,yes,no,1.00,,,,L,16
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,4432639,Jabari Smith Jr.,pts,under,14.5,15,draftkings,1.980,-102,0.6047,0.4762,0.1285,0.1247,3,yes,no,1.00,,,,L,21
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4431680,Onyeka Okongwu,pts,over,14.5,15,draftkings,1.880,-114,0.6520,0.5013,0.1506,0.1200,3,yes,no,1.00,,,,W,16
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5174563,Kyshawn George,reb,over,4.5,5,fanduel,1.880,-114,0.6166,0.5000,0.1166,0.1139,3,yes,no,1.00,,,,W,7
+2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4278073,Shai Gilgeous-Alexander,reb,under,3.5,4,fanduel,2.200,+120,0.5672,0.4241,0.1432,0.1124,3,yes,no,1.00,,,,W,3
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4566434,Franz Wagner,ast,over,7.5,8,draftkings,2.100,+110,0.5781,0.4459,0.1322,0.1100,3,yes,no,1.00,,,,L,7
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3936299,Jamal Murray,pts,over,22.5,23,fanduel,1.880,-114,0.6267,0.5000,0.1267,0.1067,3,yes,no,1.00,,,,L,14
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4566434,Franz Wagner,pts,over,24.5,25,betmgm,1.900,-111,0.6202,0.4906,0.1296,0.1055,3,yes,no,1.00,,,,W,35
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3202,Kevin Durant,reb,under,4.5,5,fanduel,2.240,+124,0.5545,0.4167,0.1378,0.0997,3,yes,no,1.00,,,,W,4
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5160992,Alex Sarr,reb,over,6.5,7,draftkings,1.760,-132,0.6459,0.5307,0.1152,0.0995,3,yes,no,1.00,,,,L,3
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5142718,AJ Dybantsa,reb,over,6.5,7,betmgm,2.050,+105,0.5627,0.4548,0.1079,0.0985,3,yes,no,1.00,,,,W,10
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,2991230,Fred VanVleet,pts,over,12.5,13,draftkings,1.880,-114,0.5954,0.5013,0.0941,0.0941,3,yes,no,1.00,,,,W,25
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4066320,Desmond Bane,ast,over,2.5,3,betmgm,1.710,-141,0.6533,0.5452,0.1081,0.0890,3,yes,no,1.00,,,,W,3
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4711294,Matas Buzelis,tpm,over,2.5,3,draftkings,2.330,+133,0.5090,0.4026,0.1064,0.0849,3,yes,no,1.00,,,,L,1
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4711294,Matas Buzelis,reb,under,5.5,6,betmgm,1.950,-105,0.6017,0.4758,0.1259,0.0737,3,yes,no,1.00,,,,W,5
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,4432639,Jabari Smith Jr.,reb,over,6.5,7,draftkings,2.100,+110,0.5402,0.4459,0.0943,0.0590,3,yes,no,1.00,,,,L,4
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,5174563,Kyshawn George,tpm,over,2.5,3,fanduel,2.340,+134,0.4820,0.4000,0.0820,0.0579,3,yes,no,1.00,,,,L,1
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3112335,Nikola Jokic,reb,over,11.5,12,draftkings,2.000,+100,0.5284,0.4681,0.0603,0.0564,3,yes,no,1.00,,,,L,7
+2026-11-20,2026-11-20 08:44,flag,morning,401909312,HOU @ DEN,3202,Kevin Durant,pts,under,21.5,22,betmgm,1.900,-111,0.5734,0.4906,0.0828,0.0547,3,yes,no,1.00,,,,W,16
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432194,Day'Ron Sharpe,pts,under,8.5,9,draftkings,1.820,-122,0.5815,0.5185,0.0630,0.0496,3,yes,no,1.00,,,,L,17
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4395651,Coby White,reb,under,2.5,3,fanduel,2.060,+106,0.5494,0.4536,0.0958,0.0494,3,yes,no,1.00,,,,L,4
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,4432194,Day'Ron Sharpe,ast,over,3.5,4,draftkings,2.050,+105,0.5570,0.4562,0.1008,0.0463,3,yes,no,1.00,,,,L,2
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4397189,Jalen Smith,reb,under,8.5,9,betmgm,2.100,+110,0.5004,0.4430,0.0574,0.0429,3,yes,no,1.00,,,,VOID,DNP
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,5101761,Mikel Brown Jr.,pts,over,10.5,11,draftkings,1.880,-114,0.5733,0.5000,0.0733,0.0414,3,yes,no,1.00,,,,W,18
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4396971,Naz Reid,reb,over,7.5,8,betmgm,1.830,-120,0.5721,0.5107,0.0614,0.0402,3,yes,no,1.00,,,,W,10
+2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,4900671,Ajay Mitchell,reb,under,3.5,4,fanduel,2.060,+106,0.5325,0.4536,0.0790,0.0379,3,yes,no,1.00,,,,W,2
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4871145,Josh Giddey,tpm,under,1.5,2,betmgm,1.710,-141,0.6294,0.5452,0.0842,0.0341,3,yes,no,1.00,,,,W,0
+2026-11-20,2026-11-20 08:44,flag,morning,401909310,NO @ OKC,3133626,Kenrich Williams,reb,under,4.5,5,fanduel,1.780,-128,0.5684,0.5241,0.0443,0.0336,3,yes,no,0.37,,,,W,2
+2026-11-20,2026-11-20 08:44,flag,morning,401909309,WSH @ CHI,4277905,Trae Young,reb,over,2.5,3,fanduel,1.880,-114,0.5566,0.5000,0.0566,0.0324,3,yes,no,1.00,,,,L,2
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,3064514,Julius Randle,ast,over,4.5,5,draftkings,2.160,+116,0.5065,0.4331,0.0734,0.0305,3,yes,no,1.00,,,,W,6
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433287,Brandon Miller,reb,over,4.5,5,draftkings,2.100,+110,0.6477,0.4459,0.2018,0.1929,3,no,yes,1.00,,,,W,8
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4433287,Brandon Miller,pts,over,20.5,21,draftkings,1.890,-112,0.6745,0.4987,0.1759,0.1599,3,no,yes,1.00,,,,L,19
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4869342,Dyson Daniels,pts,over,10.5,11,draftkings,1.920,-109,0.6117,0.4907,0.1210,0.1170,3,no,yes,1.00,,,,W,11
+2026-11-20,2026-11-20 08:44,flag,morning,401909305,CHA @ ATL,4701230,Jalen Johnson,pts,over,20.5,21,betmgm,1.900,-111,0.5523,0.4906,0.0617,0.0364,3,no,yes,1.00,,,,W,26
+2026-11-20,2026-11-20 08:44,flag,morning,401909306,ORL @ BKN,,Jalen Suggs 5+ AST | Tristan da Silva 12+ PTS | Anthony Black 5+ AST,parlay,,,,draftkings,6.853,+585,0.4407,,,,,yes,,0.50,401909306:4432165:ast:over:5;401909306:4702382:pts:over:12;401909306:4712849:ast:over:5,,,L,2/6/6
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,4395725,Tyler Herro,pts,under,20.5,21,draftkings,1.930,-108,0.8047,0.4894,0.3153,0.2767,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,4432848,Jaime Jaquez Jr.,pts,over,12.5,13,betmgm,1.950,-105,0.7309,0.4800,0.2509,0.2122,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,4395725,Tyler Herro,ast,under,4.5,5,draftkings,1.760,-132,0.7719,0.5319,0.2400,0.2064,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,4432848,Jaime Jaquez Jr.,ast,over,2.5,3,betmgm,1.650,-154,0.7451,0.5658,0.1793,0.1696,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,5214640,Kasparas Jakucionis,pts,over,7.5,8,betmgm,1.950,-105,0.6385,0.4800,0.1585,0.1226,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,5124612,VJ Edgecombe,ast,over,3.5,4,draftkings,1.660,-152,0.6620,0.5643,0.0977,0.0791,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,3134907,Kyle Kuzma,pts,over,11.5,12,betmgm,1.950,-105,0.6056,0.4800,0.1256,0.0736,3,yes,no,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,3059318,Joel Embiid,pts,over,25.5,26,draftkings,1.880,-114,0.6257,0.5013,0.1244,0.1111,3,no,yes,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,2581018,Kentavious Caldwell-Pope,pts,over,7.5,8,betmgm,1.900,-111,0.5973,0.4906,0.1067,0.0867,3,no,yes,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,4431678,Tyrese Maxey,pts,over,24.5,25,fanduel,1.880,-114,0.6043,0.5000,0.1043,0.0843,3,no,yes,1.00,,,,,
+2026-11-21,2026-11-21 08:09,flag,morning,401910023,MIL @ PHI,,Tyler Herro ≤20 PTS | Tyler Herro ≤4 AST | Kyle Kuzma 12+ PTS,parlay,,,,draftkings,6.386,+539,0.5072,,,,,yes,,0.50,401910023:4395725:pts:under:21;401910023:4395725:ast:under:5;401910023:3134907:pts:over:12,,,,

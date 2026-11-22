@@ -7,7 +7,15 @@
    "spread": "DET -2.5",
    "provider": "Draft Kings",
    "at": "2026-11-22T12:29:29.950Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "DET -1.5",
+   "provider": "DraftKings",
+   "at": "2026-11-22T19:49:58.035Z"
+  },
+  "closeMinsBeforeTip": 40,
+  "closeFinal": false
  },
  "401910030": {
   "label": "OKC @ MIA",

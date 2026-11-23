@@ -1,0 +1,102 @@
+{
+ "401910036": {
+  "label": "MEM @ CHA",
+  "tip": "2026-11-24T00:00Z",
+  "open": {
+   "total": 214.5,
+   "spread": "MEM -2.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910037": {
+  "label": "POR @ PHI",
+  "tip": "2026-11-24T00:00Z",
+  "open": {
+   "total": 231.5,
+   "spread": "PHI -3.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910038": {
+  "label": "OKC @ IND",
+  "tip": "2026-11-24T00:30Z",
+  "open": {
+   "total": 221.5,
+   "spread": "OKC -4.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910039": {
+  "label": "MIL @ TOR",
+  "tip": "2026-11-24T00:30Z",
+  "open": {
+   "total": 223.5,
+   "spread": "TOR -10.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910040": {
+  "label": "BKN @ MIN",
+  "tip": "2026-11-24T00:30Z",
+  "open": {
+   "total": 224.5,
+   "spread": "MIN -11.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910041": {
+  "label": "CLE @ CHI",
+  "tip": "2026-11-24T01:00Z",
+  "open": {
+   "total": 241.5,
+   "spread": "CLE -8.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910042": {
+  "label": "PHX @ NO",
+  "tip": "2026-11-24T01:00Z",
+  "open": {
+   "total": 233.5,
+   "spread": "PHX -3.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910043": {
+  "label": "LAC @ HOU",
+  "tip": "2026-11-24T01:30Z",
+  "open": {
+   "total": 223.5,
+   "spread": "HOU -12.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910044": {
+  "label": "UTAH @ LAL",
+  "tip": "2026-11-24T03:00Z",
+  "open": {
+   "total": 224.5,
+   "spread": "LAL -13.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ },
+ "401910045": {
+  "label": "SA @ SAC",
+  "tip": "2026-11-24T03:00Z",
+  "open": {
+   "total": 223.5,
+   "spread": "SA -10.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-23T15:26:24.971Z"
+  }
+ }
+}

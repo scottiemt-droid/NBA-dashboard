@@ -142,5 +142,11 @@
     "file": "1521-t-15.html",
     "label": "15:21 ET — T-15 re-check",
     "summary": "23 cleared, parlay"
+  },
+  {
+    "date": "2026-11-23",
+    "file": "1026-morning.html",
+    "label": "10:26 ET — Morning scan (flags only)",
+    "summary": "63 flagged, parlay"
   }
 ]

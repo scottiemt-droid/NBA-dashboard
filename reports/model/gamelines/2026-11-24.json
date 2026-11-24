@@ -1,0 +1,32 @@
+{
+ "401909314": {
+  "label": "DET @ ORL",
+  "tip": "2026-11-25T00:00Z",
+  "open": {
+   "total": 213.5,
+   "spread": "DET -2.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-24T07:39:44.197Z"
+  }
+ },
+ "401909315": {
+  "label": "BOS @ WSH",
+  "tip": "2026-11-25T01:00Z",
+  "open": {
+   "total": 217.5,
+   "spread": "BOS -10.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-24T07:39:44.197Z"
+  }
+ },
+ "401909316": {
+  "label": "DAL @ DEN",
+  "tip": "2026-11-25T03:00Z",
+  "open": {
+   "total": 232.5,
+   "spread": "DEN -8.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-24T07:39:44.197Z"
+  }
+ }
+}

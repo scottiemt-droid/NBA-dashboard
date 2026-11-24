@@ -9,13 +9,13 @@
    "at": "2026-11-24T07:39:44.197Z"
   },
   "close": {
-   "total": 212.5,
-   "spread": "DET -2.5",
-   "provider": "Draft Kings",
-   "at": "2026-11-24T23:01:44.170Z"
+   "total": 210.5,
+   "spread": "ORL -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-24T23:49:56.038Z"
   },
-  "closeMinsBeforeTip": 58,
-  "closeFinal": false
+  "closeMinsBeforeTip": 10,
+  "closeFinal": true
  },
  "401909315": {
   "label": "BOS @ WSH",

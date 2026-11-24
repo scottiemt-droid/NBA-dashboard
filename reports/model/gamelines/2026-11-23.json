@@ -135,7 +135,15 @@
    "spread": "LAL -13.5",
    "provider": "Draft Kings",
    "at": "2026-11-23T15:26:24.971Z"
-  }
+  },
+  "close": {
+   "total": 224.5,
+   "spread": "LAL -12.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-24T02:06:29.630Z"
+  },
+  "closeMinsBeforeTip": 54,
+  "closeFinal": false
  },
  "401910045": {
   "label": "SA @ SAC",
@@ -145,6 +153,14 @@
    "spread": "SA -10.5",
    "provider": "Draft Kings",
    "at": "2026-11-23T15:26:24.971Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "SA -8.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-24T02:06:29.630Z"
+  },
+  "closeMinsBeforeTip": 54,
+  "closeFinal": false
  }
 }

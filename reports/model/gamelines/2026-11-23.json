@@ -85,11 +85,11 @@
   "close": {
    "total": 240.5,
    "spread": "CLE -8.5",
-   "provider": "Draft Kings",
-   "at": "2026-11-24T00:01:57.275Z"
+   "provider": "DraftKings",
+   "at": "2026-11-24T00:50:56.230Z"
   },
-  "closeMinsBeforeTip": 58,
-  "closeFinal": false
+  "closeMinsBeforeTip": 9,
+  "closeFinal": true
  },
  "401910042": {
   "label": "PHX @ NO",
@@ -103,11 +103,11 @@
   "close": {
    "total": 232.5,
    "spread": "PHX -3.5",
-   "provider": "Draft Kings",
-   "at": "2026-11-24T00:01:57.275Z"
+   "provider": "DraftKings",
+   "at": "2026-11-24T00:50:56.230Z"
   },
-  "closeMinsBeforeTip": 58,
-  "closeFinal": false
+  "closeMinsBeforeTip": 9,
+  "closeFinal": true
  },
  "401910043": {
   "label": "LAC @ HOU",
@@ -117,7 +117,15 @@
    "spread": "HOU -12.5",
    "provider": "Draft Kings",
    "at": "2026-11-23T15:26:24.971Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "HOU -13.5",
+   "provider": "DraftKings",
+   "at": "2026-11-24T00:50:56.230Z"
+  },
+  "closeMinsBeforeTip": 39,
+  "closeFinal": false
  },
  "401910044": {
   "label": "UTAH @ LAL",

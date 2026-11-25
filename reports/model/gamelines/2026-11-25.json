@@ -25,7 +25,15 @@
    "spread": "CHA -3.5",
    "provider": "DraftKings",
    "at": "2026-11-25T06:08:34.381Z"
-  }
+  },
+  "close": {
+   "total": 217.5,
+   "spread": "CHA -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-25T23:32:47.354Z"
+  },
+  "closeMinsBeforeTip": 27,
+  "closeFinal": false
  },
  "401909319": {
   "label": "CLE @ NY",
@@ -35,7 +43,15 @@
    "spread": "NY -3.5",
    "provider": "DraftKings",
    "at": "2026-11-25T06:08:34.381Z"
-  }
+  },
+  "close": {
+   "total": 220.5,
+   "spread": "NY -4.5",
+   "provider": "DraftKings",
+   "at": "2026-11-25T23:32:47.354Z"
+  },
+  "closeMinsBeforeTip": 57,
+  "closeFinal": false
  },
  "401909320": {
   "label": "MIN @ OKC",
@@ -45,7 +61,15 @@
    "spread": "OKC -1.5",
    "provider": "DraftKings",
    "at": "2026-11-25T06:08:34.381Z"
-  }
+  },
+  "close": {
+   "total": 223.5,
+   "spread": "OKC -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-25T23:32:47.354Z"
+  },
+  "closeMinsBeforeTip": 57,
+  "closeFinal": false
  },
  "401909321": {
   "label": "LAC @ MEM",

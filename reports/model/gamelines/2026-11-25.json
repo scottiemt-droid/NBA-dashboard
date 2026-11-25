@@ -7,7 +7,15 @@
    "spread": "PHI -1.5",
    "provider": "DraftKings",
    "at": "2026-11-25T06:08:34.381Z"
-  }
+  },
+  "close": {
+   "total": 237.5,
+   "spread": "MIA -1.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-25T21:49:45.479Z"
+  },
+  "closeMinsBeforeTip": 10,
+  "closeFinal": true
  },
  "401909318": {
   "label": "CHI @ CHA",

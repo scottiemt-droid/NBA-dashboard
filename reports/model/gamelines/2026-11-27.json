@@ -7,7 +7,15 @@
    "spread": "NY -3.5",
    "provider": "DraftKings",
    "at": "2026-11-27T05:26:25.509Z"
-  }
+  },
+  "close": {
+   "total": 222.5,
+   "spread": "NY -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T23:20:44.504Z"
+  },
+  "closeMinsBeforeTip": 39,
+  "closeFinal": false
  },
  "401909327": {
   "label": "MIL @ DET",

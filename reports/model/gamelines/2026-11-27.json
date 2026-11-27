@@ -1,0 +1,112 @@
+{
+ "401909326": {
+  "label": "MIA @ NY",
+  "tip": "2026-11-28T00:00Z",
+  "open": {
+   "total": 222.5,
+   "spread": "NY -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909327": {
+  "label": "MIL @ DET",
+  "tip": "2026-11-28T00:30Z",
+  "open": {
+   "total": 219.5,
+   "spread": "DET -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909328": {
+  "label": "PHI @ IND",
+  "tip": "2026-11-28T00:30Z",
+  "open": {
+   "total": 231.5,
+   "spread": "PHI -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909329": {
+  "label": "BKN @ TOR",
+  "tip": "2026-11-28T00:30Z",
+  "open": {
+   "total": 219.5,
+   "spread": "TOR -7.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909330": {
+  "label": "ATL @ BOS",
+  "tip": "2026-11-28T01:00Z",
+  "open": {
+   "total": 221.5,
+   "spread": "BOS -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909331": {
+  "label": "MEM @ MIN",
+  "tip": "2026-11-28T01:30Z",
+  "open": {
+   "total": 220.5,
+   "spread": "MIN -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909332": {
+  "label": "DAL @ PHX",
+  "tip": "2026-11-28T02:00Z",
+  "open": {
+   "total": 227.5,
+   "spread": "PHX -2.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909333": {
+  "label": "LAL @ SA",
+  "tip": "2026-11-28T02:30Z",
+  "open": {
+   "total": 225.5,
+   "spread": "SA -5.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909334": {
+  "label": "DEN @ UTAH",
+  "tip": "2026-11-28T02:30Z",
+  "open": {
+   "total": 229.5,
+   "spread": "DEN -10.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909335": {
+  "label": "NO @ LAC",
+  "tip": "2026-11-28T02:30Z",
+  "open": {
+   "total": 231.5,
+   "spread": "LAC -3.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ },
+ "401909336": {
+  "label": "GS @ POR",
+  "tip": "2026-11-28T02:30Z",
+  "open": {
+   "total": 220.5,
+   "spread": "POR -9.5",
+   "provider": "DraftKings",
+   "at": "2026-11-27T05:26:25.509Z"
+  }
+ }
+}

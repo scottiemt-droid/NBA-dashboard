@@ -1,0 +1,52 @@
+{
+ "401910046": {
+  "label": "ORL @ WSH",
+  "tip": "2026-11-28T22:00Z",
+  "open": {
+   "total": 218.5,
+   "spread": "ORL -3.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-28T05:33:53.131Z"
+  }
+ },
+ "401910047": {
+  "label": "BKN @ CHA",
+  "tip": "2026-11-28T23:00Z",
+  "open": {
+   "total": 213.5,
+   "spread": "CHA -5.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-28T05:33:53.131Z"
+  }
+ },
+ "401910048": {
+  "label": "IND @ CHI",
+  "tip": "2026-11-29T01:00Z",
+  "open": {
+   "total": 234.5,
+   "spread": "CHI -2.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-28T05:33:53.131Z"
+  }
+ },
+ "401910049": {
+  "label": "OKC @ MIL",
+  "tip": "2026-11-29T01:00Z",
+  "open": {
+   "total": 228.5,
+   "spread": "OKC -12.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-28T05:33:53.131Z"
+  }
+ },
+ "401910050": {
+  "label": "PHI @ HOU",
+  "tip": "2026-11-29T01:30Z",
+  "open": {
+   "total": 221.5,
+   "spread": "HOU -10.5",
+   "provider": "Draft Kings",
+   "at": "2026-11-28T05:33:53.131Z"
+  }
+ }
+}

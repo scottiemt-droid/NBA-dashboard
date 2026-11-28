@@ -1,262 +1,262 @@
 {
- "updated": "2026-11-27T23:20:44.598Z",
- "days": 20,
- "pending": 1,
- "playerGames": 2461,
- "dnp": 157,
+ "updated": "2026-11-28T05:33:53.393Z",
+ "days": 21,
+ "pending": 0,
+ "playerGames": 2651,
+ "dnp": 163,
  "byStat": {
   "pts": {
-   "n": 2461,
-   "mae": 4.96,
-   "bias": 0.14,
-   "meanActual": 12.24,
+   "n": 2651,
+   "mae": 4.92,
+   "bias": 0.23,
+   "meanActual": 12.16,
    "inputs": {
     "vt": {
-     "n": 1745,
-     "mae": 5.38,
-     "bias": 0.4
+     "n": 1878,
+     "mae": 5.35,
+     "bias": 0.47
     },
     "l5": {
-     "n": 1745,
-     "mae": 5,
-     "bias": 0.1
+     "n": 1878,
+     "mae": 4.96,
+     "bias": 0.18
     },
     "op": {
-     "n": 1745,
-     "mae": 5.02,
-     "bias": 0.08
+     "n": 1878,
+     "mae": 4.98,
+     "bias": 0.16
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
-    "mae": 5.01
+    "n": 1878,
+    "mae": 4.97
    }
   },
   "reb": {
-   "n": 2461,
+   "n": 2651,
    "mae": 2.02,
    "bias": 0.17,
-   "meanActual": 4.52,
+   "meanActual": 4.53,
    "inputs": {
     "vt": {
-     "n": 1745,
+     "n": 1878,
      "mae": 2.24,
-     "bias": 0.26
+     "bias": 0.24
     },
     "l5": {
-     "n": 1745,
+     "n": 1878,
      "mae": 2.03,
-     "bias": 0.18
+     "bias": 0.16
     },
     "op": {
-     "n": 1745,
-     "mae": 2.02,
-     "bias": 0.18
+     "n": 1878,
+     "mae": 2.03,
+     "bias": 0.16
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
+    "n": 1878,
     "mae": 2.01
    }
   },
   "ast": {
-   "n": 2461,
-   "mae": 1.45,
-   "bias": 0.03,
-   "meanActual": 2.86,
+   "n": 2651,
+   "mae": 1.46,
+   "bias": 0.05,
+   "meanActual": 2.84,
    "inputs": {
     "vt": {
-     "n": 1745,
-     "mae": 1.71,
-     "bias": -0.01
+     "n": 1878,
+     "mae": 1.7,
+     "bias": 0.03
     },
     "l5": {
-     "n": 1745,
-     "mae": 1.51,
-     "bias": 0.01
+     "n": 1878,
+     "mae": 1.52,
+     "bias": 0.04
     },
     "op": {
-     "n": 1745,
+     "n": 1878,
      "mae": 1.53,
-     "bias": 0.02
+     "bias": 0.05
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
+    "n": 1878,
     "mae": 1.5
    }
   },
   "tpm": {
-   "n": 2461,
-   "mae": 1.01,
-   "bias": -0.01,
-   "meanActual": 1.47,
+   "n": 2651,
+   "mae": 1,
+   "bias": 0.01,
+   "meanActual": 1.46,
    "inputs": {
     "vt": {
-     "n": 1745,
+     "n": 1878,
      "mae": 1.06,
-     "bias": -0.03
+     "bias": -0.01
     },
     "l5": {
-     "n": 1745,
-     "mae": 1.03,
-     "bias": -0.01
+     "n": 1878,
+     "mae": 1.02,
+     "bias": 0.01
     },
     "op": {
-     "n": 1745,
-     "mae": 1.03,
-     "bias": -0.01
+     "n": 1878,
+     "mae": 1.02,
+     "bias": 0.01
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
-    "mae": 1.03
+    "n": 1878,
+    "mae": 1.02
    }
   },
   "stl": {
-   "n": 2461,
+   "n": 2651,
    "mae": 0.77,
-   "bias": 0.05,
-   "meanActual": 0.82,
+   "bias": 0.04,
+   "meanActual": 0.83,
    "inputs": {
     "vt": {
-     "n": 1745,
+     "n": 1878,
      "mae": 0.88,
-     "bias": 0.09
+     "bias": 0.08
     },
     "l5": {
-     "n": 1745,
-     "mae": 0.79,
-     "bias": 0.05
-    },
-    "op": {
-     "n": 1745,
+     "n": 1878,
      "mae": 0.8,
      "bias": 0.05
-    }
-   },
-   "blendOnSameRows": {
-    "n": 1745,
-    "mae": 0.79
-   }
-  },
-  "blk": {
-   "n": 2461,
-   "mae": 0.56,
-   "bias": 0.03,
-   "meanActual": 0.51,
-   "inputs": {
-    "vt": {
-     "n": 1745,
-     "mae": 0.6,
-     "bias": 0.03
-    },
-    "l5": {
-     "n": 1745,
-     "mae": 0.58,
-     "bias": 0.03
     },
     "op": {
-     "n": 1745,
-     "mae": 0.58,
-     "bias": 0.02
-    }
-   },
-   "blendOnSameRows": {
-    "n": 1745,
-    "mae": 0.58
-   }
-  },
-  "fga": {
-   "n": 2461,
-   "mae": 2.87,
-   "bias": 0.12,
-   "meanActual": 9.45,
-   "inputs": {
-    "vt": {
-     "n": 1745,
-     "mae": 3.34,
-     "bias": 0.4
-    },
-    "l5": {
-     "n": 1745,
-     "mae": 2.93,
-     "bias": 0.05
-    },
-    "op": {
-     "n": 1745,
-     "mae": 2.95,
+     "n": 1878,
+     "mae": 0.81,
      "bias": 0.04
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
-    "mae": 2.93
+    "n": 1878,
+    "mae": 0.8
+   }
+  },
+  "blk": {
+   "n": 2651,
+   "mae": 0.55,
+   "bias": 0.03,
+   "meanActual": 0.5,
+   "inputs": {
+    "vt": {
+     "n": 1878,
+     "mae": 0.59,
+     "bias": 0.03
+    },
+    "l5": {
+     "n": 1878,
+     "mae": 0.58,
+     "bias": 0.03
+    },
+    "op": {
+     "n": 1878,
+     "mae": 0.58,
+     "bias": 0.03
+    }
+   },
+   "blendOnSameRows": {
+    "n": 1878,
+    "mae": 0.57
+   }
+  },
+  "fga": {
+   "n": 2651,
+   "mae": 2.83,
+   "bias": 0.15,
+   "meanActual": 9.43,
+   "inputs": {
+    "vt": {
+     "n": 1878,
+     "mae": 3.31,
+     "bias": 0.41
+    },
+    "l5": {
+     "n": 1878,
+     "mae": 2.88,
+     "bias": 0.07
+    },
+    "op": {
+     "n": 1878,
+     "mae": 2.91,
+     "bias": 0.06
+    }
+   },
+   "blendOnSameRows": {
+    "n": 1878,
+    "mae": 2.89
    }
   },
   "tpa": {
-   "n": 2461,
-   "mae": 1.63,
-   "bias": 0.05,
-   "meanActual": 4.07,
+   "n": 2651,
+   "mae": 1.61,
+   "bias": 0.06,
+   "meanActual": 4.06,
    "inputs": {
     "vt": {
-     "n": 1745,
-     "mae": 1.9,
-     "bias": 0.01
+     "n": 1878,
+     "mae": 1.89,
+     "bias": 0.03
     },
     "l5": {
-     "n": 1745,
-     "mae": 1.66,
+     "n": 1878,
+     "mae": 1.65,
      "bias": 0.06
     },
     "op": {
-     "n": 1745,
-     "mae": 1.67,
-     "bias": 0.06
+     "n": 1878,
+     "mae": 1.66,
+     "bias": 0.07
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
-    "mae": 1.65
+    "n": 1878,
+    "mae": 1.64
    }
   },
   "fta": {
-   "n": 2461,
-   "mae": 1.81,
-   "bias": 0.12,
-   "meanActual": 2.52,
+   "n": 2651,
+   "mae": 1.8,
+   "bias": 0.13,
+   "meanActual": 2.51,
    "inputs": {
     "vt": {
-     "n": 1745,
-     "mae": 2.11,
-     "bias": 0.07
+     "n": 1878,
+     "mae": 2.08,
+     "bias": 0.09
     },
     "l5": {
-     "n": 1745,
-     "mae": 1.86,
-     "bias": 0.13
+     "n": 1878,
+     "mae": 1.85,
+     "bias": 0.15
     },
     "op": {
-     "n": 1745,
-     "mae": 1.85,
-     "bias": 0.12
+     "n": 1878,
+     "mae": 1.84,
+     "bias": 0.13
     }
    },
    "blendOnSameRows": {
-    "n": 1745,
-    "mae": 1.86
+    "n": 1878,
+    "mae": 1.85
    }
   }
  },
  "minutes": {
-  "n": 2461,
-  "mae": 4.75,
-  "bias": 0.51
+  "n": 2651,
+  "mae": 4.72,
+  "bias": 0.56
  },
  "bestInput": {
   "pts": "l5",
-  "reb": "op",
+  "reb": "l5",
   "ast": "l5",
   "tpm": "l5",
   "stl": "l5",
@@ -268,46 +268,46 @@
    "l5": 40,
    "op": 30
   },
-  "n": 1745,
+  "n": 1878,
   "threshold": 300,
-  "currentLoss": 4.02,
+  "currentLoss": 4.01,
   "suggested": {
    "vt": 25,
-   "l5": 55,
-   "op": 20
+   "l5": 50,
+   "op": 25
   },
   "suggestedLoss": 4.01,
   "verdict": "Suggestion from the misses so far — move the sliders (or W_DEFAULT in js/ui.js) yourself if you agree."
  },
  "market": {
   "gameTotals": {
-   "n": 38,
+   "n": 39,
    "threshold": 100,
-   "modelMae": 11.65,
-   "closeMae": 11.34,
-   "modelMinusClose": 0.59,
+   "modelMae": 11.63,
+   "closeMae": 11.29,
+   "modelMinusClose": 0.61,
    "sideRecord": {
-    "decided": 38,
+    "decided": 39,
     "modelSideWon": 22
    },
    "openToCloseMoveTowardModel": {
     "moved": 25,
     "towardModel": 14
    },
-   "verdict": "n=38 — too small to conclude anything (needs 100+)."
+   "verdict": "n=39 — too small to conclude anything (needs 100+)."
   },
   "playerLines": {
-   "n": 2127,
+   "n": 2376,
    "withClose": 413,
-   "projMae": 2.81,
-   "lineMae": 2.73,
-   "projMinusLine": 0.26,
+   "projMae": 2.76,
+   "lineMae": 2.68,
+   "projMinusLine": 0.27,
    "sideRecord": {
-    "decided": 2119,
-    "projSideWon": 1115
+    "decided": 2368,
+    "projSideWon": 1242
    },
    "note": "Lines come only from props the odds agent fetched (budget mode: a few stats per day), so this sample grows slowly.",
-   "verdict": "n=2127."
+   "verdict": "n=2376."
   }
  },
  "days_list": [
@@ -330,6 +330,7 @@
   "2026-11-22",
   "2026-11-23",
   "2026-11-24",
-  "2026-11-25"
+  "2026-11-25",
+  "2026-11-27"
  ]
 }
